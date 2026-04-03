@@ -1,13 +1,52 @@
 ---
 name: orchestrator
-description: OpenClaw's unified orchestration contract — replaces kanban, kanban-contract, and old orchestrator. Load this skill when processing Linear tickets, running sweep dispatch, or orchestrating multi-step work.
+version: "1.0.0"
+description: "Skill-first orchestration framework. Dispatch agents, verify deliverables, improve with every cycle. The meta-harness for any domain."
+argument-hint: 'orchestrator sweep, orchestrator status'
+allowed-tools: Bash, Read, Write, AskUserQuestion, WebSearch
+homepage: https://github.com/maxtechera/orchestrator
+repository: https://github.com/maxtechera/orchestrator
+author: maxtechera
+license: MIT
+user-invocable: true
 triggers:
   - kanban sweep
-  - process Linear tickets
+  - process tickets
   - orchestrate work
   - dispatch agents
   - ticket workflow
+  - sweep board
 replaces: [kanban, kanban-contract]
+metadata:
+  openclaw:
+    emoji: "🎯"
+    requires:
+      env:
+        - LINEAR_API_KEY
+      optionalEnv:
+        - SHOPIFY_ACCESS_TOKEN
+        - MAILERLITE_API_KEY
+        - INSTAGRAM_ACCESS_TOKEN
+        - META_ADS_TOKEN
+        - APOLLO_API_KEY
+        - HUBSPOT_API_KEY
+        - GA4_PROPERTY_ID
+        - GH_TOKEN
+        - STRIPE_SECRET_KEY
+        - QUICKBOOKS_TOKEN
+        - ZENDESK_API_KEY
+      bins:
+        - python3
+    primaryEnv: LINEAR_API_KEY
+    tags:
+      - orchestration
+      - dispatch
+      - verification
+      - multi-domain
+      - kanban
+      - autonomous
+      - skill-first
+      - self-improving
 ---
 
 # Orchestrator Skill

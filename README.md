@@ -2,78 +2,165 @@
 
 **Manage work, not agents.**
 
-The operating system for AI-augmented business operations. Your agents execute. Verification confirms. You architect the outcomes.
+> **Permissions overview:** Reads your ticket board (Linear, GitHub Issues, Notion) and dispatches agents with domain-specific skills. Connects to external services (Shopify, MailerLite, Instagram, etc.) via user-provided API keys stored in `~/.config/orchestrator/.env`. All credential usage documented in the [Configuration](#configuration) section.
 
-> Install from GitHub or as a Claude Code plugin. Open source. Free.
+The skill-first orchestration framework that turns your ticket board into an autonomous workforce. Dispatch agents, verify every deliverable independently, and improve with every cycle.
 
-## What Is the Orchestrator
+## Installation
 
-A system you add to Claude Code, Codex, or any AI tool. It pulls tickets from your board, dispatches agents with domain-specific skills, and runs verification on every deliverable before it ships.
-
-The Orchestrator doesn't replace your tools. It dispatches agents to use them, and verifies the output.
-
+**Claude Code (Recommended):**
 ```
-Ticket → Agent + Skill → Verification → Done
+/install marketplace maxtechera/orchestrator
 ```
 
-**The agent that did the work never grades its own homework.** Verification is hybrid: automated data checks (real API calls, exact-match assertions) plus AI judgment (brand voice, content quality, visual inspection).
+**OpenClaw:**
+```
+plugin install maxtechera/orchestrator
+```
 
-## Quickstart
+**Manual:**
+```bash
+git clone https://github.com/maxtechera/orchestrator.git ~/.claude/skills/orchestrator
+```
+
+## Setup: Progressive Integration Unlocking
+
+### Level 1 — Zero Config (core orchestration)
+
+Install the skill and invoke it. The orchestrator reads your board, identifies actionable tickets, and dispatches agents. Works immediately with any board your agent can already access.
+
+```
+/orchestrator sweep
+```
+
+### Level 2 — Connect Your Board
+
+For persistent board access, add your tracker API key to `~/.config/orchestrator/.env`:
 
 ```bash
-git clone https://github.com/maxtechera/orchestrator.git ~/.orchestrator
-# Or: claude plugin install orchestrator
+# Linear (recommended)
+LINEAR_API_KEY=lin_api_xxxxx
 
-# Add domain skills
-orchestrator skill add content ecommerce seo
+# Or GitHub
+GH_TOKEN=ghp_xxxxx
 
-# Sync tickets from your board
-orchestrator sync --board linear --project "Q2 Sprint"
-
-# Run the full cycle: dispatch, execute, verify
-orchestrator run --tickets todo --parallel 4
-
-# Check status
-orchestrator status
+# Or Notion
+NOTION_API_KEY=ntn_xxxxx
 ```
 
-## What This Repo Contains
+### Level 3 — Add Domain Skills
 
-- [`docs/VISION.md`](docs/VISION.md) — full vision deck (north star document)
-- `SKILL.md` — core orchestrator skill contract
-- `WORKFLOW.md` — end-to-end lifecycle (pickup → execution → review/qa)
-- `docs/` — architecture, runtime model, guardrails, state machine
-- `skills/` — redistributable skill contracts mapped to runtime behaviors
-- `examples/` — minimal sweep + supervisor loop examples
-- `.github/workflows/` — docs and contract lint CI
+The orchestrator dispatches agents, but domain skills give them expertise. Each domain skill is a separate plugin:
 
-## Core Concepts
+```
+/install marketplace maxtechera/skill-content
+/install marketplace maxtechera/skill-ecommerce
+/install marketplace maxtechera/skill-seo
+```
 
-### The Ticket Contract
+Available domain skills:
 
-Every ticket has four sections. If all four are filled in, any agent with the right skill can execute it end-to-end:
+| Skill | What it does | Install |
+|-------|-------------|---------|
+| content | Reels, carousels, blog posts, newsletters | `skill-content` |
+| ecommerce | Product pages, pricing, inventory, cross-sell | `skill-ecommerce` |
+| seo | Blog posts, sitemaps, meta tags, locale expansion | `skill-seo` |
+| sales-outreach | Cold email sequences, lead sourcing, CRM | `skill-sales-outreach` |
+| finance | Invoicing, AR, KPI scorecards | `skill-finance` |
+| engineering | Features, bug fixes, infrastructure | Built-in (agent default) |
+| growth | Ad campaigns, referral loops, social proof | `skill-growth` |
+| go-to-market | Full product launches end to end | `skill-gtm` |
+
+### Level 4 — Connect Integrations
+
+Each domain skill lists required integrations. Add API keys to `~/.config/orchestrator/.env`:
+
+```bash
+# E-commerce
+SHOPIFY_ACCESS_TOKEN=shpat_xxxxx
+MERCADOLIBRE_TOKEN=xxxxx
+
+# Marketing
+MAILERLITE_API_KEY=xxxxx
+MANYCHAT_API_KEY=xxxxx
+
+# Social
+INSTAGRAM_ACCESS_TOKEN=xxxxx
+META_ADS_TOKEN=xxxxx
+
+# Sales
+APOLLO_API_KEY=xxxxx
+HUBSPOT_API_KEY=xxxxx
+
+# Analytics
+GA4_PROPERTY_ID=xxxxx
+```
+
+The orchestrator validates every connection before dispatching agents. If a required integration is missing, the ticket fails early — not halfway through execution.
+
+## Usage
+
+```
+/orchestrator sweep              # Process all actionable tickets on your board
+/orchestrator status             # Check current ticket states and verification results
+/orchestrator review             # Show tickets awaiting human review (pre-verified)
+```
+
+On OpenClaw, the orchestrator runs automatically via cron — `kanban:sweep` fires every 15 minutes, dispatching agents without manual invocation.
+
+## What It Does
+
+Three steps, on every cycle:
+
+1. **Dispatch** — reads the board, matches each ticket to the right domain skill, assigns an agent
+2. **Verify** — a separate verification step checks every deliverable (API assertions for data, AI judgment for quality). The agent that did the work never grades its own homework.
+3. **Proof** — posts verification evidence to the ticket: screenshots, API responses, test results. Nothing ships without proof.
+
+## Example: One Ticket, End to End
+
+You write this ticket on your board:
+
+```
+Title: Publish SEO blog post — "5 Shopify CRO Quick Wins"
+Inputs: keyword brief, brand voice guide, competitor URLs
+Deliverables: blog post published on CMS, meta tags set, internal links added
+Verification: page returns 200, word count > 1,500, SEO score green, no brand violations
+Artifacts: published URL, screenshot of live page
+```
+
+The orchestrator picks it up. An agent loads the SEO skill, writes the post, publishes it. A separate verification step loads the published page, checks the status code, counts words, runs an SEO check, screenshots the result. Posts PASS with evidence to the ticket. Moves it to Done.
+
+Total time: minutes. Total human involvement: zero (unless you configured approval rules for publishing).
+
+## The Ticket Contract
+
+Every ticket — regardless of domain — has four sections:
 
 - **Inputs** — what the agent needs to start
 - **Deliverables** — what "done" looks like, concretely
-- **Verification** — how to confirm the work is correct
+- **Verification** — how to confirm the work is correct (automated checks + quality checks)
 - **Artifacts** — proof that the work exists in the real world
 
-### Skills
+If any section is missing, the ticket stays in Backlog. Templates for every domain are included.
 
-Skills turn your AI tool into a domain specialist. They're text files that evolve with use:
+## Integrations
 
-```yaml
-# Skill: Content Production (v3 — refined after 47 tickets)
-Domain: content
-Integrations: instagram, mailerlite, cms
-Rules:
-  - Always set social preview image before publishing
-  - Carousel images must be 1080x1350
-  - Never schedule posts within 4 hours of each other
-Verification: screenshot + brand check, link validation, hashtag count
-```
+| Integration | What it enables | Free? | Required? |
+|-------------|----------------|-------|-----------|
+| Linear | Board sync, ticket state management | Free tier | Recommended |
+| GitHub | Code repos, PR workflow, issues | Free | Optional |
+| Shopify | Product pages, pricing, inventory | Paid | For e-commerce |
+| MailerLite | Email sequences, newsletters | Free tier | For email marketing |
+| Instagram | Post publishing, carousel creation | Free (Graph API) | For content |
+| Meta Ads | Campaign management, pixel verification | Paid | For paid acquisition |
+| Apollo | Lead sourcing, outreach sequences | Free tier | For sales |
+| HubSpot | CRM, deal pipeline | Free tier | For sales |
+| GA4 | Analytics, conversion tracking | Free | For growth |
+| Stripe | Payment verification | Paid | For finance |
+| QuickBooks | Invoicing, AR *(v1.5)* | Paid | For finance |
+| Zendesk | Support tickets *(v1.5)* | Paid | For support |
 
-Available skills: content production, e-commerce, go-to-market, growth/SEO, finance, engineering, sales outreach, customer support, paid acquisition, brand design, research, vendor management.
+## Core Concepts
 
 ### Hybrid Verification
 
@@ -89,6 +176,42 @@ Every failure becomes a rule. The same mistake never happens twice. Three feedba
 1. **Skill refinement** — repeated failures with the same root cause trigger a proposed patch
 2. **Verification hardening** — missed checks get added to domain verification
 3. **Rule accumulation** — operational rules across all skills, version-controlled
+
+### Fail Visible
+
+The system is designed to fail visibly, not silently:
+
+- Nothing publishes without passing verification
+- Blocked tickets include a reason, not just a status
+- Destructive actions require approval rules you configure once
+- Partial failures are caught and flagged
+
+## Configuration
+
+```
+~/.config/orchestrator/.env      # API keys and integration credentials
+~/.orchestrator/skills/          # Domain skill files
+~/.orchestrator/rules/           # Accumulated operational rules
+```
+
+Config check: the orchestrator validates all required connections on first run and before every dispatch cycle.
+
+## What This Repo Contains
+
+```
+orchestrator/
+  SKILL.md          # Core orchestrator skill contract
+  WORKFLOW.md       # End-to-end lifecycle (pickup → execution → review/qa)
+  docs/
+    VISION.md       # North star vision document (16 slides)
+    ARCHITECTURE.md # System architecture
+    GUARDRAILS.md   # Operational guardrails from production incidents
+    RUNTIME_MODEL.md
+    STATE_MACHINE.md
+  skills/           # Domain skill contracts
+  examples/         # Minimal sweep + supervisor loop examples
+  .github/          # CI workflows
+```
 
 ## Runtime Principles
 

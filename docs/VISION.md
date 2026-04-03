@@ -139,49 +139,38 @@ Verified across every domain the system touches.
 
 ## Slide 9: What It Looks Like
 
-If you're technical, here's what a run looks like. If you're not, your AI tool runs these for you — you just see results on your board.
+Install the skill, invoke it, and watch it work. Here's what a run produces:
 
 ```
-# Install the core
-git clone https://github.com/openclaw/orchestrator ~/.orchestrator
-# Or: claude plugin install orchestrator
+> /orchestrator sweep
 
-# Add domain skills
-orchestrator skill add content ecommerce seo
+Reading board... 12 tickets synced (8 Todo, 2 In Review, 2 Done)
+Dispatching 8 tickets...
 
-# Sync tickets from your board
-orchestrator sync --board linear --project "Q2 Sprint"
-  ✓ 12 tickets synced (8 Todo, 2 In Review, 2 Done)
-
-# Run the full cycle: dispatch, execute, verify
-orchestrator run --tickets todo --parallel 4
-  → Dispatching 8 tickets...
   → TICKET-042: Monthly invoice → finance skill → agent started
   → TICKET-043: SEO blog post → seo skill → agent started
   → TICKET-044: Newsletter → newsletter skill → agent started
   → TICKET-045: IG carousel → content skill → agent started
 
-# Check status
-orchestrator status
+> /orchestrator status
 
   TICKET-042  Monthly invoice             ██████████ VERIFIED ✓
   TICKET-043  SEO blog post              ██████████ VERIFIED ✓
   TICKET-044  Newsletter sequence        ████████░░ IN REVIEW — brand tone flagged
   TICKET-045  IG carousel batch          ██████████ VERIFIED ✓
 
-# See what happened on any ticket
-orchestrator logs TICKET-044
-  [10:42] Agent loaded newsletter skill (v2)
-  [10:43] Connected to MailerLite API ✓
-  [10:45] Created 3-email sequence in draft
-  [10:47] Verification started (fresh context)
-  [10:48] Email 1: subject ✓, links ✓, segment ✓
-  [10:48] Email 2: subject ✓, links ✓, CTA tone ✗ — "BUY NOW" flagged
-  [10:49] Result: PARTIAL — 1 issue found
+> /orchestrator review
 
-# Review what needs you / Retry after fixing
-orchestrator review --status needs-human
-orchestrator retry TICKET-044
+  TICKET-044: Newsletter sequence
+    Verification: PARTIAL — brand tone check flagged CTA in email 2
+    [10:42] Agent loaded newsletter skill (v2)
+    [10:43] Connected to MailerLite API ✓
+    [10:45] Created 3-email sequence in draft
+    [10:47] Verification started (fresh context)
+    [10:48] Email 1: subject ✓, links ✓, segment ✓
+    [10:48] Email 2: subject ✓, links ✓, CTA tone ✗ — "BUY NOW" flagged
+    [10:49] Result: PARTIAL — 1 issue found
+    Action needed: approve, reject, or redirect
 ```
 
 Skills live in `~/.orchestrator/skills/`
@@ -319,11 +308,11 @@ Every item has a ticket on the board. Backlog, not wish list.
 
 ## Slide 15: Get Started
 
-1. **Install** — `git clone` from GitHub or `claude plugin install orchestrator`. One session.
-2. **Add skills** — `orchestrator skill add content ecommerce seo`. Install what your business needs.
-3. **Connect** — link your integrations. The system validates everything before any agent runs.
+1. **Install** — `/install marketplace maxtechera/orchestrator` in Claude Code, or `plugin install` on OpenClaw.
+2. **Add domain skills** — install the skill plugins for your domains (content, ecommerce, SEO, etc.).
+3. **Connect** — add your API keys to `~/.config/orchestrator/.env`. The system validates everything before any agent runs.
 4. **Write your first ticket** — templates included for every domain.
-5. **Run** — first verified output in one session.
+5. **Invoke** — `/orchestrator sweep`. First verified output in one session.
 
 Open source. Free. Maintained by the OpenClaw community. Contributions welcome — skills, integrations, verification templates.
 
