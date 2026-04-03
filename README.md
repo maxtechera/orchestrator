@@ -181,15 +181,12 @@ Three steps, every cycle:
 ```
 orchestrator/
   SKILL.md             # Core orchestrator skill — the agent reads this
-  WORKFLOW.md          # Ticket lifecycle
+  WORKFLOW.md          # Ticket lifecycle (intake → execute → verify → done)
   docs/
     VISION.md          # North star vision document (full deck)
-    ARCHITECTURE.md    # System design
-    GUARDRAILS.md      # Hard rules from production incidents
-    RUNTIME_MODEL.md   # Dispatch cycle model
     STATE_MACHINE.md   # Ticket state transitions
-  skills/              # Bundled domain skill contracts
-  examples/            # Example tickets and sweep outputs
+  skills/              # Domain skill directory (plugins installed here)
+  examples/            # Example tickets
 ```
 
 ## Runtime Principles
