@@ -2,7 +2,7 @@
 name: orchestrator
 version: "1.0.0"
 description: "Skill-first orchestration framework. Dispatch agents, verify deliverables, improve with every cycle."
-argument-hint: 'orchestrator sweep, orchestrator status, orchestrator review'
+argument-hint: 'orchestrator sweep, orchestrator status, orchestrator review, orchestrator setup'
 allowed-tools: Bash, Read, Write, AskUserQuestion, WebSearch
 homepage: https://github.com/maxtechera/orchestrator
 repository: https://github.com/maxtechera/orchestrator
@@ -19,21 +19,25 @@ metadata:
   openclaw:
     emoji: "🎯"
     requires:
-      env:
-        - LINEAR_API_KEY
-      optionalEnv:
-        - SHOPIFY_ACCESS_TOKEN
-        - MAILERLITE_API_KEY
-        - INSTAGRAM_ACCESS_TOKEN
-        - META_ADS_TOKEN
-        - APOLLO_API_KEY
-        - HUBSPOT_API_KEY
-        - GA4_PROPERTY_ID
-        - GH_TOKEN
-        - STRIPE_SECRET_KEY
       bins:
         - python3
-    primaryEnv: LINEAR_API_KEY
+    optionalEnv:
+      - LINEAR_API_KEY
+      - GH_TOKEN
+      - NOTION_API_KEY
+      - JIRA_API_TOKEN
+      - SHOPIFY_ACCESS_TOKEN
+      - MAILERLITE_API_KEY
+      - INSTAGRAM_ACCESS_TOKEN
+      - META_ADS_TOKEN
+      - GOOGLE_ADS_TOKEN
+      - APOLLO_API_KEY
+      - HUBSPOT_API_KEY
+      - GA4_PROPERTY_ID
+      - STRIPE_SECRET_KEY
+      - QUICKBOOKS_TOKEN
+      - ZENDESK_TOKEN
+      - MERCADOLIBRE_TOKEN
     tags:
       - orchestration
       - dispatch
@@ -56,6 +60,7 @@ Manage work, not agents. Dispatch agents, verify every deliverable independently
 /orchestrator sweep     Process all actionable tickets on your board
 /orchestrator status    Show current ticket states and verification results
 /orchestrator review    Show tickets awaiting your review (pre-verified)
+/orchestrator setup     Connect your issue tracker and validate integrations
 ```
 
 ## How It Works
@@ -70,7 +75,7 @@ Manage work, not agents. Dispatch agents, verify every deliverable independently
 4. Worker executes independently
 5. Separate verification step runs (fresh context, zero knowledge of how work was done)
 6. Verification report posted to ticket with evidence
-7. Ticket moves to Done (pass), Review (needs human), or retries (failed check)
+7. Ticket moves to Done (pass), Review (needs human), or retries with failure context (failed check)
 
 ## The Ticket Contract
 
@@ -107,11 +112,19 @@ Every failure becomes a rule:
 - Blocked tickets include a structured reason
 - Destructive actions require approval rules you configure once
 - Partial failures are caught and flagged
+- Failed verification triggers auto-retry with failure context; if retry fails, escalates to Review
 - System crash → tickets stay in last known state, next sweep picks up
 
-## Domain Skills
+## Board Support
 
-Domain skills are separate plugins that give agents expertise:
+Works with any issue tracker. Run `/orchestrator setup` to connect:
+
+- Linear
+- GitHub Issues
+- Notion
+- Jira
+
+## Core Skills
 
 | Skill | Plugin |
 |-------|--------|
@@ -124,12 +137,22 @@ Domain skills are separate plugins that give agents expertise:
 | Go-to-market launches | `maxtechera/skill-gtm` |
 | Engineering | Built-in (agent default) |
 
+### Starter Templates
+
+| Skill | Plugin |
+|-------|--------|
+| Customer support | `maxtechera/skill-support` |
+| Paid acquisition | `maxtechera/skill-paid-ads` |
+| Brand design | `maxtechera/skill-brand` |
+| Research / competitive intel | `maxtechera/skill-research` |
+
 ## Configuration
 
 ```
 ~/.config/orchestrator/.env       # API keys and credentials
 ~/.orchestrator/skills/           # Installed domain skill files
 ~/.orchestrator/rules/            # Accumulated operational rules
+~/.orchestrator/history/          # Outcome logs for self-improvement
 ```
 
 ## Runtime Principles

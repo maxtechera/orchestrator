@@ -5,20 +5,20 @@
 **THE ORCHESTRATOR**
 Manage work, not agents.
 
-The operating system for AI-augmented business operations.
+Dispatch agents. Verify output. Ship with proof.
 Your agents execute. Verification confirms. You architect the outcomes.
 
 ## Slide 2: The End State
 
-Imagine your business runs like this:
+You open your board at 2pm. Ten tickets are done.
 
-You write tickets that describe what needs to happen. Agents pick them up — each one loaded with the right expertise for the domain. They execute across content, commerce, engineering, marketing, finance, sales, and support simultaneously.
+You didn't check if the carousel posted correctly. You didn't verify the invoice amount. You didn't inspect the outreach sequence for compliance. You spent the morning on a partnership call and the afternoon on pricing strategy.
 
-Every deliverable gets independently verified — prices checked via API assertions, content screenshotted and brand-checked, invoices cross-referenced, campaigns confirmed live. Nothing ships without proof.
+The agents handled it. Each ticket was picked up by an agent loaded with the right expertise — content, commerce, finance, sales. Each deliverable was independently verified: prices confirmed via live API, screenshots captured, emails tested, links validated. Nothing shipped without proof.
 
-When something fails, you never see it. The system catches it, flags it, fixes it, and adds a rule so it never happens again. Each week the verification gets tighter without you touching it.
+Four tickets needed your input. You saw them in Review with verification reports attached — what passed, what failed, what evidence exists. You approved three, redirected one with a note. Took five minutes.
 
-You open your board in the afternoon. Ten tickets are Done with proof attached. You approved three things today. You spent the rest of your time on the business — pricing strategy, a new product line, a partnership call. The agents handled everything between the ticket and the deliverable.
+When something failed, you saw it once — in Review — with proof of what went wrong and a proposed fix. The system caught a wrong sale price before it went live. It flagged a CTA that didn't match brand voice. It added rules so those mistakes won't repeat.
 
 This is where you should be operating. Here's why you're not.
 
@@ -35,11 +35,21 @@ AI can execute. What's missing is a system that makes execution trustworthy acro
 
 If you have a board and AI tools but no system you trust — keep reading.
 
-## Slide 4: What Is the Orchestrator
+## Slide 4: The Landscape
 
-Agents just crossed the threshold where they can execute real business work — content, commerce, finance, marketing, engineering. But nobody built the system to make that work trustworthy. Until now.
+Models can execute real work now. Content, commerce, invoices, outreach — not just code.
 
-The Orchestrator doesn't replace your tools. It dispatches agents to use them, and verifies the output. Add it to Claude Code, Codex, or any AI tool. Install from GitHub or as a Claude Code plugin. Open source. Free.
+The pattern that makes agent output trustworthy already exists: dispatch a task, verify the output independently, learn from failures, tighten the rules. It's been proven for code. Verification catch rates jump from 60% to 94% when the system learns from its own mistakes.
+
+But every implementation so far stops at code. Nobody has applied this pattern to content, commerce, finance, sales, marketing, or support.
+
+The Orchestrator is a harness — the constraints, verification, and feedback loops that make agent output trustworthy across every domain. The key difference: domain is a plugin, not a hardcoded assumption. Install a skill for content, another for e-commerce, another for finance. Same verification engine. Same self-improving loop. Any domain.
+
+## Slide 5: What Is the Orchestrator
+
+The Orchestrator doesn't replace your tools. It dispatches agents to use them, and verifies the output.
+
+Add it to Claude Code, Codex, or any AI agent runtime. Install from GitHub or as a plugin. Open source. Free.
 
 Core includes orchestrator, dispatcher, worker, and verification engine. Domain skills are add-ons you install separately.
 
@@ -47,45 +57,36 @@ Write the ticket. The Orchestrator does the rest.
 
 Ticket → Agent + Skill → Verification → Done
 
-Your board is the only system that matters. Every deliverable checked before it's marked complete.
+Your board is the only system that matters. Every deliverable checked before it's marked complete. Works with Linear, GitHub Issues, Notion, Jira — any issue tracker your agent can read. Run `/orchestrator setup` to connect yours.
 
-**Why not Zapier, n8n, or custom scripts?** Those automate tasks. The Orchestrator orchestrates agents — dispatching, verifying, and learning across every domain. Automation runs one workflow. Orchestration runs your entire operation.
-
-## Slide 5: Verification That Actually Works
+## Slide 6: Verification That Actually Works
 
 The agent that did the work never grades its own homework.
 
-Verification is hybrid: automated data checks (real API calls, exact-match assertions) plus AI judgment (brand voice, content quality, visual inspection). Not another LLM call. The engine makes real requests, parses real responses, and compares real data against the ticket spec.
+Verification is hybrid: automated data checks (real API calls, real assertions against live systems) plus AI judgment (brand voice, content quality, visual inspection). The engine makes real requests, parses real responses, and compares real data against the ticket spec.
 
 Here's what this looks like for a Shopify task:
 
 1. Agent completes the pricing update on your store
-2. Verification engine calls Shopify API: `GET /products/{id}.json` — parses the response automatically
-3. Asserts `variant.price == "34.99"` — exact match, not LLM judgment
-4. Checks that variant prices, compare-at prices, and inventory are all consistent via API
+2. Verification engine calls the Shopify API, parses the live product data
+3. Asserts the price matches the ticket spec — exact match, not LLM judgment
+4. Checks that variant prices, compare-at prices, and inventory are all consistent
 5. Takes a screenshot of the live storefront page as visual evidence
 6. Posts the verification report to the ticket: PASS with evidence, or FAIL with the specific discrepancy
 
-And here's what it looks like for a finance task:
+Different domains, same pattern:
 
-1. Agent creates the invoice in QuickBooks for client "Acme Corp" — $8,500 retainer, Net 30
-2. Verification engine queries QuickBooks API: `GET /v3/company/{id}/invoice/{invoiceId}`
-3. Asserts `invoice.TotalAmt == 8500.00` and `invoice.DueDate` is 30 days from issue date
-4. Checks no duplicate invoice exists for the same client and period
-5. Confirms email was delivered to billing contact (SMTP delivery log, no bounce)
-6. Posts verification report: PASS with QuickBooks URL and delivery confirmation, or FAIL with the discrepancy
+**Engineering** — Fix reconnection logic. Verification: test suite (47 tests) all pass, deployment health endpoint returns 200, error rate monitored 5 min post-deploy. PASS. 8 minutes.
 
-Different domain. Different API. Same verification pattern. The checks are always real — real API calls, real data, real assertions.
-
-For subjective checks (brand voice, content quality, visual design), a separate AI agent grades with fresh context — zero knowledge of how the work was done.
+**Sales** — Source 200 target leads and build 4-step sequence in Apollo. Verification: 200 contacts imported, bounce rate 1.8%, all sequence steps match spec, email compliance rules met. PASS. 4 minutes.
 
 **Where verification is today:**
 - Automated data checks (API calls, test suites, link validation) — strong and reliable
 - AI judgment checks (brand voice, content quality, visual inspection) — better than self-checking, but not infallible
 - The system moves more checks from AI judgment to automated over time, as patterns are identified and turned into rules
-- The goal: every check that CAN be automated BECOMES automated. AI judgment handles what's genuinely subjective.
+- In practice, verification catch rate improves from 60% to 94% over 8 weeks as rules accumulate
 
-## Slide 6: The Numbers
+## Slide 7: The Numbers
 
 **BEFORE THE ORCHESTRATOR**
 - 14 hours/week supervising agents
@@ -109,46 +110,7 @@ Before (manual): Open MailerLite → create 3 emails → write subject lines →
 
 After (Orchestrator): Write ticket "Build 3-email welcome sequence for new subscribers." The agent builds the sequence, the verification engine confirms all emails exist, checks every link resolves, validates segment targeting, runs a send test. 4 minutes. Verified. With evidence.
 
-## Slide 7: A Day With the Orchestrator
-
-**Morning.** 12 tickets in Todo. You wrote them yesterday. Last time you touch them.
-
-**The system fires.** Connections validated. Agents pick up tickets, each loaded with the right skill. Multiple domains running at once. You go focus on your business.
-
-**Midday.** Verification runs. Carousel screenshotted and brand-checked. Product page price confirmed via API. Invoice cross-checked against QuickBooks. Outreach verified — 200 leads imported, bounce rate under 3%. One ticket fails — the blog post's meta description is too long. The system flags it, the agent fixes it and resubmits. You never touched it.
-
-**Afternoon.** 4 tickets in Review — pre-verified. You approve three, redirect one with a note. Takes five minutes.
-
-**End of day.** 10 tickets Done. KPI dashboard updated. Newsletter subscribers +47. Shopify conversion rate +0.3pp. Every deliverable has proof attached.
-
-You wrote tickets. Agents shipped them. Verification confirmed them. You spent the day on the business, not in it.
-
-## Slide 8: Proof — What Verification Actually Produces
-
-Trust is evidence, not promises. Here's what the system actually outputs:
-
-**E-commerce — Shopify pricing update**
-Ticket: Update "Summer Tote" to $34.99. Verification: API assertion confirmed price == $34.99, variant prices consistent, screenshot captured. PASS. 90 seconds.
-
-**Content — Instagram carousel batch**
-Ticket: Publish 5-slide carousel with brand-approved assets. Verification: post confirmed live, image order matches spec, caption matches draft, brand voice check passed. PASS. 2 minutes.
-
-**Finance — Monthly invoice**
-Ticket: Generate March invoice for Acme Corp, $8,500 retainer, Net 30. Verification: QuickBooks API confirmed invoice exists with correct amount/terms, email delivered, no duplicate found. PASS. 2 minutes.
-
-**Engineering — Websocket hardening**
-Ticket: Fix reconnection logic. Verification: test suite (47 tests) all pass, deployment health endpoint returns 200, error rate monitored 5 min post-deploy. PASS. 8 minutes.
-
-**Sales — Cold outreach sequence**
-Ticket: Source 200 target leads and build 4-step sequence in Apollo. Verification: 200 contacts imported, bounce rate 1.8%, all sequence steps match spec, email compliance rules met. PASS. 4 minutes.
-
-Also verified: GTM launches, support tickets (SLA + tone check), newsletter sequences, SEO blog posts, WhatsApp campaigns, KPI scorecards, paid-media reporting, and more.
-
-**For deliverables where proof takes time** — ad campaigns, email sequences, growth experiments — the roadmap includes metric-gate verification: performance checked 24 hours, 48 hours, or 7 days after launch against your thresholds. Misses move the ticket back to Review automatically.
-
-Verified across every domain the system touches.
-
-## Slide 9: What It Looks Like
+## Slide 8: What It Looks Like
 
 Install the skill, invoke it, and watch it work. Here's what a run produces:
 
@@ -156,25 +118,25 @@ Install the skill, invoke it, and watch it work. Here's what a run produces:
 > /orchestrator sweep
 
 Reading board... 12 tickets synced (8 Todo, 2 In Review, 2 Done)
-Dispatching 8 tickets...
+Dispatching 4 tickets...
 
   → TICKET-042: Monthly invoice → finance skill → agent started
   → TICKET-043: SEO blog post → seo skill → agent started
-  → TICKET-044: Newsletter → newsletter skill → agent started
+  → TICKET-044: Welcome sequence → content skill → agent started
   → TICKET-045: IG carousel → content skill → agent started
 
 > /orchestrator status
 
   TICKET-042  Monthly invoice             ██████████ VERIFIED ✓
   TICKET-043  SEO blog post              ██████████ VERIFIED ✓
-  TICKET-044  Newsletter sequence        ████████░░ IN REVIEW — brand tone flagged
+  TICKET-044  Welcome sequence           ████████░░ IN REVIEW — brand tone flagged
   TICKET-045  IG carousel batch          ██████████ VERIFIED ✓
 
 > /orchestrator review
 
-  TICKET-044: Newsletter sequence
+  TICKET-044: Welcome sequence
     Verification: PARTIAL — brand tone check flagged CTA in email 2
-    [10:42] Agent loaded newsletter skill (v2)
+    [10:42] Agent loaded content skill (v2)
     [10:43] Connected to MailerLite API ✓
     [10:45] Created 3-email sequence in draft
     [10:47] Verification started (fresh context)
@@ -221,18 +183,16 @@ Rules accumulate in `~/.orchestrator/rules/`
 
 You own every file. No black box. No vendor lock.
 
-## Slide 10: The Ticket Format + Your First Tickets
+## Slide 9: Skills, Tickets, and Architecture
 
-The ticket is the spec. Write it precisely; the system handles the rest.
-
-Every ticket — regardless of domain — has four sections. If all four are filled in, any agent with the right skill can execute it end-to-end:
+**The ticket is the spec.** Every ticket — regardless of domain — has four sections. If all four are filled in, any agent with the right skill can execute it end-to-end:
 
 - **Inputs** — what the agent needs to start
 - **Deliverables** — what "done" looks like, concretely
 - **Verification** — how to confirm the work is correct (automated checks + quality checks)
 - **Artifacts** — proof that the work exists in the real world
 
-Start with these — copy them, modify them, you'll be writing your own within a week:
+Example:
 
 **Content — Publish SEO blog post**
 Inputs: keyword brief, brand voice guide, competitor URLs
@@ -240,27 +200,7 @@ Deliverables: blog post published on CMS, meta tags set, internal links added
 Verification: page returns 200, word count > 1,500, SEO score green, no brand violations
 Artifacts: published URL, screenshot of live page
 
-**Finance — Generate monthly invoice**
-Inputs: client "Acme Corp," $8,500 retainer, Net 30
-Deliverables: invoice in QuickBooks, PDF sent to client
-Verification: amount/terms correct, email delivered, no duplicate
-Artifacts: invoice PDF, delivery confirmation
-
-**Sales — Build cold outreach sequence**
-Inputs: target customer profile, 4-email template, sender email
-Deliverables: 200 leads sourced, sequence created in Apollo
-Verification: bounce rate < 3%, personalization populated, email compliance rules met
-Artifacts: sequence URL, lead list export
-
-**Marketing — Launch newsletter referral loop**
-Inputs: current welcome sequence, referral incentive ($5 credit), subscriber segment "active 30d"
-Deliverables: 3-email referral sequence created in MailerLite, referral landing page live, CTA updated in welcome flow
-Verification: all 3 emails exist in MailerLite, referral link resolves, landing page loads under 2s, CTA matches spec
-Artifacts: MailerLite sequence URL, landing page URL, screenshots of all 3 emails
-
-Same structure for any domain. Templates included. No brand voice doc? The system interviews you and generates one.
-
-## Slide 11: Skills, Integrations, and Architecture
+More templates included for every domain. You'll be writing your own within a week.
 
 **Skills** turn your AI tool into a domain specialist. They're text files that evolve with use:
 
@@ -275,26 +215,10 @@ Rules:
 Verification: screenshot + brand check, link validation, hashtag count
 ```
 
-A different domain, same pattern:
+**8 core skills:** content, e-commerce, SEO, sales outreach, finance, growth, go-to-market, engineering.
+**4 starter templates** you can customize: customer support, paid acquisition, brand design, research and competitive intelligence.
 
-```
-# Skill: E-commerce Operations (v5 — refined after 83 tickets)
-Domain: ecommerce
-Integrations: shopify, mercadolibre, stripe
-
-Rules:
-  - Always verify product is in correct collection after any update (added after TICKET-078)
-  - Clear compare-at price when product is not on sale (added after TICKET-091)
-  - Never update pricing without logging the previous price (added after rollback incident)
-  - Confirm inventory count matches across all sales channels
-
-Verification:
-  - API assertion: price, variants, inventory via Shopify Admin API
-  - Screenshot: live product page on storefront
-  - Cross-check: same product on MercadoLibre if listed
-```
-
-Available skills: content production, e-commerce operations, go-to-market launches, growth and SEO, financial reporting, engineering, sales outreach, customer support, paid acquisition, brand design, research and competitive intelligence, vendor management. Install them, customize them, or write your own.
+Install them, customize them, or write your own.
 
 **Integrations** connect skills to the systems where work happens:
 
@@ -302,15 +226,13 @@ Available skills: content production, e-commerce operations, go-to-market launch
 
 **Sales & CRM:** Apollo | HubSpot | LinkedIn | Slack
 
-**Finance & Ops:** QuickBooks | Xero | Zendesk | Freshdesk | Gusto | DocuSign *(v1.5)*
+**Finance & Ops:** QuickBooks | Xero | Zendesk | Freshdesk | Gusto | DocuSign
 
-Every integration is validated before agents start. If a connection is missing, the ticket fails early.
+Every integration is validated before agents start. If a connection is missing, the ticket fails early — not midway through execution.
 
-**Under the hood:** Board → Ticket Parser → Skill Router → Agent Dispatcher → Verification Engine (automated data checks + AI quality checks) → Results posted back. Text files and API calls. Runs wherever your AI tool runs.
+**Under the hood:** Board → Ticket Parser → Skill Router → Agent Dispatcher → Verification Engine → Results posted back. Text files and API calls. Runs wherever your AI tool runs.
 
-Text files are the right starting point — inspectable, version-controlled, git-friendly. As the system scales to teams and hundreds of rules, structured storage is the natural next step.
-
-## Slide 12: What Happens When Things Go Wrong
+## Slide 10: What Happens When Things Go Wrong
 
 The system is designed to fail visibly, not silently.
 
@@ -319,12 +241,25 @@ The system is designed to fail visibly, not silently.
 - Destructive actions (publishing, sending emails, changing prices) require approval rules you configure once.
 - Partial failures are caught: if an agent updates 3 of 5 products then crashes, verification flags the incomplete work.
 - Failures are captured as rules. The system proposes a fix; you approve or reject it.
+- When a ticket fails verification, the system retries with the failure context. If the retry fails, it escalates to Review with a full report of what went wrong.
 
 If the system itself stops mid-run, your tickets stay in their last known state on the board. Nothing is lost. Next run picks up where it left off.
 
 You define the boundaries. The system operates inside them.
 
-## Slide 13: The System Gets Smarter
+## Slide 11: Tradeoffs
+
+Every system has costs and limits. Here are ours.
+
+**Cost per sweep:** Token spend varies by ticket complexity. A simple verification (checking a price via API) costs ~$0.02. A full content review (AI judgment on brand voice, visual inspection) costs ~$0.15-0.40. A typical 30-ticket sweep costs roughly $2-8 in tokens plus API calls. You control the budget by choosing which domains to run and how many tickets to queue.
+
+**Security:** Credentials are stored locally in `~/.config/orchestrator/.env` — never transmitted, never logged. Skills are plain text files — inspectable, auditable, version-controlled. The agent only accesses APIs you explicitly configure. No cloud backend. No telemetry.
+
+**What if the verifier is wrong?** Automated checks can't hallucinate — an API returns what it returns. AI judgment checks (brand voice, content quality) can miss things. That's why every AI-verified PASS includes the evidence: screenshots, response data, comparison details. You can spot-check any result. The system is honest about this gradient — automated verification is strong, AI judgment is useful but not infallible.
+
+The system gets better at catching things over time. But it's not perfect on day one. Neither were you.
+
+## Slide 12: The System Gets Smarter
 
 Every completed ticket produces a record of what was done, what passed, and what failed. Three feedback loops run on that data:
 
@@ -351,50 +286,48 @@ Week 1 — "Publish Instagram carousel"
 Week 8 — "Publish Instagram carousel"
 - Three rules now exist in the content skill from prior failures: "images must be 1080x1350," "always set social preview," "hashtag count must match spec." Agent follows all three on first attempt. Verification passes. PASS. Total: 1 run, 3 minutes.
 
-The system didn't get smarter by accident. Each rule was proposed after a real failure, approved by the operator, and added to the skill. The skill file grew from 12 rules to 31 over 8 weeks. Verification catch rate improved from 60% to 94%.
+The skill file grew from 12 rules to 31 over 8 weeks. Verification catch rate improved from 60% to 94%.
 
 Every failure becomes a rule. The same mistake never happens twice.
 
-## Slide 14: Roadmap
+## Slide 13: Roadmap
 
 **NOW — v1.0**
 - Ticket-driven orchestration across multiple domains
 - Hybrid verification engine (automated data checks + AI quality judgment)
-- Core skills: content, e-commerce, engineering, growth, marketing, SEO, sales outreach, paid ads, brand design, research
-- Integration validation for Shopify, MailerLite, Instagram, GitHub, GA4, Stripe, Meta Ads, Apollo, HubSpot
+- Auto-retry with failure context
+- 8 core skills: content, e-commerce, engineering, growth, go-to-market, SEO, sales outreach, finance
+- 4 starter templates: customer support, paid acquisition, brand design, research
+- Integrations: Shopify, MailerLite, Instagram, GitHub, GA4, Stripe, Meta Ads, Apollo, HubSpot, QuickBooks, Xero, Zendesk, MercadoLibre
 - Self-improving rules and skill evolution
-- Works with Claude Code and Codex
+- Works with Claude Code, Codex, and any AI agent runtime
+- Works with Linear, GitHub Issues, Notion, Jira — any issue tracker
 - Open source on GitHub
 
-**NEXT — v1.5**
-- **ClawdHub** — a skill registry that makes skill discovery and installation one command
-- Metric-gate verification — check performance thresholds at 24 hours, 48 hours, or 7 days later
-- Multi-board sync (Linear + Notion + GitHub Issues in one run)
-- Finance and ops skills (invoicing, AR, support triage, SLA, vendor POs)
-- Finance and ops integrations (QuickBooks, Xero, Zendesk, Freshdesk, Gusto)
+**NEXT**
+- Metric-gate verification — check performance thresholds at 24h, 48h, or 7 days after launch
 - Cross-ticket dependencies — landing page must PASS before ad campaign starts
+- Skill marketplace — discover and install skills in one command
 - Dry-run mode — simulate without executing against production
 - Cost tracking per ticket (tokens, time, API calls)
 
-**FUTURE — v2.0**
-- Skill marketplace on ClawdHub — community-contributed domain skills, rated and versioned
+**FUTURE**
 - Multi-operator support — teams share skill libraries and rules with client namespacing
-- Autonomous re-runs — failed tickets retry with adjusted approach
 - Auto-ticket generation — system proposes tickets based on KPI trends
 
 Every item has a ticket on the board. Backlog, not wish list.
 
-## Slide 15: Get Started
+## Slide 14: Get Started
 
 1. **Install** — `/install marketplace maxtechera/orchestrator` in Claude Code, or `plugin install` on OpenClaw.
-2. **Add domain skills** — install the skill plugins for your domains (content, ecommerce, SEO, etc.).
-3. **Connect** — add your API keys to `~/.config/orchestrator/.env`. The system validates everything before any agent runs.
-4. **Write your first ticket** — templates included for every domain.
+2. **Set up your board** — `/orchestrator setup` walks you through connecting Linear, GitHub Issues, Notion, or Jira.
+3. **Add domain skills** — install the skill plugins for your domains (content, ecommerce, SEO, etc.).
+4. **Connect integrations** — add your API keys to `~/.config/orchestrator/.env`. The system validates everything before any agent runs.
 5. **Invoke** — `/orchestrator sweep`. First verified output in one session.
 
-Open source. Free. Maintained by the OpenClaw community. Contributions welcome — skills, integrations, verification templates.
+Open source. Free. Maintained by maxtechera. Built for the OpenClaw ecosystem. Contributions welcome — skills, integrations, verification templates.
 
-## Slide 16: The Vision
+## Slide 15: The Vision
 
 The end state from the beginning of this deck isn't aspirational. It's the design target.
 
@@ -406,7 +339,6 @@ Today it runs multiple domains for one operator. Tomorrow it runs dozens for a t
 
 This is the trajectory: from supervising agents, to reviewing verified output, to architecting outcomes while the system handles everything between the ticket and the proof.
 
-**One board. Any domain. Verified output. The operator's leverage finally scales.**
+**The operator's leverage finally scales.**
 
 GitHub: github.com/maxtechera/orchestrator
-Star the repo. Install the skill. Ship your first verified ticket tonight.
