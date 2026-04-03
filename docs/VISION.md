@@ -66,6 +66,17 @@ Here's what this looks like for a Shopify task:
 5. Takes a screenshot of the live storefront page as visual evidence
 6. Posts the verification report to the ticket: PASS with evidence, or FAIL with the specific discrepancy
 
+And here's what it looks like for a finance task:
+
+1. Agent creates the invoice in QuickBooks for client "Acme Corp" — $8,500 retainer, Net 30
+2. Verification engine queries QuickBooks API: `GET /v3/company/{id}/invoice/{invoiceId}`
+3. Asserts `invoice.TotalAmt == 8500.00` and `invoice.DueDate` is 30 days from issue date
+4. Checks no duplicate invoice exists for the same client and period
+5. Confirms email was delivered to billing contact (SMTP delivery log, no bounce)
+6. Posts verification report: PASS with QuickBooks URL and delivery confirmation, or FAIL with the discrepancy
+
+Different domain. Different API. Same verification pattern. The checks are always real — real API calls, real data, real assertions.
+
 For subjective checks (brand voice, content quality, visual design), a separate AI agent grades with fresh context — zero knowledge of how the work was done.
 
 **Where verification is today:**
@@ -173,6 +184,38 @@ Dispatching 8 tickets...
     Action needed: approve, reject, or redirect
 ```
 
+And when verification fails — the system handles it:
+
+```
+> /orchestrator status
+
+  TICKET-046  Shopify collection update   ████████░░ FAILED — verification caught issue
+
+> /orchestrator review
+
+  TICKET-046: Shopify collection update
+    Verification: FAIL — 2 issues found
+    [11:02] Agent updated collection "Spring Sale" — added 12 products
+    [11:04] Verification started (fresh context)
+    [11:04] Collection exists ✓
+    [11:04] Product count: 12 ✓
+    [11:05] Product "Summer Tote" price: $34.99 — expected $29.99 ✗ (sale price not applied)
+    [11:05] Collection sort order: manual — expected "best-selling" ✗
+    [11:05] Result: FAIL — 2 discrepancies
+
+    → Auto-retry triggered. Agent re-executing with failure context...
+
+  TICKET-046: Shopify collection update (retry 1)
+    [11:08] Agent corrected price to $29.99 and sort order to "best-selling"
+    [11:09] Verification re-run (fresh context)
+    [11:09] Product price: $29.99 ✓
+    [11:09] Sort order: best-selling ✓
+    [11:10] All 12 products present ✓
+    [11:10] Result: PASS — screenshot captured
+
+  TICKET-046 → VERIFIED ✓ (after 1 retry)
+```
+
 Skills live in `~/.orchestrator/skills/`
 Rules accumulate in `~/.orchestrator/rules/`
 
@@ -209,7 +252,13 @@ Deliverables: 200 leads sourced, sequence created in Apollo
 Verification: bounce rate < 3%, personalization populated, email compliance rules met
 Artifacts: sequence URL, lead list export
 
-Same structure for e-commerce, marketing, engineering, support, ads, or any domain. Templates for every domain are included. No brand voice doc? The system interviews you and generates one.
+**Marketing — Launch newsletter referral loop**
+Inputs: current welcome sequence, referral incentive ($5 credit), subscriber segment "active 30d"
+Deliverables: 3-email referral sequence created in MailerLite, referral landing page live, CTA updated in welcome flow
+Verification: all 3 emails exist in MailerLite, referral link resolves, landing page loads under 2s, CTA matches spec
+Artifacts: MailerLite sequence URL, landing page URL, screenshots of all 3 emails
+
+Same structure for any domain. Templates included. No brand voice doc? The system interviews you and generates one.
 
 ## Slide 11: Skills, Integrations, and Architecture
 
@@ -224,6 +273,25 @@ Rules:
   - Carousel images must be 1080x1350 (added after 2 brand check failures)
   - Never schedule posts within 4 hours of each other
 Verification: screenshot + brand check, link validation, hashtag count
+```
+
+A different domain, same pattern:
+
+```
+# Skill: E-commerce Operations (v5 — refined after 83 tickets)
+Domain: ecommerce
+Integrations: shopify, mercadolibre, stripe
+
+Rules:
+  - Always verify product is in correct collection after any update (added after TICKET-078)
+  - Clear compare-at price when product is not on sale (added after TICKET-091)
+  - Never update pricing without logging the previous price (added after rollback incident)
+  - Confirm inventory count matches across all sales channels
+
+Verification:
+  - API assertion: price, variants, inventory via Shopify Admin API
+  - Screenshot: live product page on storefront
+  - Cross-check: same product on MercadoLibre if listed
 ```
 
 Available skills: content production, e-commerce operations, go-to-market launches, growth and SEO, financial reporting, engineering, sales outreach, customer support, paid acquisition, brand design, research and competitive intelligence, vendor management. Install them, customize them, or write your own.
@@ -274,6 +342,16 @@ You approve or reject every change.
 **Verification hardening** — when a deliverable passes verification but you later flag it as wrong, the system adds the missed check to that domain's verification. AI judgment checks get replaced with automated checks as patterns emerge.
 
 **Rule accumulation** — operational rules across all skills. "Never publish content without confirming all image URLs resolve." Every rule is a line in a text file — visible, editable, deletable, version-controlled. Periodically reviewed for conflicts and staleness.
+
+**The same ticket type, 8 weeks apart:**
+
+Week 1 — "Publish Instagram carousel"
+- Agent posts carousel. Verification finds: images are 1080x1080 (wrong aspect for feed), no social preview image set, 2 hashtags missing from spec. FAIL. Agent retries. Second attempt passes after corrections. Total: 2 runs, 8 minutes.
+
+Week 8 — "Publish Instagram carousel"
+- Three rules now exist in the content skill from prior failures: "images must be 1080x1350," "always set social preview," "hashtag count must match spec." Agent follows all three on first attempt. Verification passes. PASS. Total: 1 run, 3 minutes.
+
+The system didn't get smarter by accident. Each rule was proposed after a real failure, approved by the operator, and added to the skill. The skill file grew from 12 rules to 31 over 8 weeks. Verification catch rate improved from 60% to 94%.
 
 Every failure becomes a rule. The same mistake never happens twice.
 
@@ -330,5 +408,5 @@ This is the trajectory: from supervising agents, to reviewing verified output, t
 
 **One board. Any domain. Verified output. The operator's leverage finally scales.**
 
-GitHub: github.com/openclaw/orchestrator
-Star the repo. Clone it. Ship your first verified ticket tonight.
+GitHub: github.com/maxtechera/orchestrator
+Star the repo. Install the skill. Ship your first verified ticket tonight.
