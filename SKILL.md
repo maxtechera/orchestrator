@@ -10,7 +10,7 @@ triggers:
 replaces: [kanban, kanban-contract]
 ---
 
-# Orchestrator Skill — OpenClaw's Symphony
+# Orchestrator Skill
 
 OpenClaw's unified orchestration contract for ticket-driven execution. This skill owns both deterministic `kanban:sweep` dispatch and multi-step decomposition/delegation for complex work.
 
@@ -460,7 +460,7 @@ Blocked by Max (explicit human dependency)
 
 ---
 
-## Symphony Patterns (Future Contracts)
+## Future Contracts
 
 Document what agents should do — NOT code implementations.
 
@@ -577,7 +577,6 @@ Decompose ticket into 5 sub-tasks
 - `skills/orchestrator/references/architecture.md` — Architecture overview
 - `skills/orchestrator/references/runtime-model.md` — Runtime loop model
 - `skills/orchestrator/references/guardrails.md` — Guardrails summary
-- `skills/orchestrator/references/symphony-patterns.md` — OpenClaw vs Symphony comparison
 - `memory/2026-03-11.md` — Recent orchestrator migration notes
 - `memory/2026-03-10.md` — Dispatch loop incident analysis
 - `memory/2026-02-25.md` — Cron self-modification incident + fixes
