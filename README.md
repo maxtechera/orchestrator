@@ -1,67 +1,71 @@
 # The Orchestrator
 
 **Manage work, not agents.**
+Independent verification for every AI agent deliverable.
 
-### Claude Code (recommended)
+Your agents do the work. A separate agent checks it. Nothing ships without proof. Every mistake becomes a rule so it never happens again.
+
+**Best for:** operators running AI agents across multiple domains who are tired of being the QA department.
+
 ```
 /install marketplace maxtechera/orchestrator
 ```
 
-**OpenClaw:**
+---
+
+## What This Does
+
+You write tickets on your board. The orchestrator reads them, dispatches agents loaded with domain-specific skills, and independently verifies every deliverable before marking it done. Content, e-commerce, engineering, marketing, finance, sales — one system, every output checked.
+
+**The agent that did the work never grades its own homework.** A separate agent verifies with fresh context — real API calls to confirm prices are correct, screenshots to prove content is live, link checks, compliance validation. Not just another AI saying "looks good."
+
+**The tradeoff:** A sweep takes 5-30 minutes depending on ticket complexity. A typical 30-ticket sweep costs $2-8 in tokens. Verified output is worth the wait, but simple one-off tasks may be faster done directly.
+
+---
+
+## Get Started
+
+### 1. Install
+
+**Claude Code:**
+```
+/install marketplace maxtechera/orchestrator
+```
+
+**OpenClaw** (multi-agent platform for autonomous workflows):
 ```
 plugin install maxtechera/orchestrator
 ```
 
-**Manual:**
-```bash
-git clone https://github.com/maxtechera/orchestrator.git ~/.claude/skills/orchestrator
+### 2. Connect your board
+
+```
+/orchestrator setup
 ```
 
-The skill-first orchestration framework that turns your ticket board into an autonomous workforce. `/orchestrator` reads your board, dispatches agents loaded with domain-specific skills, independently verifies every deliverable, and improves with every cycle. Content, e-commerce, engineering, marketing, finance, sales, support — one system, every deliverable checked before it ships.
-
-**The agent that did the work never grades its own homework.** Verification is hybrid: automated data checks (real API calls, exact-match assertions) plus AI judgment (brand voice, content quality, visual inspection). Nothing ships without proof.
-
-**The tradeoff:** The orchestrator runs a full dispatch → execute → verify cycle. Depending on ticket complexity and how many are queued, a sweep takes 5-30 minutes. A 30-ticket sweep costs roughly $2-8 in tokens. We think verified output is worth the wait, but simple one-off tasks may be faster done directly.
-
-**Best for:** operators running AI agents across multiple domains who are tired of being the QA department.
-
----
-
-## Setup: Progressive Integration Unlocking
-
-Start using `/orchestrator` immediately. Add integrations when you want more domains.
-
-### 1. Zero Config — Just install
-
-Install the skill and run `/orchestrator sweep`. The orchestrator works with whatever board your agent can already access. No API keys needed to start.
-
-### 2. Connect Your Board
-
-For reliable, persistent board access, run `/orchestrator setup` or add to `~/.config/orchestrator/.env`:
+The setup wizard walks you through connecting your issue tracker — Linear, GitHub Issues, Notion, or Jira. Or add manually to `~/.config/orchestrator/.env`:
 
 ```bash
-# Pick your issue tracker:
-
-# Linear
-BOARD_PROVIDER=linear
-LINEAR_API_KEY=lin_api_xxxxx
-
-# GitHub Issues
-BOARD_PROVIDER=github
-GH_TOKEN=ghp_xxxxx
-
-# Notion
-BOARD_PROVIDER=notion
-NOTION_API_KEY=ntn_xxxxx
-
-# Jira
-BOARD_PROVIDER=jira
-JIRA_API_TOKEN=xxxxx
+BOARD_PROVIDER=linear        # or: github, notion, jira
+LINEAR_API_KEY=lin_api_xxxxx  # swap for your tracker's key
 ```
 
-### 3. Add Domain Skills (RECOMMENDED)
+### 3. Try it
 
-Domain skills give agents expertise. Without them, agents use built-in capabilities. With them, they follow domain-specific rules, verification criteria, and best practices learned from real executions.
+```
+/orchestrator sweep
+```
+
+With just a board connected, the orchestrator will scan your tickets and dispatch agents using built-in capabilities. No domain skills or integrations required to start.
+
+**What to expect on your first sweep:**
+- Tickets with all four sections (Inputs, Deliverables, Verification, Artifacts) get dispatched
+- Tickets missing sections get moved to Backlog with a comment explaining what's needed
+- If you have no tickets in the right format yet, the orchestrator will tell you — use the templates below to write your first one
+
+### 4. Add domain skills (recommended)
+
+Domain skills give agents expertise. Without them, agents use general capabilities. With them, they follow domain-specific rules, verification criteria, and best practices learned from real executions.
 
 ```
 /install marketplace maxtechera/skill-content
@@ -69,9 +73,9 @@ Domain skills give agents expertise. Without them, agents use built-in capabilit
 /install marketplace maxtechera/skill-seo
 ```
 
-### 4. Connect Integrations
+### 5. Connect integrations
 
-Each domain skill lists the integrations it needs. Add API keys to `~/.config/orchestrator/.env`:
+Each skill uses specific integrations. Add API keys to `~/.config/orchestrator/.env`:
 
 ```bash
 # E-commerce
@@ -85,63 +89,58 @@ APOLLO_API_KEY=xxxxx
 
 # Growth
 META_ADS_TOKEN=xxxxx
-GOOGLE_ADS_TOKEN=xxxxx
 
 # Analytics
 GA4_PROPERTY_ID=xxxxx
 
 # Finance
 QUICKBOOKS_TOKEN=xxxxx
-STRIPE_SECRET_KEY=xxxxx
 ```
 
-The orchestrator validates every connection before dispatching. Missing integrations fail early with a clear message.
-
----
-
-### Do I need API keys?
-
-| Integration | Free? | Required? | Notes |
-|-------------|-------|-----------|-------|
-| Issue Tracker | Free | Any | Linear, GitHub Issues, Notion, Jira |
-| Shopify | Paid | For e-commerce skill | Product pages, pricing, inventory |
-| MailerLite | Free tier | For content skill | Email sequences, newsletters |
-| Instagram | Free (Graph API) | For content skill | Post publishing, carousels |
-| Meta Ads | Paid | For growth skill | Campaign management |
-| Google Ads | Paid | For growth skill | Campaign management |
-| Apollo | Free tier | For sales skill | Lead sourcing, outreach |
-| HubSpot | Free tier | For sales skill | CRM, pipeline |
-| GA4 | Free | For growth skill | Analytics, conversions |
-| Stripe | Paid | For finance skill | Payment verification |
-| QuickBooks | Paid | For finance skill | Invoicing, AR |
-| Zendesk | Paid | For support skill | Ticket management |
-| MercadoLibre | Free | For e-commerce (LATAM) | Marketplace listings |
-
-*All credentials stored locally in `~/.config/orchestrator/.env`. Never transmitted. The orchestrator validates connections before dispatch — missing credentials fail early, not midway through execution.*
-
----
-
-### Config file locations
-
-```
-~/.config/orchestrator/.env       # API keys and credentials
-~/.orchestrator/skills/           # Installed domain skill files
-~/.orchestrator/rules/            # Accumulated operational rules (grow automatically)
-~/.orchestrator/history/          # Outcome logs for self-improvement
-```
+The orchestrator validates every connection before dispatching. Missing integrations fail early with a clear message — not midway through execution.
 
 ---
 
 ## Usage
 
 ```
-/orchestrator sweep     Process all actionable tickets on your board
-/orchestrator status    Show current ticket states and verification results
-/orchestrator review    Show tickets awaiting your review (pre-verified)
-/orchestrator setup     Connect your issue tracker and validate integrations
+/orchestrator sweep                Process all actionable tickets
+/orchestrator sweep TICKET-046     Re-run a single ticket
+/orchestrator status               Show current ticket states and verification results
+/orchestrator review               Show tickets awaiting your review (pre-verified)
+/orchestrator approve TICKET-044   Approve a reviewed ticket → Done
+/orchestrator reject TICKET-044    Reject → back to execution with your notes
+/orchestrator setup                Connect your board and validate integrations
+/orchestrator stats                Show this week's pass/fail rate, ticket count, cost
 ```
 
+**Reviewing verified work:** When tickets land in Review, run `/orchestrator review` to see the verification report. Then approve, reject, or redirect with a note. This is your only daily touchpoint — everything else is automated.
+
+**When rules are proposed:** After repeated failures with the same root cause, the system proposes a new rule in the verification report. You approve or reject it inline. Approved rules are added to the skill file and apply to all future tickets.
+
 On OpenClaw, the orchestrator also runs on cron — dispatching agents automatically every 15 minutes.
+
+---
+
+## Do I Need API Keys?
+
+| Integration | Free? | What it's for |
+|-------------|-------|---------------|
+| Issue Tracker | Free | Linear, GitHub Issues, Notion, or Jira |
+| Shopify | Paid | Product pages, pricing, inventory |
+| MailerLite | Free tier | Email sequences, newsletters |
+| Instagram | Free (Graph API) | Post publishing, carousels |
+| Meta Ads | Paid | Campaign management |
+| Google Ads | Paid | Campaign management |
+| Apollo | Free tier | Lead sourcing, outreach |
+| HubSpot | Free tier | CRM, pipeline |
+| GA4 | Free | Analytics, conversions |
+| Stripe | Paid | Payment verification |
+| QuickBooks | Paid | Invoicing, AR |
+| Zendesk | Paid | Ticket management |
+| MercadoLibre | Free | Marketplace listings (LATAM) |
+
+*All credentials stored locally in `~/.config/orchestrator/.env`. Never transmitted. The orchestrator validates connections before dispatch.*
 
 ---
 
@@ -160,7 +159,7 @@ On OpenClaw, the orchestrator also runs on cron — dispatching agents automatic
 
 ### Starter Templates
 
-Customize these or use as a starting point for your own skills:
+Customize these or use as a starting point:
 
 | Skill | What it does | Plugin |
 |-------|-------------|--------|
@@ -175,9 +174,9 @@ Customize these or use as a starting point for your own skills:
 
 Three steps, every cycle:
 
-1. **Dispatch** — reads the board, prioritizes by proximity to done (Review before Verification, Verification before Todo, Todo before Backlog), matches each ticket to an installed domain skill, validates integrations, dispatches a worker agent
-2. **Verify** — after the worker delivers, a separate verification step runs with fresh context and zero knowledge of how the work was done. Automated data checks (API assertions, link validation, test suites) plus AI judgment for subjective criteria (brand voice, content quality)
-3. **Proof** — verification report posted to the ticket with evidence (screenshots, API responses, test results). PASS moves to Done. PARTIAL moves to Review. FAIL retries with failure context or escalates.
+1. **Dispatch** — reads the board, prioritizes by proximity to done (Review > Verification > Todo > Backlog), matches each ticket to a domain skill, validates integrations, dispatches a worker agent
+2. **Verify** — a separate agent runs with fresh context and zero knowledge of how the work was done. Automated data checks (API assertions, link validation, test suites) plus AI judgment for subjective criteria (brand voice, content quality)
+3. **Proof** — verification report posted to the ticket with evidence (screenshots, API responses, test results). PASS → Done. PARTIAL → Review. FAIL → auto-retry with failure context, or escalates.
 
 **Finishing beats starting** — tickets closest to done get dispatched first.
 
@@ -189,6 +188,32 @@ Three steps, every cycle:
 
 ---
 
+## Your First Ticket
+
+Copy this to your board and run `/orchestrator sweep`:
+
+**Publish SEO blog post**
+
+```
+Inputs: keyword brief "AI agent verification", brand voice guide, 3 competitor URLs
+Deliverables: blog post published on CMS, meta tags set, internal links added
+Verification: page returns 200, word count > 1,500, SEO score green, no brand violations
+Artifacts: published URL, screenshot of live page
+```
+
+More templates for every domain in [docs/VISION.md](docs/VISION.md).
+
+---
+
+## Config
+
+```
+~/.config/orchestrator/.env       # API keys and credentials
+~/.orchestrator/skills/           # Installed domain skill files
+~/.orchestrator/rules/            # Accumulated operational rules (grow automatically)
+~/.orchestrator/history/          # Outcome logs for self-improvement
+```
+
 ## What This Repo Contains
 
 ```
@@ -196,13 +221,13 @@ orchestrator/
   SKILL.md             # Core orchestrator skill — the agent reads this
   WORKFLOW.md          # Ticket lifecycle (intake → execute → verify → done)
   docs/
-    VISION.md          # North star vision document (full deck)
+    VISION.md          # Vision deck — the full story (15 slides)
     STATE_MACHINE.md   # Ticket state transitions
-  skills/              # Domain skill directory (plugins installed here)
-  examples/            # Example workflow
+  skills/              # Domain skill directory
+  examples/            # Example workflows and tickets
 ```
 
-## Runtime Principles
+## Principles
 
 - Your ticket board is the single source of truth
 - The executor and the verifier are always different

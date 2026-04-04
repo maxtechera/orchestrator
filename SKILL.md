@@ -3,7 +3,7 @@ name: orchestrator
 version: "1.0.0"
 description: "Skill-first orchestration framework. Dispatch agents, verify deliverables, improve with every cycle."
 argument-hint: 'orchestrator sweep, orchestrator status, orchestrator review, orchestrator setup'
-allowed-tools: Bash, Read, Write, AskUserQuestion, WebSearch
+allowed-tools: Bash, Read, Write, Edit, Glob, Grep, Agent, AskUserQuestion, WebSearch
 homepage: https://github.com/maxtechera/orchestrator
 repository: https://github.com/maxtechera/orchestrator
 author: maxtechera
@@ -18,9 +18,6 @@ triggers:
 metadata:
   openclaw:
     emoji: "🎯"
-    requires:
-      bins:
-        - python3
     optionalEnv:
       - LINEAR_API_KEY
       - GH_TOKEN
@@ -57,10 +54,15 @@ Manage work, not agents. Dispatch agents, verify every deliverable independently
 ## Commands
 
 ```
-/orchestrator sweep     Process all actionable tickets on your board
-/orchestrator status    Show current ticket states and verification results
-/orchestrator review    Show tickets awaiting your review (pre-verified)
-/orchestrator setup     Connect your issue tracker and validate integrations
+/orchestrator sweep                Process all actionable tickets
+/orchestrator sweep TICKET-046     Re-run a single ticket
+/orchestrator status               Show current ticket states and verification results
+/orchestrator review               Show tickets awaiting your review (pre-verified)
+/orchestrator approve TICKET-044   Approve a reviewed ticket → Done
+/orchestrator reject TICKET-044    Reject → back to execution with your notes
+/orchestrator approve-rule "..."   Approve a proposed rule into the skill
+/orchestrator setup                Connect your issue tracker and validate integrations
+/orchestrator stats                This week's pass/fail rate, ticket count, cost
 ```
 
 ## How It Works
@@ -133,7 +135,7 @@ Works with any issue tracker. Run `/orchestrator setup` to connect:
 | SEO | `maxtechera/skill-seo` |
 | Sales outreach | `maxtechera/skill-sales-outreach` |
 | Financial reporting | `maxtechera/skill-finance` |
-| Growth / paid acquisition | `maxtechera/skill-growth` |
+| Growth | `maxtechera/skill-growth` |
 | Go-to-market launches | `maxtechera/skill-gtm` |
 | Engineering | Built-in (agent default) |
 

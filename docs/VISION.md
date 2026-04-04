@@ -12,15 +12,15 @@ Your agents execute. Verification confirms. You architect the outcomes.
 
 You open your board at 2pm. Ten tickets are done.
 
-You didn't check if the carousel posted correctly. You didn't verify the invoice amount. You didn't inspect the outreach sequence for compliance. You spent the morning on a partnership call and the afternoon on pricing strategy.
+You spent the morning on a partnership call. You ate lunch without checking Slack. You didn't verify the invoice amount, inspect the outreach sequence, or open Shopify to confirm the sale price. You forgot there were tickets running. That's the point.
 
 The agents handled it. Each ticket was picked up by an agent loaded with the right expertise — content, commerce, finance, sales. Each deliverable was independently verified: prices confirmed via live API, screenshots captured, emails tested, links validated. Nothing shipped without proof.
 
-Four tickets needed your input. You saw them in Review with verification reports attached — what passed, what failed, what evidence exists. You approved three, redirected one with a note. Took five minutes.
+Four tickets landed in Review. You see them now — verification reports attached with what passed, what failed, and the evidence. You approve three, redirect one with a note. Five minutes.
 
-When something failed, you saw it once — in Review — with proof of what went wrong and a proposed fix. The system caught a wrong sale price before it went live. It flagged a CTA that didn't match brand voice. It added rules so those mistakes won't repeat.
+One ticket failed earlier. You didn't know because the system caught it, retried with the failure context, and it passed on the second run. A new rule was proposed — "always confirm collection sort order after product updates." You approve it. That mistake won't happen again.
 
-This is where you should be operating. Here's why you're not.
+You close your laptop. Ten tickets done. Five minutes of your attention. The rest of the day was yours.
 
 ## Slide 3: The Gap
 
@@ -39,11 +39,11 @@ If you have a board and AI tools but no system you trust — keep reading.
 
 Models can execute real work now. Content, commerce, invoices, outreach — not just code.
 
-The pattern that makes agent output trustworthy already exists: dispatch a task, verify the output independently, learn from failures, tighten the rules. It's been proven for code. Verification catch rates jump from 60% to 94% when the system learns from its own mistakes.
+The pattern that makes agent output trustworthy already exists: dispatch a task, verify the output independently, learn from failures, tighten the rules. It works. Verification catch rates improve from 60% to 94% when the system learns from its own mistakes.
 
-But every implementation so far stops at code. Nobody has applied this pattern to content, commerce, finance, sales, marketing, or support.
+Existing frameworks treat verification as domain-specific — one tool for code, another for content, nothing for finance or sales. The Orchestrator treats verification as a protocol. Same engine. Any domain.
 
-The Orchestrator is a harness — the constraints, verification, and feedback loops that make agent output trustworthy across every domain. The key difference: domain is a plugin, not a hardcoded assumption. Install a skill for content, another for e-commerce, another for finance. Same verification engine. Same self-improving loop. Any domain.
+The Orchestrator is a harness — the constraints, verification, and feedback loops that make agent output trustworthy across every domain. The key difference: domain is a plugin, not a hardcoded assumption. Install a skill for content, another for e-commerce, another for finance. Same verification engine. Same self-improving loop.
 
 ## Slide 5: What Is the Orchestrator
 
@@ -88,21 +88,23 @@ Different domains, same pattern:
 
 ## Slide 7: The Numbers
 
-**BEFORE THE ORCHESTRATOR**
+These are my results running the orchestrator across multiple domains for 8 weeks:
+
+**BEFORE**
 - 14 hours/week supervising agents
 - 8 tickets shipped per week
-- Zero verification — you were the verifier
+- Zero verification — I was the verifier
 - Every "done" required manual inspection
 
-**AFTER THE ORCHESTRATOR**
+**AFTER**
 - 2 hours/week reviewing pre-verified work
 - 31 tickets shipped per week
 - 100% of deliverables verified before review
 - Every "done" has proof attached
 
-12 hours/week back. Nearly 4x the output. Same operator. Same agents. Different system.
+12 hours/week back. Nearly 4x the output. Same agents. Different system.
 
-*These are the results from the first operator to run this system — multiple domains, 8 weeks. Every new operator starts with the same foundation: same ticket format, same verification engine, same skill library.*
+*Every new operator starts with the same foundation: same ticket format, same verification engine, same skill library. Your results will depend on your domains and ticket complexity.*
 
 **One task, side by side:**
 
@@ -144,6 +146,9 @@ Dispatching 4 tickets...
     [10:48] Email 2: subject ✓, links ✓, CTA tone ✗ — "BUY NOW" flagged
     [10:49] Result: PARTIAL — 1 issue found
     Action needed: approve, reject, or redirect
+
+> /orchestrator approve TICKET-044 --note "BUY NOW is fine for this campaign"
+  TICKET-044 → Done ✓
 ```
 
 And when verification fails — the system handles it:
@@ -153,29 +158,29 @@ And when verification fails — the system handles it:
 
   TICKET-046  Shopify collection update   ████████░░ FAILED — verification caught issue
 
-> /orchestrator review
-
   TICKET-046: Shopify collection update
     Verification: FAIL — 2 issues found
     [11:02] Agent updated collection "Spring Sale" — added 12 products
     [11:04] Verification started (fresh context)
     [11:04] Collection exists ✓
     [11:04] Product count: 12 ✓
-    [11:05] Product "Summer Tote" price: $34.99 — expected $29.99 ✗ (sale price not applied)
+    [11:05] Product price: $34.99 — expected $29.99 ✗ (sale price not applied)
     [11:05] Collection sort order: manual — expected "best-selling" ✗
     [11:05] Result: FAIL — 2 discrepancies
 
     → Auto-retry triggered. Agent re-executing with failure context...
+    → Proposed rule: "Always confirm collection sort order after product updates"
 
   TICKET-046: Shopify collection update (retry 1)
     [11:08] Agent corrected price to $29.99 and sort order to "best-selling"
     [11:09] Verification re-run (fresh context)
-    [11:09] Product price: $29.99 ✓
-    [11:09] Sort order: best-selling ✓
-    [11:10] All 12 products present ✓
+    [11:09] All checks pass ✓
     [11:10] Result: PASS — screenshot captured
 
   TICKET-046 → VERIFIED ✓ (after 1 retry)
+
+> /orchestrator approve-rule "Always confirm collection sort order after product updates"
+  Rule added to ecommerce skill ✓
 ```
 
 Skills live in `~/.orchestrator/skills/`
@@ -183,9 +188,9 @@ Rules accumulate in `~/.orchestrator/rules/`
 
 You own every file. No black box. No vendor lock.
 
-## Slide 9: Skills, Tickets, and Architecture
+## Slide 9: The Ticket Contract and Skills
 
-**The ticket is the spec.** Every ticket — regardless of domain — has four sections. If all four are filled in, any agent with the right skill can execute it end-to-end:
+**The ticket is the spec.** Every ticket — regardless of domain — has four sections:
 
 - **Inputs** — what the agent needs to start
 - **Deliverables** — what "done" looks like, concretely
@@ -216,23 +221,27 @@ Verification: screenshot + brand check, link validation, hashtag count
 ```
 
 **8 core skills:** content, e-commerce, SEO, sales outreach, finance, growth, go-to-market, engineering.
-**4 starter templates** you can customize: customer support, paid acquisition, brand design, research and competitive intelligence.
+**4 starter templates** you can customize: customer support, paid acquisition, brand design, research.
 
 Install them, customize them, or write your own.
 
+## Slide 10: Integrations and Architecture
+
 **Integrations** connect skills to the systems where work happens:
 
-**Commerce & Marketing:** Shopify | MailerLite | Instagram | GitHub | GA4 | Stripe | MercadoLibre | ManyChat | WhatsApp | Meta Ads | Google Ads
-
-**Sales & CRM:** Apollo | HubSpot | LinkedIn | Slack
-
-**Finance & Ops:** QuickBooks | Xero | Zendesk | Freshdesk | Gusto | DocuSign
+| Category | Integrations |
+|----------|-------------|
+| Commerce | Shopify, Stripe, MercadoLibre |
+| Content & Marketing | MailerLite, Instagram, Meta Ads, Google Ads, GA4 |
+| Sales & CRM | Apollo, HubSpot |
+| Finance & Ops | QuickBooks, Xero, Zendesk |
+| Engineering | GitHub |
 
 Every integration is validated before agents start. If a connection is missing, the ticket fails early — not midway through execution.
 
 **Under the hood:** Board → Ticket Parser → Skill Router → Agent Dispatcher → Verification Engine → Results posted back. Text files and API calls. Runs wherever your AI tool runs.
 
-## Slide 10: What Happens When Things Go Wrong
+## Slide 11: What Happens When Things Go Wrong
 
 The system is designed to fail visibly, not silently.
 
@@ -240,14 +249,14 @@ The system is designed to fail visibly, not silently.
 - If an agent can't complete a ticket, it moves to "Blocked" with a reason — not "Done" with broken output.
 - Destructive actions (publishing, sending emails, changing prices) require approval rules you configure once.
 - Partial failures are caught: if an agent updates 3 of 5 products then crashes, verification flags the incomplete work.
-- Failures are captured as rules. The system proposes a fix; you approve or reject it.
-- When a ticket fails verification, the system retries with the failure context. If the retry fails, it escalates to Review with a full report of what went wrong.
+- When a ticket fails verification, the system retries with the failure context. If the retry fails, it escalates to Review with a full report.
+- Failures are captured as rules. The system proposes a fix; you approve or reject.
 
 If the system itself stops mid-run, your tickets stay in their last known state on the board. Nothing is lost. Next run picks up where it left off.
 
 You define the boundaries. The system operates inside them.
 
-## Slide 11: Tradeoffs
+## Slide 12: Tradeoffs
 
 Every system has costs and limits. Here are ours.
 
@@ -259,7 +268,7 @@ Every system has costs and limits. Here are ours.
 
 The system gets better at catching things over time. But it's not perfect on day one. Neither were you.
 
-## Slide 12: The System Gets Smarter
+## Slide 13: The System Gets Smarter
 
 Every completed ticket produces a record of what was done, what passed, and what failed. Three feedback loops run on that data:
 
@@ -272,11 +281,11 @@ Every completed ticket produces a record of what was done, what passed, and what
 # Added automatically after verification gaps on TICKET-078, TICKET-091
 ```
 
-You approve or reject every change.
+You approve or reject every change — inline during review or via `/orchestrator approve-rule`.
 
 **Verification hardening** — when a deliverable passes verification but you later flag it as wrong, the system adds the missed check to that domain's verification. AI judgment checks get replaced with automated checks as patterns emerge.
 
-**Rule accumulation** — operational rules across all skills. "Never publish content without confirming all image URLs resolve." Every rule is a line in a text file — visible, editable, deletable, version-controlled. Periodically reviewed for conflicts and staleness.
+**Rule accumulation** — operational rules across all skills. "Never publish content without confirming all image URLs resolve." Every rule is a line in a text file — visible, editable, deletable, version-controlled.
 
 **The same ticket type, 8 weeks apart:**
 
@@ -290,7 +299,7 @@ The skill file grew from 12 rules to 31 over 8 weeks. Verification catch rate im
 
 Every failure becomes a rule. The same mistake never happens twice.
 
-## Slide 13: Roadmap
+## Slide 14: Roadmap
 
 **NOW — v1.0**
 - Ticket-driven orchestration across multiple domains
@@ -298,18 +307,19 @@ Every failure becomes a rule. The same mistake never happens twice.
 - Auto-retry with failure context
 - 8 core skills: content, e-commerce, engineering, growth, go-to-market, SEO, sales outreach, finance
 - 4 starter templates: customer support, paid acquisition, brand design, research
-- Integrations: Shopify, MailerLite, Instagram, GitHub, GA4, Stripe, Meta Ads, Apollo, HubSpot, QuickBooks, Xero, Zendesk, MercadoLibre
+- Integrations: Shopify, MailerLite, Instagram, GitHub, GA4, Stripe, Meta Ads, Google Ads, Apollo, HubSpot, QuickBooks, Xero, Zendesk, MercadoLibre
 - Self-improving rules and skill evolution
-- Works with Claude Code, Codex, and any AI agent runtime
+- Works with Claude Code, Codex, OpenClaw, and any AI agent runtime
 - Works with Linear, GitHub Issues, Notion, Jira — any issue tracker
 - Open source on GitHub
 
 **NEXT**
+- Dry-run mode — simulate without touching production systems
 - Metric-gate verification — check performance thresholds at 24h, 48h, or 7 days after launch
 - Cross-ticket dependencies — landing page must PASS before ad campaign starts
 - Skill marketplace — discover and install skills in one command
-- Dry-run mode — simulate without executing against production
 - Cost tracking per ticket (tokens, time, API calls)
+- Weekly stats and reporting dashboard
 
 **FUTURE**
 - Multi-operator support — teams share skill libraries and rules with client namespacing
@@ -317,17 +327,17 @@ Every failure becomes a rule. The same mistake never happens twice.
 
 Every item has a ticket on the board. Backlog, not wish list.
 
-## Slide 14: Get Started
+## Slide 15: Get Started
 
 1. **Install** — `/install marketplace maxtechera/orchestrator` in Claude Code, or `plugin install` on OpenClaw.
 2. **Set up your board** — `/orchestrator setup` walks you through connecting Linear, GitHub Issues, Notion, or Jira.
-3. **Add domain skills** — install the skill plugins for your domains (content, ecommerce, SEO, etc.).
-4. **Connect integrations** — add your API keys to `~/.config/orchestrator/.env`. The system validates everything before any agent runs.
-5. **Invoke** — `/orchestrator sweep`. First verified output in one session.
+3. **Write your first ticket** — use the templates included for any domain. Four sections: Inputs, Deliverables, Verification, Artifacts.
+4. **Run** — `/orchestrator sweep`. First verified output in one session.
+5. **Review** — `/orchestrator review` to see pre-verified results. Approve, reject, or redirect.
 
 Open source. Free. Maintained by maxtechera. Built for the OpenClaw ecosystem. Contributions welcome — skills, integrations, verification templates.
 
-## Slide 15: The Vision
+## Slide 16: The Vision
 
 The end state from the beginning of this deck isn't aspirational. It's the design target.
 
