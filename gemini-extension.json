@@ -1,0 +1,61 @@
+{
+  "name": "orchestrator",
+  "version": "1.0.0",
+  "description": "Skill-first orchestration framework. Dispatch agents, verify deliverables, improve with every cycle.",
+  "settings": [
+    {
+      "name": "Board Provider",
+      "description": "Your issue tracker: linear, github, notion, or jira",
+      "envVar": "BOARD_PROVIDER",
+      "sensitive": false
+    },
+    {
+      "name": "Linear API Key",
+      "description": "Linear API key (required if BOARD_PROVIDER=linear)",
+      "envVar": "LINEAR_API_KEY",
+      "sensitive": true
+    },
+    {
+      "name": "GitHub Token",
+      "description": "GitHub personal access token (required if BOARD_PROVIDER=github)",
+      "envVar": "GH_TOKEN",
+      "sensitive": true
+    },
+    {
+      "name": "Notion API Key",
+      "description": "Notion integration token (required if BOARD_PROVIDER=notion)",
+      "envVar": "NOTION_API_KEY",
+      "sensitive": true
+    },
+    {
+      "name": "Jira API Token",
+      "description": "Jira API token (required if BOARD_PROVIDER=jira)",
+      "envVar": "JIRA_API_TOKEN",
+      "sensitive": true
+    },
+    {
+      "name": "Shopify Access Token",
+      "description": "Shopify store access token for e-commerce verification (optional)",
+      "envVar": "SHOPIFY_ACCESS_TOKEN",
+      "sensitive": true
+    },
+    {
+      "name": "MailerLite API Key",
+      "description": "MailerLite API key for content/newsletter verification (optional)",
+      "envVar": "MAILERLITE_API_KEY",
+      "sensitive": true
+    },
+    {
+      "name": "Apollo API Key",
+      "description": "Apollo.io API key for sales verification (optional)",
+      "envVar": "APOLLO_API_KEY",
+      "sensitive": true
+    },
+    {
+      "name": "Default Model",
+      "description": "Default LLM model override (optional)",
+      "envVar": "DEFAULT_MODEL",
+      "sensitive": false
+    }
+  ]
+}

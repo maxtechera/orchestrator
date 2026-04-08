@@ -3,6 +3,7 @@
 Complete reference for the ticket journey from pickup to Done.
 
 **Canonical source**: This file. All agents follow this contract.
+For the detailed state machine with all transitions, see [docs/STATE_MACHINE.md](docs/STATE_MACHINE.md).
 
 ---
 
@@ -123,7 +124,7 @@ Tickets closest to done get dispatched first:
 
 1. **Review** — artifact exists, needs human approval
 2. **Verification** — delivered, needs checking
-3. **Stale** — agent went idle, needs fresh worker
+3. **In Progress (stale)** — agent went idle (>30 min), needs fresh worker
 4. **Todo** — ready to start, contract complete
 5. **Backlog** — not ready, missing contract sections
 

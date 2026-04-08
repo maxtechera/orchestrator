@@ -20,7 +20,7 @@ Four tickets landed in Review. You see them now — verification reports attache
 
 One ticket failed earlier. You didn't know because the system caught it, retried with the failure context, and it passed on the second run. A new rule was proposed — "always confirm collection sort order after product updates." You approve it. That mistake won't happen again.
 
-You close your laptop. Ten tickets done. Five minutes of your attention. The rest of the day was yours.
+You close your laptop. Ten tickets done. Five minutes of your attention. The rest of the day was yours. Not "yours to catch up on Slack." Yours. The kind of afternoon where you almost forget you run a business — because nothing needed you.
 
 ## Slide 3: The Gap
 
@@ -39,7 +39,7 @@ If you have a board and AI tools but no system you trust — keep reading.
 
 Models can execute real work now. Content, commerce, invoices, outreach — not just code.
 
-The pattern that makes agent output trustworthy already exists: dispatch a task, verify the output independently, learn from failures, tighten the rules. It works. Verification catch rates improve from 60% to 94% when the system learns from its own mistakes.
+The pattern that makes agent output trustworthy already exists: dispatch a task, verify the output independently, learn from failures, tighten the rules. It works. Verification catch rates improve from 60% to 94% of known failure modes when the system learns from its own mistakes.
 
 Existing frameworks treat verification as domain-specific — one tool for code, another for content, nothing for finance or sales. The Orchestrator treats verification as a protocol. Same engine. Any domain.
 
@@ -63,9 +63,9 @@ Your board is the only system that matters. Every deliverable checked before it'
 
 The agent that did the work never grades its own homework.
 
-Verification is hybrid: automated data checks (real API calls, real assertions against live systems) plus AI judgment (brand voice, content quality, visual inspection). The engine makes real requests, parses real responses, and compares real data against the ticket spec.
+Verification runs as a separate pass — a different agent instance that reads the ticket spec and checks the deliverable with zero knowledge of how the work was done. It's not fully independent (it reads the same spec the executor used), but it eliminates confirmation bias from the implementation path. The verifier doesn't know what shortcuts were taken or what edge cases were dodged — it only knows what was promised and what exists.
 
-Here's what this looks like for a Shopify task:
+The engine makes real requests, parses real responses, and compares real data against the ticket spec. Here's what this looks like for a Shopify task:
 
 1. Agent completes the pricing update on your store
 2. Verification engine calls the Shopify API, parses the live product data
@@ -80,11 +80,16 @@ Different domains, same pattern:
 
 **Sales** — Source 200 target leads and build 4-step sequence in Apollo. Verification: 200 contacts imported, bounce rate 1.8%, all sequence steps match spec, email compliance rules met. PASS. 4 minutes.
 
-**Where verification is today:**
-- Automated data checks (API calls, test suites, link validation) — strong and reliable
-- AI judgment checks (brand voice, content quality, visual inspection) — better than self-checking, but not infallible
-- The system moves more checks from AI judgment to automated over time, as patterns are identified and turned into rules
-- In practice, verification catch rate improves from 60% to 94% over 8 weeks as rules accumulate
+**How much is automated vs. AI judgment:**
+
+| Domain type | Automated checks | AI judgment | Examples |
+|-------------|-----------------|-------------|----------|
+| E-commerce, engineering | ~80-100% | ~0-20% | API assertions, test suites, price matching |
+| Content, brand, outreach | ~40-60% | ~40-60% | Links + formatting automated; tone + quality by AI |
+
+For data-heavy domains, verification is strong and reliable. For subjective domains — brand voice, content quality, visual design — it's a useful second opinion, not a guarantee. The system is honest about this: every AI-judged check is labeled as such in the verification report, and the system moves checks from AI judgment to automated as patterns are identified and turned into rules.
+
+In practice, verification catch rate improves from 60% to 94% of known failure modes over 8 weeks as rules accumulate. That denominator matters — "known failure modes" means issues the operator noticed post-verification. There are always defects neither the system nor the human caught. The goal is to shrink that blind spot over time, not to claim perfection.
 
 ## Slide 7: The Numbers
 
@@ -104,7 +109,7 @@ These are my results running the orchestrator across multiple domains for 8 week
 
 12 hours/week back. Nearly 4x the output. Same agents. Different system.
 
-*Every new operator starts with the same foundation: same ticket format, same verification engine, same skill library. Your results will depend on your domains and ticket complexity.*
+*Your results will vary by domain complexity and ticket volume. Data-heavy domains (e-commerce, engineering) see the fastest gains. Subjective domains (content, brand) take longer to build reliable rules.*
 
 **One task, side by side:**
 
@@ -141,7 +146,7 @@ Dispatching 4 tickets...
     [10:42] Agent loaded content skill (v2)
     [10:43] Connected to MailerLite API ✓
     [10:45] Created 3-email sequence in draft
-    [10:47] Verification started (fresh context)
+    [10:47] Verification started (separate pass)
     [10:48] Email 1: subject ✓, links ✓, segment ✓
     [10:48] Email 2: subject ✓, links ✓, CTA tone ✗ — "BUY NOW" flagged
     [10:49] Result: PARTIAL — 1 issue found
@@ -149,6 +154,10 @@ Dispatching 4 tickets...
 
 > /orchestrator approve TICKET-044 --note "BUY NOW is fine for this campaign"
   TICKET-044 → Done ✓
+
+> /orchestrator reject TICKET-044 --note "fix the CTA to match brand voice"
+  TICKET-044 → Back to execution with notes attached
+  Agent will re-run with your feedback as context
 ```
 
 And when verification fails — the system handles it:
@@ -161,7 +170,7 @@ And when verification fails — the system handles it:
   TICKET-046: Shopify collection update
     Verification: FAIL — 2 issues found
     [11:02] Agent updated collection "Spring Sale" — added 12 products
-    [11:04] Verification started (fresh context)
+    [11:04] Verification started (separate pass)
     [11:04] Collection exists ✓
     [11:04] Product count: 12 ✓
     [11:05] Product price: $34.99 — expected $29.99 ✗ (sale price not applied)
@@ -173,11 +182,11 @@ And when verification fails — the system handles it:
 
   TICKET-046: Shopify collection update (retry 1)
     [11:08] Agent corrected price to $29.99 and sort order to "best-selling"
-    [11:09] Verification re-run (fresh context)
+    [11:09] Verification re-run (separate pass)
     [11:09] All checks pass ✓
     [11:10] Result: PASS — screenshot captured
 
-  TICKET-046 → VERIFIED ✓ (after 1 retry)
+  TICKET-046 → VERIFIED ✓ (after 1 retry — flagged for human spot-check)
 
 > /orchestrator approve-rule "Always confirm collection sort order after product updates"
   Rule added to ecommerce skill ✓
@@ -210,14 +219,14 @@ More templates included for every domain. You'll be writing your own within a we
 **Skills** turn your AI tool into a domain specialist. They're text files that evolve with use:
 
 ```
-# Skill: Content Production (v3 — refined after 47 tickets)
-Domain: content
-Integrations: instagram, mailerlite, cms
+# Skill: E-commerce Operations (v4 — refined after 63 tickets)
+Domain: ecommerce
+Integrations: shopify, stripe, mercadolibre
 Rules:
-  - Always set social preview image before publishing (added after 3 SEO failures)
-  - Carousel images must be 1080x1350 (added after 2 brand check failures)
-  - Never schedule posts within 4 hours of each other
-Verification: screenshot + brand check, link validation, hashtag count
+  - Always confirm collection sort order after product updates (added after TICKET-046)
+  - Verify compare-at price is cleared when not on sale (added after 3 pricing errors)
+  - Check inventory sync across all sales channels before marking done
+Verification: price match via API, screenshot of live storefront, inventory count
 ```
 
 **8 core skills:** content, e-commerce, SEO, sales outreach, finance, growth, go-to-market, engineering.
@@ -225,9 +234,9 @@ Verification: screenshot + brand check, link validation, hashtag count
 
 Install them, customize them, or write your own.
 
-## Slide 10: Integrations and Architecture
+## Slide 10: Integrations
 
-**Integrations** connect skills to the systems where work happens:
+Skills connect to the systems where work happens:
 
 | Category | Integrations |
 |----------|-------------|
@@ -237,9 +246,9 @@ Install them, customize them, or write your own.
 | Finance & Ops | QuickBooks, Xero, Zendesk |
 | Engineering | GitHub |
 
-Every integration is validated before agents start. If a connection is missing, the ticket fails early — not midway through execution.
+This is the authoritative list. Every integration listed here has a corresponding env var in SKILL.md and is validated before agents start. If a connection is missing, the ticket fails early — not midway through execution.
 
-**Under the hood:** Board → Ticket Parser → Skill Router → Agent Dispatcher → Verification Engine → Results posted back. Text files and API calls. Runs wherever your AI tool runs.
+Board connectors (Linear, GitHub Issues, Notion, Jira) are configured separately via `/orchestrator setup`.
 
 ## Slide 11: What Happens When Things Go Wrong
 
@@ -250,6 +259,7 @@ The system is designed to fail visibly, not silently.
 - Destructive actions (publishing, sending emails, changing prices) require approval rules you configure once.
 - Partial failures are caught: if an agent updates 3 of 5 products then crashes, verification flags the incomplete work.
 - When a ticket fails verification, the system retries with the failure context. If the retry fails, it escalates to Review with a full report.
+- **Tickets that required retries are flagged for closer human review.** The retry teaches the agent what checks to pass — which means it could learn to satisfy the verifier without actually fixing the root issue. Flagging retried tickets keeps the human in the loop where it matters most.
 - Failures are captured as rules. The system proposes a fix; you approve or reject.
 
 If the system itself stops mid-run, your tickets stay in their last known state on the board. Nothing is lost. Next run picks up where it left off.
@@ -295,7 +305,7 @@ Week 1 — "Publish Instagram carousel"
 Week 8 — "Publish Instagram carousel"
 - Three rules now exist in the content skill from prior failures: "images must be 1080x1350," "always set social preview," "hashtag count must match spec." Agent follows all three on first attempt. Verification passes. PASS. Total: 1 run, 3 minutes.
 
-The skill file grew from 12 rules to 31 over 8 weeks. Verification catch rate improved from 60% to 94%.
+The skill file grew from 12 rules to 31 over 8 weeks. Verification catch rate improved from 60% to 94% of known failure modes.
 
 Every failure becomes a rule. The same mistake never happens twice.
 
@@ -304,7 +314,7 @@ Every failure becomes a rule. The same mistake never happens twice.
 **NOW — v1.0**
 - Ticket-driven orchestration across multiple domains
 - Hybrid verification engine (automated data checks + AI quality judgment)
-- Auto-retry with failure context
+- Auto-retry with failure context (retried tickets flagged for human review)
 - 8 core skills: content, e-commerce, engineering, growth, go-to-market, SEO, sales outreach, finance
 - 4 starter templates: customer support, paid acquisition, brand design, research
 - Integrations: Shopify, MailerLite, Instagram, GitHub, GA4, Stripe, Meta Ads, Google Ads, Apollo, HubSpot, QuickBooks, Xero, Zendesk, MercadoLibre
@@ -314,7 +324,7 @@ Every failure becomes a rule. The same mistake never happens twice.
 - Open source on GitHub
 
 **NEXT**
-- Dry-run mode — simulate without touching production systems
+- **Dry-run mode — simulate without touching production systems** *(coming first)*
 - Metric-gate verification — check performance thresholds at 24h, 48h, or 7 days after launch
 - Cross-ticket dependencies — landing page must PASS before ad campaign starts
 - Skill marketplace — discover and install skills in one command
@@ -329,7 +339,7 @@ Every item has a ticket on the board. Backlog, not wish list.
 
 ## Slide 15: Get Started
 
-1. **Install** — `/install marketplace maxtechera/orchestrator` in Claude Code, or `plugin install` on OpenClaw.
+1. **Install** — `/plugin marketplace add maxtechera/orchestrator` on Claude Code, `clawhub install orchestrator` on OpenClaw, or `git clone` for manual.
 2. **Set up your board** — `/orchestrator setup` walks you through connecting Linear, GitHub Issues, Notion, or Jira.
 3. **Write your first ticket** — use the templates included for any domain. Four sections: Inputs, Deliverables, Verification, Artifacts.
 4. **Run** — `/orchestrator sweep`. First verified output in one session.

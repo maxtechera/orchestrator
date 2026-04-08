@@ -1,0 +1,23 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "orchestrator",
+  "description": "Skill-first orchestration framework. Dispatch agents, verify deliverables, improve with every cycle.",
+  "owner": {
+    "name": "maxtechera",
+    "url": "https://github.com/maxtechera"
+  },
+  "plugins": [
+    {
+      "name": "orchestrator",
+      "description": "Read your board, dispatch domain-skilled agents, independently verify every deliverable. The agent that did the work never grades its own homework.",
+      "version": "1.0.0",
+      "author": {
+        "name": "maxtechera",
+        "url": "https://github.com/maxtechera"
+      },
+      "source": "./",
+      "category": "productivity",
+      "homepage": "https://github.com/maxtechera/orchestrator"
+    }
+  ]
+}

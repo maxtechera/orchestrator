@@ -1,0 +1,145 @@
+name: validate
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  contract-lint:
+    name: Contract lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install ripgrep
+        run: sudo apt-get update -qq && sudo apt-get install -y ripgrep
+      - name: Ticket contract sections
+        run: |
+          rg -q '^## Inputs$'        examples/minimal_workflow.md
+          rg -q '^## Deliverables$'  examples/minimal_workflow.md
+          rg -q '^## Verification$'  examples/minimal_workflow.md
+          rg -q '^## Artifacts$'     examples/minimal_workflow.md
+
+  manifest-validation:
+    name: Manifest validation
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Required manifests exist
+        run: |
+          test -f .claude-plugin/marketplace.json || { echo "MISSING: .claude-plugin/marketplace.json"; exit 1; }
+          test -f .claude-plugin/plugin.json      || { echo "MISSING: .claude-plugin/plugin.json"; exit 1; }
+          test -f gemini-extension.json           || { echo "MISSING: gemini-extension.json"; exit 1; }
+          test -f .clawhubignore                  || { echo "MISSING: .clawhubignore"; exit 1; }
+
+      - name: Valid JSON
+        run: |
+          python3 -m json.tool .claude-plugin/marketplace.json > /dev/null
+          python3 -m json.tool .claude-plugin/plugin.json      > /dev/null
+          python3 -m json.tool gemini-extension.json           > /dev/null
+
+      - name: Required keys in plugin.json
+        run: |
+          python3 - <<'EOF'
+          import json, sys
+          with open('.claude-plugin/plugin.json') as f:
+              data = json.load(f)
+          missing = [k for k in ['name', 'version', 'description', 'license', 'skills'] if k not in data]
+          if missing:
+              print(f"plugin.json missing: {missing}"); sys.exit(1)
+          print("plugin.json OK")
+          EOF
+
+      - name: Required keys in marketplace.json
+        run: |
+          python3 - <<'EOF'
+          import json, sys
+          with open('.claude-plugin/marketplace.json') as f:
+              data = json.load(f)
+          if '$schema' not in data:
+              print("missing $schema"); sys.exit(1)
+          if not data.get('plugins'):
+              print("missing plugins array"); sys.exit(1)
+          for key in ['name', 'description', 'version', 'source']:
+              if key not in data['plugins'][0]:
+                  print(f"plugins[0] missing: {key}"); sys.exit(1)
+          print("marketplace.json OK")
+          EOF
+
+  version-sync:
+    name: Version sync
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: All versions match SKILL.md
+        run: |
+          python3 - <<'EOF'
+          import json, re, sys
+
+          with open('SKILL.md') as f:
+              m = re.search(r'^version:\s*["\']?([0-9]+\.[0-9]+\.[0-9]+)', f.read(), re.MULTILINE)
+          if not m:
+              print("No version in SKILL.md"); sys.exit(1)
+          skill_ver = m.group(1)
+
+          checks = {
+              '.claude-plugin/plugin.json': lambda d: d.get('version', ''),
+              '.claude-plugin/marketplace.json': lambda d: d['plugins'][0].get('version', ''),
+              'gemini-extension.json': lambda d: d.get('version', ''),
+          }
+          errors = []
+          for path, extract in checks.items():
+              with open(path) as f:
+                  ver = extract(json.load(f))
+              if ver != skill_ver:
+                  errors.append(f"{path}: {ver!r} != {skill_ver!r}")
+          if errors:
+              for e in errors: print(f"MISMATCH: {e}")
+              sys.exit(1)
+          print(f"All versions: {skill_ver}")
+          EOF
+
+  cross-doc-checks:
+    name: Cross-doc consistency
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install ripgrep
+        run: sudo apt-get update -qq && sudo apt-get install -y ripgrep
+
+      - name: SKILL.md required frontmatter
+        run: |
+          rg -q '^name:' SKILL.md
+          rg -q '^version:' SKILL.md
+          rg -q '^description:' SKILL.md
+          rg -q '^author:' SKILL.md
+          rg -q '^license:' SKILL.md
+
+      - name: WORKFLOW.md lifecycle stages
+        run: |
+          rg -q 'Stage 1' WORKFLOW.md
+          rg -q 'Stage 2' WORKFLOW.md
+          rg -q 'Stage 3' WORKFLOW.md
+          rg -q 'Stage 4' WORKFLOW.md
+          rg -q 'Stage 5' WORKFLOW.md
+
+      - name: No GITHUB_TOKEN in env example
+        run: |
+          if rg -q '^GITHUB_TOKEN=' .env.example 2>/dev/null; then
+            echo "ERROR: .env.example uses GITHUB_TOKEN — should be GH_TOKEN"
+            exit 1
+          fi
+
+      - name: optionalEnv keys covered in .env.example
+        run: |
+          python3 - <<'EOF'
+          import re, sys
+          with open('SKILL.md') as f: content = f.read()
+          block = content[content.find('optionalEnv'):content.find('tags:')]
+          env_keys = re.findall(r'- ([A-Z_]+)', block)
+          with open('.env.example') as f: example = f.read()
+          missing = [k for k in env_keys if k not in example]
+          if missing:
+              print(f"Missing from .env.example: {missing}"); sys.exit(1)
+          print(f"All {len(env_keys)} optionalEnv keys covered")
+          EOF
