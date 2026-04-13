@@ -1,6 +1,5 @@
 # /orchestrator
 
-[![ClawHub](https://img.shields.io/badge/ClawHub-orchestrator-blue)](https://clawhub.ai/skills/orchestrator)
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Version](https://img.shields.io/badge/version-1.0.0-green.svg)](CHANGELOG.md)
 
@@ -8,9 +7,6 @@
 
 ```
 /plugin marketplace add maxtechera/orchestrator
-```
-```bash
-clawhub install orchestrator
 ```
 
 Zero config. Run `/orchestrator sweep` immediately — if no board is connected, the setup wizard runs automatically.
@@ -197,19 +193,15 @@ gemini extensions install maxtechera/orchestrator
 
 After install, run `orchestrator sweep` to get started. The extension manifest (`gemini-extension.json`) prompts for board credentials during setup. Additional integrations can be added to `~/.config/orchestrator/.env`.
 
-### OpenClaw (ClawHub platform)
+### OpenClaw / OpenCode
 
-OpenClaw is the skill runtime on ClawHub — the `clawhub install` command above deploys to it automatically.
+Copy the SKILL.md into your skills directory:
 
-Credentials are managed through the platform's secret store — you don't need the `.env` file. The `optionalEnv` block in SKILL.md tells OpenClaw which keys to prompt for during install. At minimum, provide one board key (`LINEAR_API_KEY`, `GH_TOKEN`, `NOTION_API_KEY`, or `JIRA_API_TOKEN`).
-
-To run the orchestrator on a schedule (recommended), add to `.clawhub/config.yml` in your repo:
-
-```yaml
-schedule: "*/15 * * * *"
-command: "/orchestrator sweep"
-session: new    # spawns a fresh session per sweep
+```bash
+git clone https://github.com/maxtechera/orchestrator.git ~/.agents/skills/orchestrator
 ```
+
+Add credentials to `~/.config/orchestrator/.env` — see the setup section above. At minimum, provide one board key (`LINEAR_API_KEY`, `GH_TOKEN`, `NOTION_API_KEY`, or `JIRA_API_TOKEN`).
 
 ---
 
@@ -348,17 +340,18 @@ Customize these or use as a starting point:
 orchestrator/
   SKILL.md                        # Core orchestrator skill — the agent reads this
   WORKFLOW.md                     # Ticket lifecycle (intake → execute → verify → done)
-  .claude-plugin/
-    marketplace.json              # Claude Code marketplace discovery
-    plugin.json                   # Plugin identity and metadata
+  .claude-plugin/                 # Claude Code marketplace manifests
+  .codex-plugin/                  # Codex CLI discovery
+  .agents/                        # OpenCode/OpenClaw skill discovery
   gemini-extension.json           # Gemini CLI extension manifest
-  .clawhubignore                  # ClawHub bundle exclusions
-  CHANGELOG.md                   # Release history
+  .clawhubignore                  # Distribution exclusions
+  .env.example                    # All configuration variables
+  CHANGELOG.md                    # Release history
   docs/
-    VISION.md                    # Vision deck — the full story (16 slides)
-    STATE_MACHINE.md             # Ticket state transitions (detailed)
-  skills/                        # Domain skill directory
-  examples/                      # Example workflows and tickets (see [minimal_workflow.md](examples/minimal_workflow.md))
+    VISION.md                     # Vision deck — the full story
+    STATE_MACHINE.md              # Ticket state transitions (detailed)
+  skills/                         # Domain skill directory
+  examples/                       # Example workflows and tickets
 ```
 
 ## Principles
