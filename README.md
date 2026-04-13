@@ -1,5 +1,22 @@
 # /orchestrator
 
+[![ClawHub](https://img.shields.io/badge/ClawHub-orchestrator-blue)](https://clawhub.ai/skills/orchestrator)
+[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Version](https://img.shields.io/badge/version-1.0.0-green.svg)](CHANGELOG.md)
+
+**Your AI agents say "done" but the work is wrong. The Orchestrator catches that.**
+
+```
+/plugin marketplace add maxtechera/orchestrator
+```
+```bash
+clawhub install orchestrator
+```
+
+Zero config. Run `/orchestrator sweep` immediately — if no board is connected, the setup wizard runs automatically.
+
+---
+
 ### Claude Code (recommended)
 ```
 /plugin marketplace add maxtechera/orchestrator
@@ -8,20 +25,12 @@
 
 The first command registers the plugin repository. The second installs the `orchestrator` plugin from it (`plugin-name@marketplace-name`). Verify with `/orchestrator status`.
 
-[![ClawHub](https://img.shields.io/badge/ClawHub-orchestrator-blue)](https://clawhub.ai/skills/orchestrator)
-
-```bash
-clawhub install orchestrator
-```
-
 ### Manual Install (Claude Code)
 ```bash
 git clone https://github.com/maxtechera/orchestrator.git ~/.claude/skills/orchestrator
 ```
 
 After cloning, Claude Code discovers the skill via `.claude-plugin/plugin.json`. Verify with `/orchestrator status`.
-
-**Your AI agents say "done" but the work is wrong. The Orchestrator catches that.** It reads your board, dispatches agents loaded with domain-specific skills, independently verifies every deliverable, and improves with every cycle. Content, e-commerce, engineering, marketing, finance, sales — one system, every output checked before it ships.
 
 **The agent that did the work never grades its own homework.** A separate verification pass checks with real API calls, screenshots, link checks, and compliance validation. Not just another AI saying "looks good."
 
@@ -30,6 +39,18 @@ After cloning, Claude Code discovers the skill via `.claude-plugin/plugin.json`.
 **Best for:** operators running AI agents across multiple domains who are tired of being the QA department.
 
 That's it. Run `/orchestrator sweep` to get started. If no board is connected, the orchestrator will prompt you to run `/orchestrator setup`. See [Your First Ticket](#your-first-ticket) below for a copy-paste template.
+
+---
+
+## What people use it for
+
+**Running a content operation.** `/orchestrator sweep` reads all open tickets, dispatches content agents loaded with your brand voice, and independently verifies every deliverable before marking it done. Not just "here's a draft" — checked output.
+
+**Managing an e-commerce store.** Set `BOARD_PROVIDER=linear` and connect Shopify. The orchestrator processes inventory updates, price changes, and product listings — and verifies prices, compare-at fields, and image counts before closing tickets.
+
+**Engineering ticket flow.** `/orchestrator sweep` picks up GitHub Issues, runs domain-specific verification (link checks, schema validation, test presence), and only marks tickets done when the deliverable actually passes.
+
+**Auditing before a release.** `/orchestrator review <ticket>` independently checks a specific deliverable. The agent that did the work never grades its own homework.
 
 ---
 

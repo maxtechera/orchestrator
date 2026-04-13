@@ -27,6 +27,15 @@ jobs:
           python3 -m json.tool .claude-plugin/plugin.json      > /dev/null
           python3 -m json.tool gemini-extension.json           > /dev/null
 
+      - name: Distribution channel manifests present
+        run: |
+          set -e
+          for f in .claude-plugin/plugin.json .claude-plugin/marketplace.json \
+                   .codex-plugin/plugin.json gemini-extension.json .clawhubignore; do
+            test -f "$f" || { echo "MISSING: $f"; exit 1; }
+          done
+          echo "All channel manifests present"
+
       - name: Tag matches SKILL.md version
         run: |
           python3 - <<'EOF'
@@ -77,3 +86,13 @@ jobs:
           gh release create "$GITHUB_REF_NAME" \
             --title "orchestrator $GITHUB_REF_NAME" \
             --notes-file /tmp/release_notes.md
+
+      - name: Dispatch to aggregate registry
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh api repos/maxtechera/claude-plugins/dispatches \
+            -f event_type=skill-released \
+            -f "client_payload[skill]=${{ github.event.repository.name }}" \
+            -f "client_payload[version]=${{ github.ref_name }}" \
+            2>/dev/null || echo "Aggregate registry dispatch skipped (not configured)"

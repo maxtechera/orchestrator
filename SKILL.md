@@ -18,26 +18,31 @@ triggers:
 metadata:
   openclaw:
     emoji: "🎯"
-    optionalEnv:
-      - BOARD_PROVIDER
-      - LINEAR_API_KEY
-      - GH_TOKEN
-      - NOTION_API_KEY
-      - JIRA_API_TOKEN
-      - SHOPIFY_ACCESS_TOKEN
-      - MAILERLITE_API_KEY
-      - INSTAGRAM_ACCESS_TOKEN
-      - META_ADS_TOKEN
-      - GOOGLE_ADS_TOKEN
-      - APOLLO_API_KEY
-      - HUBSPOT_API_KEY
-      - GA4_PROPERTY_ID
-      - STRIPE_SECRET_KEY
-      - QUICKBOOKS_TOKEN
-      - ZENDESK_TOKEN
-      - MERCADOLIBRE_TOKEN
-      - XERO_TOKEN
-      - DEFAULT_MODEL
+    requires:
+      env: []
+      optionalEnv:
+        - BOARD_PROVIDER
+        - LINEAR_API_KEY
+        - GH_TOKEN
+        - NOTION_API_KEY
+        - JIRA_API_TOKEN
+        - SHOPIFY_ACCESS_TOKEN
+        - MAILERLITE_API_KEY
+        - INSTAGRAM_ACCESS_TOKEN
+        - META_ADS_TOKEN
+        - GOOGLE_ADS_TOKEN
+        - APOLLO_API_KEY
+        - HUBSPOT_API_KEY
+        - GA4_PROPERTY_ID
+        - STRIPE_SECRET_KEY
+        - QUICKBOOKS_TOKEN
+        - ZENDESK_TOKEN
+        - MERCADOLIBRE_TOKEN
+        - XERO_TOKEN
+        - DEFAULT_MODEL
+      bins: []
+    primaryEnv: ""
+    files: []
     tags:
       - orchestration
       - dispatch
