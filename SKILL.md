@@ -11,30 +11,38 @@ license: MIT
 user-invocable: true
 triggers:
   - orchestrator
+  - orchestrator sweep
+  - orchestrator setup
   - sweep board
   - process tickets
-  - dispatch agents
-  - verify deliverables
 metadata:
   openclaw:
     emoji: "🎯"
-    optionalEnv:
-      - LINEAR_API_KEY
-      - GH_TOKEN
-      - NOTION_API_KEY
-      - JIRA_API_TOKEN
-      - SHOPIFY_ACCESS_TOKEN
-      - MAILERLITE_API_KEY
-      - INSTAGRAM_ACCESS_TOKEN
-      - META_ADS_TOKEN
-      - GOOGLE_ADS_TOKEN
-      - APOLLO_API_KEY
-      - HUBSPOT_API_KEY
-      - GA4_PROPERTY_ID
-      - STRIPE_SECRET_KEY
-      - QUICKBOOKS_TOKEN
-      - ZENDESK_TOKEN
-      - MERCADOLIBRE_TOKEN
+    requires:
+      env: []
+      optionalEnv:
+        - BOARD_PROVIDER
+        - LINEAR_API_KEY
+        - GH_TOKEN
+        - NOTION_API_KEY
+        - JIRA_API_TOKEN
+        - SHOPIFY_ACCESS_TOKEN
+        - MAILERLITE_API_KEY
+        - INSTAGRAM_ACCESS_TOKEN
+        - META_ADS_TOKEN
+        - GOOGLE_ADS_TOKEN
+        - APOLLO_API_KEY
+        - HUBSPOT_API_KEY
+        - GA4_PROPERTY_ID
+        - STRIPE_SECRET_KEY
+        - QUICKBOOKS_TOKEN
+        - ZENDESK_TOKEN
+        - MERCADOLIBRE_TOKEN
+        - XERO_TOKEN
+        - DEFAULT_MODEL
+      bins: []
+    primaryEnv: ""
+    files: []
     tags:
       - orchestration
       - dispatch
@@ -54,15 +62,19 @@ Manage work, not agents. Dispatch agents, verify every deliverable independently
 ## Commands
 
 ```
-/orchestrator sweep                Process all actionable tickets
-/orchestrator sweep TICKET-046     Re-run a single ticket
-/orchestrator status               Show current ticket states and verification results
-/orchestrator review               Show tickets awaiting your review (pre-verified)
-/orchestrator approve TICKET-044   Approve a reviewed ticket → Done
-/orchestrator reject TICKET-044    Reject → back to execution with your notes
-/orchestrator approve-rule "..."   Approve a proposed rule into the skill
-/orchestrator setup                Connect your issue tracker and validate integrations
-/orchestrator stats                This week's pass/fail rate, ticket count, cost
+/orchestrator sweep                            Process all actionable tickets
+/orchestrator sweep TICKET-046                 Re-run a single ticket
+/orchestrator status                           Show current ticket states and verification results
+/orchestrator review                           Show tickets awaiting your review (pre-verified)
+/orchestrator approve TICKET-044               Approve → Done
+/orchestrator approve TICKET-044 --note "..."  Approve with a note
+/orchestrator reject TICKET-044 --note "..."   Reject → back to execution with your feedback
+/orchestrator approve-rule "..."               Approve a proposed rule into the skill
+/orchestrator reject-rule "..."                Reject a proposed rule
+/orchestrator rules --pending                  List proposed rules awaiting approval
+/orchestrator flag TICKET-XXX "description"    Report a verification false negative
+/orchestrator setup                            Connect your board and validate integrations
+/orchestrator stats                            Show this week's pass/fail rate, ticket count, cost
 ```
 
 ## How It Works
@@ -150,6 +162,8 @@ Works with any issue tracker. Run `/orchestrator setup` to connect:
 
 ## Configuration
 
+> The orchestrator detects available MCP servers (Linear, GitHub, etc.) and uses them when available. The .env file is a fallback for environments without MCP support.
+
 ```
 ~/.config/orchestrator/.env       # API keys and credentials
 ~/.orchestrator/skills/           # Installed domain skill files
@@ -162,5 +176,6 @@ Works with any issue tracker. Run `/orchestrator setup` to connect:
 - Your ticket board is the single source of truth
 - The executor and the verifier are always different
 - Done is fail-closed: no evidence, no completion
+- The system fails visibly, not silently
 - Finishing beats starting
 - You define the boundaries. The system operates inside them.

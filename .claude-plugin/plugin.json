@@ -1,0 +1,24 @@
+{
+  "name": "orchestrator",
+  "version": "1.0.0",
+  "description": "Skill-first orchestration framework. Dispatch agents, verify deliverables, improve with every cycle.",
+  "author": {
+    "name": "maxtechera",
+    "url": "https://github.com/maxtechera"
+  },
+  "homepage": "https://github.com/maxtechera/orchestrator",
+  "repository": "https://github.com/maxtechera/orchestrator",
+  "license": "MIT",
+  "category": "productivity",
+  "keywords": [
+    "orchestration",
+    "dispatch",
+    "verification",
+    "multi-domain",
+    "autonomous",
+    "skill-first",
+    "self-improving"
+  ],
+  "skills": ["./"],
+  "hooks": {}
+}

@@ -1,6 +1,8 @@
 # State Machine
 
-All 8 workflow states with descriptions and transition triggers.
+All 7 workflow states with descriptions and transition triggers.
+
+> This is the detailed state model. [WORKFLOW.md](../WORKFLOW.md) describes the simplified 5-stage lifecycle. Both describe the same system at different levels of detail.
 
 ## States
 
@@ -20,37 +22,35 @@ All 8 workflow states with descriptions and transition triggers.
 - **Description**: Agent executing ticket work
 - **Characteristics**: Active session with `ticket-<ID>` label, work in flight
 - **Transition trigger**: 
-  - PR opened → Code Review
-  - Non-code artifact ready for review → In Review
-  - Human dependency identified → Blocked by Max
+  - Deliverable ready for checking → Verification
+  - Human dependency identified → Blocked
 - **Dispatcher action**: Skip (session active); re-dispatch if orphaned (stale > 1800s)
 
-### Code Review
-- **Description**: PR open, awaiting human merge
-- **Characteristics**: PR exists, CI passing, awaiting Max approval
-- **Transition trigger**: Human merges PR → QA
-- **Dispatcher action**: Monitor PR status; move to Blocked by Max if feedback unresolved
+### Verification
+- **Description**: Independent check of deliverables against ticket spec
+- **Characteristics**: Work complete, verification in progress with fresh context
+- **Transition trigger**:
+  - All checks PASS → Done
+  - PARTIAL (needs human judgment) → Review
+  - FAIL → back to In Progress with failure context (or escalate)
+- **Dispatcher action**: Spawn verification session if needed
 
-### QA
-- **Description**: Post-merge validation
-- **Characteristics**: PR merged, verification in progress
-- **Transition trigger**: Verification passed + artifacts complete → Done
-- **Dispatcher action**: Spawn QA validation session if needed
+### Review
+- **Description**: Human reviews pre-verified work that requires judgment
+- **Characteristics**: Deliverable (PR, doc, design, research, etc.) verified but flagged for human decision
+- **Transition trigger**:
+  - Human approves → Done
+  - Human rejects → back to In Progress with notes
+- **Dispatcher action**: Monitor review status; move to Blocked if feedback unresolved
 
-### In Review
-- **Description**: Non-code artifact review pending
-- **Characteristics**: Artifact (doc, design, research, etc.) ready for human review
-- **Transition trigger**: Human approves → Done
-- **Dispatcher action**: Monitor review status; move to Blocked by Max if feedback pending
-
-### Blocked by Max
+### Blocked
 - **Description**: Explicit human dependency
-- **Characteristics**: Requires Max decision/action; agent cannot proceed
+- **Characteristics**: Requires operator decision/action; agent cannot proceed
 - **Mandatory payload**: 
-  - `human_dependency`: What Max must do
+  - `human_dependency`: What the operator must do
   - `why_ai_cannot_proceed`: Why agent is stuck
-  - `direct_question_for_max`: Specific question or decision needed
-- **Transition trigger**: Max provides decision/action → appropriate next state
+  - `direct_question_for_operator`: Specific question or decision needed
+- **Transition trigger**: Operator provides decision/action → appropriate next state
 - **Dispatcher action**: Skip (waiting on human)
 
 ### Done
@@ -65,34 +65,35 @@ All 8 workflow states with descriptions and transition triggers.
 |------|----|----|
 | Backlog | Todo | Contract completed |
 | Todo | In Progress | Dispatcher spawns session |
-| In Progress | Code Review | PR opened |
-| In Progress | In Review | Non-code artifact ready |
-| In Progress | Blocked by Max | Human dependency identified |
-| Code Review | QA | Human merges PR |
-| Code Review | Blocked by Max | Feedback unresolved, human input needed |
-| QA | Done | Verification passed + artifacts complete |
-| In Review | Done | Human approves artifact |
-| In Review | Blocked by Max | Feedback pending, human input needed |
-| Blocked by Max | Todo | Max provides decision, more work needed |
-| Blocked by Max | Done | Max provides decision, work complete |
+| In Progress | Verification | Deliverable ready for checking |
+| In Progress | Blocked | Human dependency identified |
+| Verification | Done | All checks PASS + artifacts complete |
+| Verification | Review | PARTIAL — needs human judgment |
+| Verification | In Progress | FAIL — retry with failure context |
+| Review | Done | Human approves |
+| Review | In Progress | Human rejects, back to execution with notes |
+| Review | Blocked | Feedback unresolved, human input needed |
+| Blocked | Todo | Operator provides decision, more work needed |
+| Blocked | Done | Operator provides decision, work complete |
 
 ## Dispatcher Pickup Priority
 
 ```
-1. Code Review (PR awaiting merge)
-2. QA (post-merge validation)
-3. In Review (artifact review pending)
-4. In Progress (orphaned, stale > 1800s)
-5. Todo (pickup-ready)
-6. Backlog (not actionable, skip)
+1. Review (pre-verified, awaiting human approval)
+2. Verification (delivered, needs checking)
+3. In Progress (orphaned, stale > 1800s)
+4. Todo (pickup-ready)
+5. Backlog (not actionable, skip)
 ```
 
 ## State Diagram
 
 ```
-Backlog ──contract──> Todo ──dispatch──> In Progress ──┬──> Code Review ──merge──> QA ──verify──> Done
-                                            │           │
-                                            │           └──> In Review ──approve──> Done
-                                            │
-                                            └──> Blocked by Max ──decision──> (Todo|Done)
+Backlog ──contract──> Todo ──dispatch──> In Progress ──> Verification ──┬──pass──> Done
+                                              │                         │
+                                              │                         └──partial──> Review ──approve──> Done
+                                              │                                          │
+                                              │                                          └──reject──> In Progress
+                                              │
+                                              └──> Blocked ──decision──> (Todo|Done)
 ```

@@ -1,0 +1,10 @@
+# Exclude dev/internal artifacts from ClawHub bundle
+docs/MAX_VISION.md
+plans/
+.github/
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.mp3
+*.jsonl
