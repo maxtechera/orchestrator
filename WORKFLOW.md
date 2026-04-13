@@ -156,7 +156,7 @@ The human sees:
 
 Human actions: approve → Done | reject → back to Execute | redirect → back to Execute with notes
 
-### Blocked by Max
+### Blocked by Owner
 
 **Last resort — not a first response to friction.** Default is full autonomous completion.
 
@@ -166,7 +166,7 @@ Use only when work is genuinely complete but requires a human decision or action
 human_dependency: [exact human action needed — specific, not vague]
 why_ai_cannot_proceed: [why AI cannot complete this — auth, merge rights, external approval]
 alternatives_attempted: [what was tried and why each failed the acceptance criteria]
-direct_question_for_max: [yes/no or a specific decision — not an open-ended question]
+direct_question: [yes/no or a specific decision — not an open-ended question]
 ```
 
 ### Comment Contract
