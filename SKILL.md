@@ -77,6 +77,41 @@ Manage work, not agents. Dispatch agents, verify every deliverable independently
 /orchestrator stats                            Show this week's pass/fail rate, ticket count, cost
 ```
 
+## Team Mode
+
+Run a zero-idle agent team instead of single-dispatch. Use when your board has a sprint — 3+ related tickets with different role requirements.
+
+```
+/orchestrator team
+```
+
+Reads your sprint tickets, spawns a named team, and keeps every agent busy at all times.
+
+**Team lifecycle:**
+1. Read sprint tickets from board grouped by role/domain
+2. `TeamCreate team_name="<project-sprint>"` — creates the team context
+3. Spawn agents by role — code agents with `isolation="worktree"`, strategy/research without
+4. Assign 2 tasks per agent: **primary** (current sprint) + **secondary** (next sprint prep)
+5. On completion → `SendMessage` with next assignment — never re-spawn, never idle
+6. `/loop 10m /orchestrator` — continuous status visibility without blocking
+7. Sprint close: bundle worktree branches → single PR → CI → merge → measure → pull next sprint
+
+**Zero-idle rule:** Every agent always has a primary and secondary task. When primary completes, secondary promotes and a new secondary is assigned from the backlog. No agent ever waits.
+
+**Roster pattern (adapt to your project):**
+
+| Agent | Isolation | Focus |
+|-------|-----------|-------|
+| `builder` | worktree | Feature code, integrations |
+| `designer` | worktree | UI, landing pages, copy |
+| `tester` | worktree | E2E specs (written before code lands) + regression |
+| `strategist` | none | Content, positioning, sequences |
+| `analyst` | none | Metrics, attribution, funnel |
+
+**Key difference from sweep:** `/orchestrator sweep` dispatches one agent per ticket sequentially. `/orchestrator team` runs all agents in parallel with role specialization and zero-idle coordination.
+
+**Independent verification still applies:** The verifier agent remains separate — the agent that did the work never grades its own homework. In team mode, `tester` handles verification for code; a separate verifier pass runs on final deliverables.
+
 ## How It Works
 
 1. Read the board — identify tickets in actionable states

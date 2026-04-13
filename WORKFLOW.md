@@ -180,3 +180,62 @@ After every ticket (pass or fail):
 - The system fails visibly, not silently
 - Finishing beats starting
 - You define the boundaries. The system operates inside them.
+
+---
+
+## Stage T: Team Execution
+
+**Trigger:** `/orchestrator team` command, or board has a sprint milestone with 3+ tickets across different roles.
+
+**When to use team mode vs sweep:**
+- Use `/orchestrator sweep` for independent tickets with no shared sprint grouping
+- Use `/orchestrator team` when tickets belong to a sprint — shared feature, launch, or milestone
+
+### Sprint Setup
+
+```
+1. Read board: group tickets by sprint tag or milestone
+2. TeamCreate team_name="<project>-sprint-<N>"
+3. Create tasks: 2 per agent (primary = this sprint, secondary = next sprint prep)
+4. Spawn agents (all run_in_background=true):
+   Agent name="builder"    team_name="<team>" isolation="worktree"
+   Agent name="designer"   team_name="<team>" isolation="worktree"
+   Agent name="tester"     team_name="<team>" isolation="worktree"
+   Agent name="strategist" team_name="<team>"
+   Agent name="analyst"    team_name="<team>"
+5. /loop 10m /orchestrator  ← status loop, non-blocking
+```
+
+### Zero-Idle Coordination
+
+On each agent completion:
+```
+SendMessage to="<agent>" message="Primary done. New primary: <next-ticket>. Secondary: <prep-task>. Check TaskList."
+```
+
+Never shut down an agent. If no board tickets remain, assign research or prep work from the backlog.
+
+### Spec-First Testing
+
+The `tester` agent writes E2E specs and test plans **before code lands** — not after. This runs in parallel with `builder` and `designer`. By the time code is ready, tests are already written and waiting.
+
+### Sprint Close
+
+```
+1. All primary tasks complete
+2. Collect worktrees: git worktree list
+3. Review PRs: one branch per code agent
+4. Bundle: merge into a single sprint PR (not one PR per agent)
+5. CI runs E2E (tester's specs)
+6. Merge to main
+7. analyst + strategist measure results
+8. Pull next sprint: promote secondaries, assign new secondaries
+9. Continue loop
+```
+
+### Independent Verification (retained from sweep mode)
+
+Before sprint PR merges, a separate verification pass runs:
+- Verifier agent inspects deliverables against ticket acceptance criteria
+- The agent that built it does NOT verify it
+- Same fail-closed standard as single-dispatch sweep
