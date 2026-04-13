@@ -5,28 +5,43 @@
 
 **Your AI agents say "done" but the work is wrong. The Orchestrator catches that.**
 
+Claude Code:
 ```
 /plugin marketplace add maxtechera/orchestrator
+```
+
+OpenClaw:
+```
+clawhub install orchestrator
 ```
 
 Zero config. Run `/orchestrator sweep` immediately — if no board is connected, the setup wizard runs automatically.
 
 ---
 
-### Claude Code (recommended)
+## Install
+
+### Claude Code
+
+#### Install
 ```
 /plugin marketplace add maxtechera/orchestrator
-/plugin install orchestrator@orchestrator
 ```
 
-The first command registers the plugin repository. The second installs the `orchestrator` plugin from it (`plugin-name@marketplace-name`). Verify with `/orchestrator status`.
+#### Update
+```
+claude plugin update orchestrator@orchestrator
+```
 
-### Manual Install (Claude Code)
+### OpenClaw
+```bash
+clawhub install orchestrator
+```
+
+### Manual
 ```bash
 git clone https://github.com/maxtechera/orchestrator.git ~/.claude/skills/orchestrator
 ```
-
-After cloning, Claude Code discovers the skill via `.claude-plugin/plugin.json`. Verify with `/orchestrator status`.
 
 **The agent that did the work never grades its own homework.** A separate verification pass checks with real API calls, screenshots, link checks, and compliance validation. Not just another AI saying "looks good."
 
@@ -175,33 +190,9 @@ The orchestrator validates every connection before dispatching. Missing integrat
 ~/.orchestrator/history/          # Outcome logs for self-improvement
 ```
 
-### Codex CLI
+### Other platforms
 
-This skill also works in OpenAI Codex CLI:
-
-```bash
-git clone https://github.com/maxtechera/orchestrator.git ~/.agents/skills/orchestrator
-```
-
-After cloning, Codex discovers the skill from `SKILL.md`. Use the same commands as Claude Code (e.g., `orchestrator sweep`). Add credentials to `~/.config/orchestrator/.env` — see the setup section above.
-
-### Gemini CLI
-
-```bash
-gemini extensions install maxtechera/orchestrator
-```
-
-After install, run `orchestrator sweep` to get started. The extension manifest (`gemini-extension.json`) prompts for board credentials during setup. Additional integrations can be added to `~/.config/orchestrator/.env`.
-
-### OpenClaw / OpenCode
-
-Copy the SKILL.md into your skills directory:
-
-```bash
-git clone https://github.com/maxtechera/orchestrator.git ~/.agents/skills/orchestrator
-```
-
-Add credentials to `~/.config/orchestrator/.env` — see the setup section above. At minimum, provide one board key (`LINEAR_API_KEY`, `GH_TOKEN`, `NOTION_API_KEY`, or `JIRA_API_TOKEN`).
+The Manual install works for Codex CLI, Gemini CLI, and OpenCode — clone to `~/.agents/skills/orchestrator` and the skill is discovered via `SKILL.md`. Add credentials to `~/.config/orchestrator/.env`.
 
 ---
 
