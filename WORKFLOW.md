@@ -7,6 +7,32 @@ For the detailed state machine with all transitions, see [docs/STATE_MACHINE.md]
 
 ---
 
+## Guardrails (Non-Negotiable)
+
+Hard rules derived from production incidents. These override everything else.
+
+1. **NEVER re-dispatch an In Progress ticket** — creates dispatch loops. Always check state before pickup. *(incident: 2026-03-10)*
+2. **NEVER merge PRs** — post the PR, stop. Merging is a human-only action, no exceptions. *(multiple incidents)*
+3. **NEVER modify own cron job** — cron self-modification creates unrecoverable loops. *(incident: 2026-02-25)*
+4. **NEVER output status chatter without a delta** — no comments without state/artifact/proof change. *(incident: 2026-03-11)*
+5. **Parent sweep dispatches only, never implements** — the orchestrator does not do the work. *(incident: 2026-03-10)*
+
+---
+
+## Linear-First Gate
+
+**No implementation starts without a pickup-ready Linear ticket.**
+
+If a task arrives without a ticket:
+1. Create the ticket in Linear
+2. Fill all four contract sections: Inputs / Deliverables / Verification / Artifacts
+3. Set state to Todo
+4. Then begin — ticket first, implementation second
+
+Work that skips this gate has no proof trail and cannot transition to Done.
+
+---
+
 ## Overview
 
 Every ticket follows a 5-stage lifecycle:
@@ -87,6 +113,34 @@ Result: [outcome + next action]
 **On PARTIAL:** move to Review for human decision
 **On FAIL:** retry with failure context, or escalate if retry fails
 
+### Proof Pack (Required for Done)
+
+Agent CANNOT self-transition to Done without all 5 elements:
+
+1. **Primary artifact link** — PR URL, deployed URL, or canonical file link
+2. **Evidence log** — exact commands run + outputs captured (not summarized)
+3. **Artifact/test/run logs** — build output, test results, or run logs attached
+4. **Canonical link** — where the work lives permanently (git, Drive, Linear)
+5. **Verification report** — the report above, posted to the ticket
+
+**Zero-credit actions** (these alone do NOT qualify as proof):
+- State transition without artifact
+- Checklist tick without evidence
+- Status comment without proof delta
+
+### Domain Verification Checklists
+
+What "done" means varies by domain:
+
+| Domain | Required checks before Done |
+|--------|-----------------------------|
+| **Code** | Build passes, tests pass, linter clean, type check clean, manual test on local/staging |
+| **Research** | Sources cited (URLs + dates), multi-source synthesis, KB entry created, report structure complete |
+| **Content** | Tone matches brand voice, proof of publication (screenshot + link), engagement metrics if posted |
+| **Design** | Design file linked, visual proof (screenshot), accessibility check noted |
+| **Video** | MP4 file link, platform link (Instagram/YouTube), script/storyboard attached |
+| **Ops** | Deployment logs attached, health check output, service status confirmed, monitoring link |
+
 ---
 
 ## Stage 4: Review (if needed)
@@ -101,6 +155,32 @@ The human sees:
 - Evidence (screenshots, API responses)
 
 Human actions: approve → Done | reject → back to Execute | redirect → back to Execute with notes
+
+### Blocked by Max
+
+**Last resort — not a first response to friction.** Default is full autonomous completion.
+
+Use only when work is genuinely complete but requires a human decision or action AI cannot take. Required fields:
+
+```
+human_dependency: [exact human action needed — specific, not vague]
+why_ai_cannot_proceed: [why AI cannot complete this — auth, merge rights, external approval]
+alternatives_attempted: [what was tried and why each failed the acceptance criteria]
+direct_question_for_max: [yes/no or a specific decision — not an open-ended question]
+```
+
+### Comment Contract
+
+Every meaningful ticket update must include:
+
+```
+status_summary: <what changed + confidence (High/Medium/Low)>
+next_steps:
+  - <owner>: <next concrete action>
+  - <owner>: <fallback if blocked>
+```
+
+Never post without a delta. No "working on it" comments.
 
 ---
 
@@ -169,6 +249,17 @@ After every ticket (pass or fail):
 2. If repeated failure pattern detected → propose skill patch
 3. If verification missed an issue → add check to domain verification
 4. All rule changes are version-controlled and human-approved
+
+---
+
+## Evidence-First Handoff Protocol
+
+For multi-ticket work where one ticket depends on another's output:
+
+- **Upstream** ends by linking Artifacts in the ticket before transitioning state
+- **Downstream** starts by reading those Artifacts before beginning work
+- If artifact is not linked, it does not exist — the upstream ticket is not Done
+- No implicit handoff. No "I told them verbally." The ticket is the contract.
 
 ---
 
