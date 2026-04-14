@@ -1,7 +1,7 @@
 ---
 name: orchestrator
 version: "1.0.0"
-description: "Skill-first orchestration framework. Dispatch agents, verify deliverables, improve with every cycle."
+description: "Expert orchestrator of agentic teams. Ticket contract defines work. Independent verification harness rules completion."
 argument-hint: 'orchestrator sweep, orchestrator status, orchestrator review, orchestrator setup'
 allowed-tools: Bash, Read, Write, Edit, Glob, Grep, Agent, AskUserQuestion, WebSearch
 homepage: https://github.com/maxtechera/orchestrator
@@ -55,7 +55,9 @@ metadata:
 
 # The Orchestrator
 
-Manage work, not agents. Dispatch agents, verify every deliverable independently, improve with every cycle.
+Expert orchestrator of agentic teams. Define the ticket contract — the verification harness rules completion.
+
+Dispatch agents. Verify deliverables independently. Improve with every cycle.
 
 > Full vision and depth: [docs/VISION.md](docs/VISION.md)
 
@@ -208,9 +210,10 @@ Works with any issue tracker. Run `/orchestrator setup` to connect:
 
 ## Runtime Principles
 
+- The verification harness rules completion — no evidence, no done
+- The executor and the verifier are always different agents
 - Your ticket board is the single source of truth
-- The executor and the verifier are always different
-- Done is fail-closed: no evidence, no completion
+- The harness improves with every failure — checks that can be automated become automated
 - The system fails visibly, not silently
 - Finishing beats starting
-- You define the boundaries. The system operates inside them.
+- You define the boundaries. The harness operates inside them.
