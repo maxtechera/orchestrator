@@ -3,7 +3,7 @@
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Version](https://img.shields.io/badge/version-1.0.0-green.svg)](CHANGELOG.md)
 
-**Your AI agents say "done" but the work is wrong. The Orchestrator catches that.**
+**Expert orchestrator of agentic teams. The ticket contract defines work. The verification harness rules completion.**
 
 Claude Code:
 ```
@@ -43,11 +43,11 @@ clawhub install orchestrator
 git clone https://github.com/maxtechera/orchestrator.git ~/.claude/skills/orchestrator
 ```
 
-**The agent that did the work never grades its own homework.** A separate verification pass checks with real API calls, screenshots, link checks, and compliance validation. Not just another AI saying "looks good."
+**The agent that did the work never grades its own homework.** A separate verification pass runs with fresh context — real API calls, screenshots, link checks, compliance validation. Not another AI saying "looks good."
 
-**The tradeoff:** A sweep takes 5-30 minutes depending on ticket complexity. A typical 30-ticket sweep costs $2-8 in tokens. We think verified output is worth the wait, but simple one-off tasks may be faster done directly.
+**The core pattern:** Ticket contract (Inputs / Deliverables / Verification / Artifacts) → dispatch worker agent → independent verifier → evidence posted to ticket. One cycle, every ticket.
 
-**Best for:** operators running AI agents across multiple domains who are tired of being the QA department.
+**Best for:** operators running agentic teams who want verified output, not just agent output.
 
 That's it. Run `/orchestrator sweep` to get started. If no board is connected, the orchestrator will prompt you to run `/orchestrator setup`. See [Your First Ticket](#your-first-ticket) below for a copy-paste template.
 
@@ -99,7 +99,7 @@ LINEAR_API_KEY=lin_api_xxxxx  # swap for your tracker's key
 
 **Domain skills give agents real expertise** — domain-specific rules, verification criteria, and best practices learned from actual executions. Without them, agents use general capabilities. With them, they follow rules like "carousel images must be 1080x1350" and "always verify compare-at price is cleared when not on sale."
 
-> **Note:** Domain skill plugins are currently in development. The orchestrator works without them using built-in agent capabilities. Check [skills/README.md](skills/README.md) for current availability.
+Domain skills are **composition wrappers** — they load [`maxtechera/ship`](https://github.com/maxtechera/ship) and [`maxtechera/memory`](https://github.com/maxtechera/memory) skills and add domain-specific verification rules on top. Install ship and memory first, then the domain skill activates their capabilities for orchestrator verification. See [skills/README.md](skills/README.md) for the full list and their composition chains.
 
 ```
 /plugin marketplace add maxtechera/skill-content
@@ -220,13 +220,15 @@ The Manual install works for Codex CLI, Gemini CLI, and OpenCode — clone to `~
 
 ---
 
-## What It Does
+## How It Works
 
-Three steps, every cycle:
+Three steps, every ticket:
 
-1. **Dispatch** — reads the board, prioritizes by proximity to done (Review > Verification > In Progress stale > Todo > Backlog), matches each ticket to a domain skill, validates integrations, dispatches a worker agent
-2. **Verify** — a separate verification pass runs with fresh context. Automated data checks (API assertions, link validation, test suites) plus AI judgment for subjective criteria (brand voice, content quality). Eliminates confirmation bias — the verifier doesn't know how the work was done.
-3. **Proof** — verification report posted to the ticket with evidence (screenshots, API responses, test results). PASS → Done. PARTIAL → Review. FAIL → auto-retry with failure context, or escalates.
+1. **Dispatch** — read the board, prioritize by proximity to done (Review > Verification > In Progress stale > Todo), match to domain skill, validate integrations, dispatch worker agent
+2. **Verify** — separate verification pass with fresh context. Automated checks (API assertions, link validation, test suites) + AI judgment (brand voice, content quality). The verifier never knows how the work was done — no confirmation bias.
+3. **Proof** — verification report posted to ticket with evidence. PASS → Done. PARTIAL → Review (human decides). FAIL → auto-retry with failure context, or escalates to Review.
+
+The harness is the invariant. The worker changes. The verification contract never does.
 
 ---
 
@@ -287,41 +289,32 @@ Result: PASS — moved to Done
 
 ---
 
-## Core Skills
+## Domain Skills
 
-| Skill | What it does | Plugin |
+Domain skills extend the orchestrator with specialized verification rules for specific work types. Each skill is a composition wrapper — it adds domain rules and verification criteria on top of the base harness.
+
+| Skill | What it adds | Plugin |
 |-------|-------------|--------|
-| content | Reels, carousels, blog posts, newsletters, stories | `maxtechera/skill-content` |
-| ecommerce | Product pages, pricing, inventory, cross-sell | `maxtechera/skill-ecommerce` |
-| seo | Blog posts, sitemaps, meta tags, structured data | `maxtechera/skill-seo` |
-| sales-outreach | Cold email sequences, lead sourcing, CRM | `maxtechera/skill-sales-outreach` |
-| finance | Invoicing, AR, KPI scorecards | `maxtechera/skill-finance` |
-| growth | Ad campaigns, referral loops, social proof | `maxtechera/skill-growth` |
-| go-to-market | Coordinated product launches | `maxtechera/skill-gtm` |
-| engineering | Features, bug fixes, infrastructure | Built-in (agent default) |
+| content | Brand voice, format specs, engagement baseline | `maxtechera/skill-content` |
+| ecommerce | Price/compare-at checks, image count, Shopify API | `maxtechera/skill-ecommerce` |
+| seo | Meta limits, word count, Lighthouse, GSC inspection | `maxtechera/skill-seo` |
+| engineering | Build/test/lint/CI gates, PR required, no self-merge | Built-in (agent default) |
 
-### Starter Templates
-
-Customize these or use as a starting point:
-
-| Skill | What it does | Plugin |
-|-------|-------------|--------|
-| customer-support | Ticket triage, SLA tracking, tone checking | `maxtechera/skill-support` |
-| paid-acquisition | Campaign setup, bid management, reporting | `maxtechera/skill-paid-ads` |
-| brand-design | Asset generation, brand consistency checks | `maxtechera/skill-brand` |
-| research | Competitive intelligence, market analysis | `maxtechera/skill-research` |
+Full skill list and composition chains: [skills/README.md](skills/README.md)
 
 ---
 
 ## Key Concepts
 
-**Finishing beats starting** — tickets closest to done get dispatched first.
+**Harness over trust** — the verification harness rules completion. No evidence, no done. This is the invariant.
 
 **The ticket contract** — every ticket has four sections: Inputs, Deliverables, Verification, Artifacts. Missing any → rejected to Backlog with guidance. [Full spec](docs/VISION.md).
 
-**Self-improving** — every failure becomes a rule. Skills evolve, verification hardens, rules accumulate. All version-controlled. You approve every change.
+**Finishing beats starting** — tickets closest to done get dispatched first.
 
-**Fail visible** — nothing publishes without passing verification. Blocked tickets include a structured reason. Partial failures are caught. The system fails visibly, not silently.
+**Self-improving harness** — every failure becomes a rule. Skills evolve, verification hardens, rules accumulate. All version-controlled. You approve every change.
+
+**Fail visible** — nothing ships without passing verification. Blocked tickets include a structured reason. Partial failures are caught. The system fails visibly, not silently.
 
 ---
 
