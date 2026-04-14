@@ -27,10 +27,24 @@ Loads ship's full content suite (17 sub-skills) and adds orchestrator-level bran
 
 ## Verification Checklist
 
+Quality gate uses the v3 rubric (100-pt, 10 categories × 10). Threshold ≥75 to pass. One revise pass max.
+
+| # | Category | What to check |
+|---|----------|---------------|
+| 1 | Brand voice | No flagged phrases, no generic AI cadence |
+| 2 | Audience fit | Matches ICP signal from research guide |
+| 3 | Hook strength | STEPPS ≥3/6, VE ≥100, matches viral pattern library |
+| 4 | CTA + Hormozi | Two-part rule: Action + Reason-for-now both present |
+| 5 | Offer framing | Value stack, risk reversal, urgency, dream outcome |
+| 6 | Structural | Format complete, no missing sections |
+| 7 | Guide alignment | Matches research guide angle and anti-patterns |
+| 8 | Human-sounding | Zero Tier-1 AI words, varied sentence length, contractions, no rule-of-three |
+| 9 | Format craft | Platform-specific: carousel cadence, reel first-10s hook, YT packaging, HN no-emoji |
+| 10 | Verbatim/specificity | Real numbers and receipts — no unsubstantiated claims |
+
+Publication checks (automated):
 - [ ] Live URL resolves (HTTP 200)
 - [ ] Screenshot of published content captured
-- [ ] Brand voice check passed (no flagged phrases)
-- [ ] Format spec met (dimensions/word count/subject length per format)
 - [ ] All links in the piece resolve (no broken links)
-- [ ] Engagement baseline captured within 24h of publish (views, reach, or open rate)
+- [ ] Engagement baseline captured within 24h (views, reach, or open rate)
 - [ ] `/memory sync` invoked at completion to persist performance data
