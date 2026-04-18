@@ -1,0 +1,46 @@
+{
+  "ticket_id": "MAX-529",
+  "content_type": "blog-post",
+  "target_repo": "maxtechera/orchestrator",
+  "brand": "max-techera",
+  "locale": "en",
+  "placements": {
+    "blog_post": {
+      "slug": "/README",
+      "title": "/orchestrator README refresh",
+      "meta_description": "Workflow engine for AI teams that stay busy, route work by domain, and require proof before completion.",
+      "hero_og": "artifacts/MAX-529/rendered-html-preview.png",
+      "body_md": "# /orchestrator\n\nAI teams do not usually fail because they are incapable. They fail because they go idle, pick the wrong next ticket, and declare work finished without proof.\n\n/orchestrator is the workflow engine for that gap. It keeps ticketed work moving, routes it to the right domain specialist, and refuses completion until a proof pack exists.\n\n## Core concepts\n- Sweep mode\n- Team mode\n- Proof pack\n- Guardrails\n\n## Quick start\nInstall and run `/orchestrator sweep`.\n\n## Domain-aware execution\nCovers code, research, content, design, video, and ops.\n\n## The 5 hard rules\nReal incidents encoded into memorable guardrails.",
+      "faq": [
+        {
+          "q": "What makes orchestrator different from a generic AI task runner?",
+          "a": "It enforces a ticket contract, dispatches by domain, and blocks completion until proof exists."
+        },
+        {
+          "q": "When should I use sweep mode vs team mode?",
+          "a": "Use sweep for daily throughput, team mode for multi-ticket sprints that need parallel specialists."
+        }
+      ]
+    },
+    "linkedin_post": {
+      "text": "Most AI teams do not fail because the model is weak. They fail because work goes idle, the wrong agent picks up the wrong task, and tickets get marked done without proof.\n\nThat is the gap /orchestrator is built for. It is a workflow engine for ticket-driven execution: sweep mode for reliable daily throughput, team mode for parallel sprint work, domain-aware verification for code, content, design, video, research, and ops, and a proof pack that blocks fake completion.\n\nThe part I like most is that the guardrails are not generic process advice. They came from real incidents, then got encoded into hard rules so the same failures do not repeat.",
+      "cta": {
+        "action": "Try `/orchestrator sweep` on one pickup-ready ticket",
+        "reason_for_now": "It shows the full contract-to-proof loop in minutes"
+      }
+    }
+  },
+  "proof": {
+    "pr_url": "https://github.com/maxtechera/orchestrator/pull/17",
+    "preview_urls": [
+      "artifacts/MAX-529/preview.html"
+    ],
+    "screenshots": {
+      "desktop": "artifacts/MAX-529/rendered-html-preview.png",
+      "github_markdown": "artifacts/MAX-529/rendered-github-markdown.png"
+    },
+    "mp4_attachments": [
+      "artifacts/MAX-529/readme-preview.mp4"
+    ]
+  }
+}

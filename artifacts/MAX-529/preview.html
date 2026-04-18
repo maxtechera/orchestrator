@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MAX-529 README Preview</title>
+  <style>
+    body { margin: 0; font-family: Inter, Arial, sans-serif; background: #0b1020; color: #e5e7eb; }
+    .wrap { max-width: 980px; margin: 0 auto; padding: 56px 32px 80px; }
+    .hero { background: linear-gradient(135deg, #111827, #172554); border: 1px solid #334155; border-radius: 24px; padding: 32px; box-shadow: 0 20px 60px rgba(0,0,0,.35); }
+    .eyebrow { color: #93c5fd; font-size: 14px; text-transform: uppercase; letter-spacing: .12em; }
+    h1 { font-size: 52px; line-height: 1.04; margin: 10px 0 16px; }
+    h2 { font-size: 28px; margin: 40px 0 14px; }
+    p, li { font-size: 18px; line-height: 1.6; color: #d1d5db; }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 18px; margin-top: 20px; }
+    .card { background: rgba(15,23,42,.72); border: 1px solid #334155; border-radius: 18px; padding: 20px; }
+    .code { background: #020617; border: 1px solid #334155; border-radius: 16px; padding: 18px; white-space: pre-wrap; font-family: ui-monospace, SFMono-Regular, monospace; }
+    table { width: 100%; border-collapse: collapse; margin-top: 12px; }
+    th, td { border: 1px solid #334155; padding: 12px 14px; text-align: left; vertical-align: top; }
+    th { background: #111827; }
+    .small { color: #93c5fd; font-size: 15px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <div class="eyebrow">/orchestrator</div>
+      <h1>Keep AI teams moving, route work correctly, and require proof before anything counts as done.</h1>
+      <p>AI teams usually fail because they go idle, pick the wrong next ticket, and ship without receipts. /orchestrator is the workflow engine that fixes those three problems with ticket contracts, domain-aware execution, independent verification, and proof packs.</p>
+      <div class="grid">
+        <div class="card"><strong>Sweep mode</strong><p>Process actionable tickets in priority order with contract validation and independent verification.</p></div>
+        <div class="card"><strong>Team mode</strong><p>Run a parallel roster for sprint work so specialists never sit idle.</p></div>
+        <div class="card"><strong>Proof pack</strong><p>Artifact link, evidence log, run output, canonical link, and verification report.</p></div>
+        <div class="card"><strong>Guardrails</strong><p>Battle-tested hard rules written after real incidents, not generic process advice.</p></div>
+      </div>
+    </section>
+
+    <h2>Quick start</h2>
+    <div class="code">/plugin marketplace add maxtechera/orchestrator
+clawhub install orchestrator
+/orchestrator sweep</div>
+
+    <h2>Domain-aware execution</h2>
+    <table>
+      <tr><th>Domain</th><th>Dispatch</th><th>Verification</th></tr>
+      <tr><td>Code</td><td>Repo changes, tests, PRs</td><td>Build, lint, typecheck, manual proof</td></tr>
+      <tr><td>Research</td><td>Source gathering, synthesis</td><td>Citations, freshness, structure</td></tr>
+      <tr><td>Content</td><td>Copy, assets, publishing workflows</td><td>Brand voice, screenshots, links</td></tr>
+      <tr><td>Design</td><td>Layouts and assets</td><td>Visual proof and accessibility notes</td></tr>
+      <tr><td>Video</td><td>Scripts, edits, renders</td><td>MP4 output and storyboard proof</td></tr>
+      <tr><td>Ops</td><td>Deployments and service actions</td><td>Logs, health checks, monitoring evidence</td></tr>
+    </table>
+
+    <h2>The 5 hard rules</h2>
+    <ol>
+      <li>Never re-dispatch an In Progress ticket <span class="small">(incident: 2026-03-10)</span></li>
+      <li>Never merge PRs <span class="small">(battle-tested across multiple incidents)</span></li>
+      <li>Never modify your own cron job <span class="small">(incident: 2026-02-25)</span></li>
+      <li>Never post status chatter without a delta <span class="small">(incident: 2026-03-11)</span></li>
+      <li>Parent sweep dispatches only, never implements <span class="small">(incident: 2026-03-10)</span></li>
+    </ol>
+  </div>
+</body>
+</html>
