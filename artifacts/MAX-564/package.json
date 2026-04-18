@@ -71,7 +71,7 @@
   },
   "proof": {
     "branch": "feat/MAX-564-memory-course-outline",
-    "pr_url": "https://github.com/maxtechera/orchestrator/pull/TBD",
+    "pr_url": "https://github.com/maxtechera/orchestrator/pull/19",
     "deployed_url": "https://cdn.jsdelivr.net/gh/maxtechera/orchestrator@feat/MAX-564-memory-course-outline/artifacts/MAX-564/preview.html",
     "linear_attached_visual_proof": "artifacts/MAX-564/linear_attached_visual_proof.png",
     "rendered_html_screenshot": "artifacts/MAX-564/rendered_html_screenshot.png",

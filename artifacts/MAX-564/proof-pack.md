@@ -28,4 +28,4 @@
 
 ## Proof links
 - Branch preview URL: `https://cdn.jsdelivr.net/gh/maxtechera/orchestrator@feat/MAX-564-memory-course-outline/artifacts/MAX-564/preview.html`
-- PR URL: `TBD after push`
+- PR URL: `https://github.com/maxtechera/orchestrator/pull/19`
