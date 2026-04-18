@@ -1,0 +1,77 @@
+<!doctype html>
+<html><head>
+<meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.8.1/github-markdown-dark.min.css'>
+<style>body{box-sizing:border-box;min-width:200px;max-width:980px;margin:0 auto;padding:32px;background:#0d1117}.markdown-body{background:#0d1117}</style>
+</head><body><article class='markdown-body'>
+<h1>NODO newsletter issue, OSS stack</h1>
+<p>Ticket: MAX-539<br>Surface: <code>maxtechera/orchestrator</code><br>Slug: <code>nodo/oss-stack</code></p>
+<h2>Subject line variants</h2>
+<ol>
+<li>Curiosity, <code>Tus agentes de IA se olvidan todo. Acá está la solución.</code></li>
+<li>Specific-result, <code>3 repos open source para que Claude Code deje de romper tu proyecto</code></li>
+<li>Contrarian, <code>Todo lo que te venden como &quot;AI agent&quot; es glue code. Mirá esto.</code></li>
+</ol>
+<h2>Preview text</h2>
+<p><code>ship, orchestrator, memory, el stack open source que uso todos los días.</code></p>
+<h2>MailerLite setup notes</h2>
+<ul>
+<li>Campaign type: broadcast</li>
+<li>Sequence length: 1 email</li>
+<li>Segment: <code>TBD_NODO_SEGMENT</code></li>
+<li>UTM base: <code>utm_source=mailerlite&amp;utm_campaign=nodo-oss-stack&amp;utm_medium=email</code></li>
+<li>Web version target: <code>https://maxtechera.dev/nodo/oss-stack</code></li>
+</ul>
+<h2>Body copy</h2>
+<p>Che,</p>
+<p>Hay un patrón que veo seguido con agentes de IA en producción.</p>
+<p>Arrancan bien, pero a la media hora ya están inventando contexto, olvidando decisiones y diciendo que terminaron sin mostrar ninguna prueba real.</p>
+<p>No es un problema de modelo. Es un problema de sistema.</p>
+<p>Si no tienen memoria, cada sesión vuelve a empezar de cero. Si no tienen orquestación, cada task se convierte en caos. Si no tienen verificación, terminás aprobando humo.</p>
+<p>Por eso terminé armando un stack con 3 repos open source que uso juntos todos los días, <code>memory</code>, <code>orchestrator</code> y <code>ship</code>.</p>
+<h2>1. memory, para que las sesiones sobrevivan reinicios</h2>
+<p><code>memory</code> le da memoria persistente a Claude Code, OpenClaw y Gemini CLI. Guarda contexto, decisiones y learnings entre sesiones con un sistema HOT, WARM y COLD que no te obliga a reexplicar todo cada vez.</p>
+<p>El receipt importante es este, las sesiones sobreviven restarts. El agente puede retomar trabajo, decisiones previas y contexto de proyecto en vez de arrancar con amnesia.</p>
+<p><strong>Install</strong></p>
+<pre><code class="language-bash">clawhub install memory
+</code></pre>
+<p><strong>CTA</strong><br><a href="https://github.com/maxtechera/memory?utm_source=mailerlite&utm_campaign=nodo-oss-stack&utm_medium=email&utm_content=memory">→ star memory</a></p>
+<h2>2. orchestrator, para que varios agentes trabajen con guardrails</h2>
+<p><code>orchestrator</code> toma tickets, separa ejecución de verificación y obliga a entregar evidencia antes de mover una tarea. El agente que hizo el trabajo no se autoaprueba.</p>
+<p>El receipt importante es este, podés correr agentes en paralelo con guardrails. Eso baja muchísimo el falso positivo típico de los agent stacks y cambia &quot;parece que quedó&quot; por &quot;acá está la prueba&quot;.</p>
+<p><strong>Install</strong></p>
+<pre><code class="language-bash">clawhub install orchestrator
+</code></pre>
+<p><strong>CTA</strong><br><a href="https://github.com/maxtechera/orchestrator?utm_source=mailerlite&utm_campaign=nodo-oss-stack&utm_medium=email&utm_content=orchestrator">→ star orchestrator</a></p>
+<h2>3. ship, para validar, construir y lanzar en un solo pipeline</h2>
+<p><code>ship</code> monta arriba de esa base un pipeline GTM completo. Coordina stages, credenciales, critic, analyst y handoffs para que una idea no se quede en repo sino que llegue a distribución.</p>
+<p>El receipt importante es este, podés validar, build y launch en un solo pipeline. Menos improvisación, más shipping real.</p>
+<p><strong>Install</strong></p>
+<pre><code class="language-bash">clawhub install ship
+</code></pre>
+<p><strong>CTA</strong><br><a href="https://github.com/maxtechera/ship?utm_source=mailerlite&utm_campaign=nodo-oss-stack&utm_medium=email&utm_content=ship">→ star ship</a></p>
+<h2>Lo que viene en La Academia</h2>
+<p>Esto también es la base de lo que voy a enseñar en La Academia sobre Claude Code.</p>
+<p>No solo prompts. Sistemas reales para trabajar con agentes en producción, memoria persistente, orquestación multi-agent, verificación y shipping con receipts.</p>
+<h2>CTA principal</h2>
+<p>Reply con tu use case.</p>
+<p>Contame dónde se te rompen hoy los agentes, memoria, coordinación o shipping, y te digo cuál atacaría primero.</p>
+<h2>CTA secundaria</h2>
+<p>Si querés ver los 3 repos con más contexto, acá están los posts de lanzamiento:</p>
+<ul>
+<li><a href="https://github.com/maxtechera/memory?utm_source=mailerlite&utm_campaign=nodo-oss-stack&utm_medium=email&utm_content=memory-post">memory</a></li>
+<li><a href="https://github.com/maxtechera/orchestrator?utm_source=mailerlite&utm_campaign=nodo-oss-stack&utm_medium=email&utm_content=orchestrator-post">orchestrator</a></li>
+<li><a href="https://github.com/maxtechera/ship?utm_source=mailerlite&utm_campaign=nodo-oss-stack&utm_medium=email&utm_content=ship-post">ship</a></li>
+</ul>
+<h2>Proof checklist</h2>
+<ul>
+<li>3 subject lines defined</li>
+<li>Preview text defined</li>
+<li>UTM-tagged CTA links included</li>
+<li>Web version target defined as <code>/nodo/oss-stack</code></li>
+<li>HTML preview lives in <code>examples/nodo_oss_stack_newsletter_preview.html</code></li>
+</ul>
+
+
+</article></body></html>

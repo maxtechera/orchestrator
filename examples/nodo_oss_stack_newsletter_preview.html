@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NODO, OSS stack newsletter preview</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #0b1020;
+      --panel: rgba(15, 23, 42, 0.9);
+      --border: rgba(148, 163, 184, 0.2);
+      --text: #e5eefb;
+      --muted: #b6c2d9;
+      --accent: #8b5cf6;
+      --accent-2: #22c55e;
+      --accent-3: #f97316;
+      --link: #93c5fd;
+      --code: #86efac;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top, rgba(139, 92, 246, 0.14), transparent 28%),
+        radial-gradient(circle at right, rgba(34, 197, 94, 0.12), transparent 24%),
+        var(--bg);
+      color: var(--text);
+      padding: 24px;
+    }
+    .frame {
+      max-width: 760px;
+      margin: 0 auto;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.35);
+    }
+    .bar {
+      height: 8px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2), var(--accent-3));
+    }
+    .content { padding: 36px 30px 44px; }
+    .eyebrow {
+      margin: 0 0 12px;
+      color: #c4b5fd;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(32px, 4vw, 44px);
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+    }
+    .deck {
+      margin: 0 0 24px;
+      font-size: 18px;
+      line-height: 1.6;
+      color: var(--muted);
+    }
+    .meta {
+      display: grid;
+      gap: 10px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      margin: 0 0 28px;
+    }
+    .meta-card {
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 14px 16px;
+      background: rgba(15, 23, 42, 0.45);
+    }
+    .meta-card strong { display: block; font-size: 13px; color: #cbd5e1; margin-bottom: 6px; }
+    .meta-card span { color: var(--text); font-size: 14px; }
+    .section { margin-top: 28px; }
+    h2 {
+      margin: 0 0 10px;
+      font-size: 24px;
+      line-height: 1.2;
+    }
+    p, li {
+      font-size: 17px;
+      line-height: 1.75;
+      color: var(--muted);
+    }
+    ul { padding-left: 22px; }
+    .receipt {
+      border-left: 3px solid var(--accent);
+      padding-left: 14px;
+      color: var(--text);
+      margin: 12px 0 16px;
+    }
+    pre {
+      margin: 14px 0 12px;
+      padding: 16px;
+      border-radius: 14px;
+      overflow-x: auto;
+      background: rgba(2, 6, 23, 0.88);
+      border: 1px solid var(--border);
+      color: var(--code);
+    }
+    code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+    a { color: var(--link); }
+    .cta-box {
+      margin-top: 28px;
+      padding: 20px;
+      border-radius: 18px;
+      background: rgba(139, 92, 246, 0.12);
+      border: 1px solid rgba(139, 92, 246, 0.28);
+    }
+    .cta-button {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 14px 18px;
+      border-radius: 12px;
+      background: var(--accent);
+      color: white;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .footer {
+      margin-top: 30px;
+      padding-top: 18px;
+      border-top: 1px solid var(--border);
+      font-size: 14px;
+      color: #94a3b8;
+    }
+    @media (max-width: 540px) {
+      body { padding: 12px; }
+      .content { padding: 24px 18px 28px; }
+      p, li { font-size: 16px; line-height: 1.65; }
+    }
+  </style>
+</head>
+<body>
+  <article class="frame">
+    <div class="bar"></div>
+    <div class="content">
+      <p class="eyebrow">NODO · ship + orchestrator + memory</p>
+      <h1>Tus agentes de IA se olvidan todo. Acá está la solución.</h1>
+      <p class="deck">ship, orchestrator, memory, el stack open source que uso todos los días.</p>
+
+      <section class="meta">
+        <div class="meta-card">
+          <strong>Subject variants</strong>
+          <span>Curiosity, Specific-result, Contrarian</span>
+        </div>
+        <div class="meta-card">
+          <strong>Campaign</strong>
+          <span>Broadcast, 1 email, MailerLite-ready</span>
+        </div>
+        <div class="meta-card">
+          <strong>Web version</strong>
+          <span>maxtechera.dev/nodo/oss-stack</span>
+        </div>
+      </section>
+
+      <p>Hay un patrón que veo seguido con agentes de IA en producción. Arrancan bien, pero a la media hora ya están inventando contexto, olvidando decisiones y diciendo que terminaron sin mostrar ninguna prueba real.</p>
+      <p>No es un problema de modelo. Es un problema de sistema.</p>
+      <p>Si no tienen memoria, cada sesión vuelve a empezar de cero. Si no tienen orquestación, cada task se convierte en caos. Si no tienen verificación, terminás aprobando humo.</p>
+      <p>Por eso armé un stack con 3 repos open source que uso juntos todos los días, <code>memory</code>, <code>orchestrator</code> y <code>ship</code>.</p>
+
+      <section class="section">
+        <h2>1. memory</h2>
+        <p><strong>memory</strong> le da memoria persistente a Claude Code, OpenClaw y Gemini CLI. Guarda contexto, decisiones y learnings entre sesiones con un sistema HOT, WARM y COLD.</p>
+        <p class="receipt">Receipt: las sesiones sobreviven restarts. El agente retoma trabajo y decisiones previas en vez de arrancar con amnesia.</p>
+        <pre><code>clawhub install memory</code></pre>
+        <p><a href="https://github.com/maxtechera/memory?utm_source=mailerlite&utm_campaign=nodo-oss-stack&utm_medium=email&utm_content=memory">→ star memory</a></p>
+      </section>
+
+      <section class="section">
+        <h2>2. orchestrator</h2>
+        <p><strong>orchestrator</strong> toma tickets, separa ejecución de verificación y obliga a entregar evidencia antes de mover una tarea. El agente que hizo el trabajo no se autoaprueba.</p>
+        <p class="receipt">Receipt: podés correr agentes en paralelo con guardrails. Menos "parece que quedó", más "acá está la prueba".</p>
+        <pre><code>clawhub install orchestrator</code></pre>
+        <p><a href="https://github.com/maxtechera/orchestrator?utm_source=mailerlite&utm_campaign=nodo-oss-stack&utm_medium=email&utm_content=orchestrator">→ star orchestrator</a></p>
+      </section>
+
+      <section class="section">
+        <h2>3. ship</h2>
+        <p><strong>ship</strong> monta arriba de esa base un pipeline GTM completo. Coordina stages, credenciales, critic, analyst y handoffs para que una idea no se quede en repo sino que llegue a distribución.</p>
+        <p class="receipt">Receipt: podés validar, build y launch en un solo pipeline. Menos improvisación, más shipping real.</p>
+        <pre><code>clawhub install ship</code></pre>
+        <p><a href="https://github.com/maxtechera/ship?utm_source=mailerlite&utm_campaign=nodo-oss-stack&utm_medium=email&utm_content=ship">→ star ship</a></p>
+      </section>
+
+      <section class="section">
+        <h2>Lo que viene en La Academia</h2>
+        <p>No solo prompts. Sistemas reales para trabajar con agentes en producción, memoria persistente, orquestación multi-agent, verificación y shipping con receipts.</p>
+      </section>
+
+      <section class="cta-box">
+        <h2>Reply con tu use case</h2>
+        <p>Contame dónde se te rompen hoy los agentes, memoria, coordinación o shipping, y te digo cuál atacaría primero.</p>
+        <a class="cta-button" href="mailto:max@example.com?subject=Mi%20use%20case%20con%20agentes">Responder con mi use case →</a>
+        <p>También podés entrar por los 3 repos desde esta edición y leer el contexto completo detrás del stack.</p>
+      </section>
+
+      <p class="footer">MAX-539 preview asset · dark mode base · ready to capture for desktop and mobile screenshots.</p>
+    </div>
+  </article>
+</body>
+</html>
