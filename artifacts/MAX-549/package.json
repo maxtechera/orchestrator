@@ -1,0 +1,247 @@
+{
+  "ticket_id": "MAX-549",
+  "content_type": "reel",
+  "target_repo": "maxtechera/orchestrator",
+  "brand": "max-techera",
+  "locale": "en",
+  "variants": [
+    {
+      "id": "v1-problem-agitate-solve",
+      "name": "Problem \u2192 Agitate \u2192 Solve",
+      "angle": "Launch pain is not building, it is the missing GTM pipeline.",
+      "hooks": [
+        "I launched a product with AI agents in 3 hours. Here is the pipeline.",
+        "Your product is not stuck in build mode. Your launch pipeline is.",
+        "If launch day still takes a week, steal this 3-hour agent workflow."
+      ],
+      "script": "Show /ship create starting the coordinator, the credential gate surfacing hidden failures, then the validate \u2192 strategy \u2192 awareness \u2192 launch \u2192 measure flow. End with the solo-founder payoff and DM SHIP CTA."
+    },
+    {
+      "id": "v2-contrarian",
+      "name": "Contrarian",
+      "angle": "More tools are not the answer. Better orchestration is.",
+      "hooks": [
+        "Hot take, you do not need a bigger launch team. You need one better run command.",
+        "More GTM tools do not save launch day. Better orchestration does.",
+        "Most founders stack apps. I stacked agents and launched faster."
+      ],
+      "script": "Open on the contrarian line, reveal /ship create, show credentials gating and the full GTM stage handoff, then close on orchestration beating tool sprawl."
+    },
+    {
+      "id": "v3-specific-number",
+      "name": "Specific-number",
+      "angle": "Quantified proof, 30 integrations, 9 agents, 3 hours.",
+      "hooks": [
+        "30 integrations. 9 agents. 3 hours. That was the launch stack.",
+        "Here is the exact AI pipeline behind a 3-hour product launch.",
+        "I compressed a week of GTM work into one 3-hour agent run."
+      ],
+      "script": "Lead with the numbers, then show the credential preflight, agent chain, and measurable launch outputs landing stage by stage."
+    },
+    {
+      "id": "v4-insider-reveal",
+      "name": "Insider reveal",
+      "angle": "The real advantage is the machine behind the prompt.",
+      "hooks": [
+        "The secret is not the prompt. It is the launch pipeline behind the prompt.",
+        "Everyone shows the output. Almost nobody shows the GTM machine.",
+        "Behind every fast AI launch is a ruthless checklist. Here is mine."
+      ],
+      "script": "Reveal the pipeline architecture, credential gate, stage transitions, content generation, and launch coordination, then anchor /ship as the system behind the speed."
+    },
+    {
+      "id": "v5-testimonial",
+      "name": "Testimonial",
+      "angle": "Make the solo-founder transformation feel personal and believable.",
+      "hooks": [
+        "I ran one command and it felt like a launch team showed up.",
+        "If you are a solo founder, this is the closest thing to hiring a launch squad overnight.",
+        "Best part, it did not feel like software. It felt like backup."
+      ],
+      "script": "Tell a before-and-after story, fragmented launch work before, coordinated AI launch team after /ship create. End with reply SHIP for setup guide."
+    }
+  ],
+  "placements": {
+    "instagram_reel": {
+      "text": "I launched a product with AI agents in 3 hours. Here is the pipeline.\n\nThe trick was not one magic prompt. It was a GTM system that checked credentials, ran validate \u2192 strategy \u2192 awareness \u2192 launch \u2192 measure, and kept moving without me stitching tools together all day.\n\nIf you are building solo and your launch still takes a week, DM SHIP and I will send the free install guide.",
+      "cta": {
+        "action": "DM \"SHIP\"",
+        "reason_for_now": "because the install guide shows the exact launch workflow before your next launch slips"
+      },
+      "hashtags": [
+        "#ship",
+        "#aiagents",
+        "#buildinpublic",
+        "#indiehackers",
+        "#claudecode",
+        "#opensource",
+        "#gtm",
+        "#productlaunch"
+      ],
+      "media": {
+        "mp4": "artifacts/MAX-549/MAX-549-problem-agitate-solve.mp4",
+        "thumbnail": "artifacts/MAX-549/problem-agitate-solve-thumbnail.png"
+      },
+      "hook_variants": [
+        "I launched a product with AI agents in 3 hours. Here is the pipeline.",
+        "Your product is not stuck in build mode. Your launch pipeline is.",
+        "If launch day still takes a week, steal this 3-hour agent workflow."
+      ],
+      "manychat_trigger": {
+        "keyword": "SHIP",
+        "flow_id": "TBD_MAX_PROVIDES"
+      }
+    },
+    "tiktok": {
+      "caption": "Hot take, you do not need a bigger launch team. You need one better run command. `/ship` checked the stack, ran the GTM pipeline, and got a product out in 3 hours. Comment pipeline and I will send the repo.",
+      "hook_variants": [
+        "Hot take, you do not need a bigger launch team. You need one better run command.",
+        "More GTM tools do not save launch day. Better orchestration does.",
+        "Most founders stack apps. I stacked agents and launched faster."
+      ],
+      "media": {
+        "mp4": "artifacts/MAX-549/MAX-549-contrarian.mp4",
+        "thumbnail": "artifacts/MAX-549/contrarian-thumbnail.png"
+      }
+    },
+    "youtube_short": {
+      "title": "30 Integrations, 9 Agents, 3 Hours to Launch",
+      "description": "This is the /ship GTM pipeline behind a 3-hour product launch, credential checks, validate, strategy, awareness, launch, and measure in one workflow. Link in bio for the repo.",
+      "media": {
+        "mp4": "artifacts/MAX-549/MAX-549-specific-number.mp4",
+        "thumbnail": "artifacts/MAX-549/specific-number-thumbnail.png"
+      }
+    },
+    "x_thread": {
+      "tweets": [
+        {
+          "text": "I launched a product with AI agents in 3 hours. The interesting part was not the prompt. It was the GTM pipeline."
+        },
+        {
+          "text": "The run started with credential checks, then moved through validate, strategy, awareness, launch, and measure without me babysitting every handoff."
+        },
+        {
+          "text": "If you are an indie hacker or Claude Code user, this is what shipping looks like when you orchestrate agents instead of stacking more tools."
+        },
+        {
+          "text": "Want the install guide? Reply SHIP. Want the repo? Comment pipeline and I will send github.com/maxtechera/ship"
+        }
+      ],
+      "cta": {
+        "action": "Reply \"SHIP\"",
+        "reason_for_now": "to get the install guide before your next launch turns into another week of manual GTM work"
+      }
+    },
+    "linkedin_post": {
+      "text": "I launched a product with AI agents in 3 hours, and the biggest lesson was this, speed did not come from better prompting. It came from orchestration.\n\nThe workflow started with credential checks so launch blockers surfaced before execution. Then `/ship` ran a full GTM handoff, validate, strategy, awareness, launch, and measure, so every stage produced the next asset instead of waiting on me to coordinate it manually.\n\nIf you are a solo founder, indie hacker, or Claude Code user, this is the leverage point. Stop stacking disconnected tools. Start building a launch pipeline that behaves like a team.",
+      "cta": {
+        "action": "DM \"SHIP\"",
+        "reason_for_now": "to get the install guide while you still have a product worth launching this week"
+      }
+    },
+    "email": {
+      "subject_variants": [
+        "I launched with AI agents in 3 hours",
+        "The /ship pipeline behind a fast launch",
+        "Steal my 3-hour AI GTM workflow"
+      ],
+      "preview_text": "A proof-first breakdown of the /ship pipeline that compresses launch work into one orchestrated run.",
+      "body_html": "<html><body style=\"font-family:Arial,sans-serif;max-width:640px;margin:0 auto;line-height:1.6;color:#111;\"><h1>I launched a product with AI agents in 3 hours</h1><p>The win was not one prompt. It was a workflow that checked credentials, then pushed work through validate, strategy, awareness, launch, and measure.</p><p>If you want the free install guide, reply with <strong>SHIP</strong>. If you want the repo, use <a href=\"https://github.com/maxtechera/ship\">github.com/maxtechera/ship</a>.</p></body></html>",
+      "utm": {
+        "source": "mailerlite",
+        "campaign": "max-549-ship-reel-series",
+        "medium": "email"
+      }
+    },
+    "blog_post": {
+      "slug": "/blog/i-launched-a-product-with-ai-agents-in-3-hours",
+      "title": "I Launched a Product With AI Agents in 3 Hours",
+      "meta_description": "A proof-first breakdown of the /ship GTM pipeline, from credential checks to launch and measurement.",
+      "hero_og": "artifacts/MAX-549/insider-reveal-thumbnail.png",
+      "body_md": "# I launched a product with AI agents in 3 hours\n\nThe headline is true, but the useful part is how. The launch only moved fast because the system started with credential checks and then ran a full GTM pipeline, validate, strategy, awareness, launch, and measure.\n\n## What changed\nInstead of stitching together prompts and tools manually, `/ship` handled the handoffs between stages.\n\n## Why it matters\nFor solo founders and indie hackers, the bottleneck is rarely the product. It is the launch machine around the product.\n\n## What to do next\nIf you want the install guide, DM SHIP. If you want the repo, grab github.com/maxtechera/ship.",
+      "faq": [
+        {
+          "q": "Who is /ship for?",
+          "a": "AI builders, Claude Code users, indie hackers, and solo founders shipping products."
+        },
+        {
+          "q": "What does the pipeline cover?",
+          "a": "Credential checks, validate, strategy, awareness, launch, and measure."
+        }
+      ]
+    },
+    "landing_page": {
+      "slug": "/ship",
+      "hero": {
+        "headline": "I launched a product with AI agents in 3 hours",
+        "subhead": "/ship turns credential checks and GTM execution into one orchestrated launch workflow.",
+        "hero_image": "artifacts/MAX-549/testimonial-thumbnail.png"
+      },
+      "features": [
+        {
+          "name": "Credential gate first",
+          "hero_image": "artifacts/MAX-549/problem-agitate-solve-thumbnail.png",
+          "diagram": "artifacts/MAX-549/problem-agitate-solve-thumbnail.png",
+          "demo_media": "artifacts/MAX-549/MAX-549-problem-agitate-solve.mp4"
+        },
+        {
+          "name": "GTM stage pipeline",
+          "hero_image": "artifacts/MAX-549/specific-number-thumbnail.png",
+          "diagram": "artifacts/MAX-549/insider-reveal-thumbnail.png",
+          "demo_media": "artifacts/MAX-549/MAX-549-specific-number.mp4"
+        },
+        {
+          "name": "Launch-day orchestration",
+          "hero_image": "artifacts/MAX-549/contrarian-thumbnail.png",
+          "diagram": "artifacts/MAX-549/testimonial-thumbnail.png",
+          "demo_media": "artifacts/MAX-549/MAX-549-testimonial.mp4"
+        }
+      ],
+      "ctas": {
+        "primary": "DM SHIP",
+        "secondary": "Comment pipeline"
+      },
+      "tracking_events": [
+        "page_view",
+        "cta_click_primary",
+        "cta_click_secondary",
+        "video_play"
+      ],
+      "meta": {
+        "title": "/ship launch workflow",
+        "description": "The AI-agent GTM pipeline behind a 3-hour product launch.",
+        "og": "artifacts/MAX-549/problem-agitate-solve-thumbnail.png",
+        "canonical": "https://github.com/maxtechera/ship"
+      }
+    }
+  },
+  "proof": {
+    "pr_url": "https://github.com/maxtechera/orchestrator/pull/14",
+    "preview_urls": [
+      "artifacts/MAX-549/preview.html",
+      "artifacts/MAX-549/rendered-markdown.html"
+    ],
+    "screenshots": {
+      "desktop": "artifacts/MAX-549/screenshot-desktop.png",
+      "mobile": "artifacts/MAX-549/screenshot-mobile.png",
+      "rendered_html": "artifacts/MAX-549/rendered-html-screenshot.png",
+      "rendered_html_preview": "artifacts/MAX-549/rendered-html-preview-screenshot.png",
+      "rendered_github_markdown": "artifacts/MAX-549/rendered-github-markdown-screenshot.png"
+    },
+    "mp4_attachments": [
+      "artifacts/MAX-549/MAX-549-problem-agitate-solve.mp4",
+      "artifacts/MAX-549/MAX-549-contrarian.mp4",
+      "artifacts/MAX-549/MAX-549-specific-number.mp4",
+      "artifacts/MAX-549/MAX-549-insider-reveal.mp4",
+      "artifacts/MAX-549/MAX-549-testimonial.mp4"
+    ],
+    "thumbnail_pngs": [
+      "artifacts/MAX-549/problem-agitate-solve-thumbnail.png",
+      "artifacts/MAX-549/contrarian-thumbnail.png",
+      "artifacts/MAX-549/specific-number-thumbnail.png",
+      "artifacts/MAX-549/insider-reveal-thumbnail.png",
+      "artifacts/MAX-549/testimonial-thumbnail.png"
+    ],
+    "deployed_url": "https://github.com/maxtechera/orchestrator/blob/feat/MAX-549-ship-package-proof/artifacts/MAX-549/preview.html"
+  }
+}
