@@ -61,11 +61,13 @@
     }
   },
   "proof": {
-    "pr_url": "TBD",
+    "pr_url": "https://github.com/maxtechera/orchestrator/pull/15",
     "deployed_url": "https://github.com/maxtechera/orchestrator",
     "preview_urls": [
       "https://github.com/maxtechera/orchestrator",
-      "https://github.com/maxtechera/orchestrator/blob/main/docs/course-outline.md"
+      "https://github.com/maxtechera/orchestrator/blob/main/docs/course-outline.md",
+      "https://github.com/maxtechera/orchestrator/blob/feat/MAX-525-github-optimization/artifacts/MAX-525/preview.html",
+      "https://github.com/maxtechera/orchestrator/blob/feat/MAX-525-github-optimization/artifacts/MAX-525/proof-pack.md"
     ],
     "screenshots": {
       "desktop": "artifacts/MAX-525/screenshot_desktop.png",
