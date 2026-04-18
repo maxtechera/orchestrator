@@ -1,0 +1,3 @@
+Ticket closed. Broken link still live. Test still red.
+Now the cleanup work lands on you.
+Run /orchestrator so the sweep checks proof before done is accepted.

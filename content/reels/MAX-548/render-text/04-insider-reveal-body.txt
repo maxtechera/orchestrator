@@ -1,0 +1,3 @@
+Artifact delta. Business delta. Surface correctness.
+If one is missing, the ticket does not get the victory lap.
+That is how /orchestrator catches fake done states.
