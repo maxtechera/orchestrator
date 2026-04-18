@@ -1,0 +1,81 @@
+{
+  "ticket_id": "MAX-525",
+  "content_type": "landing-page",
+  "target_repo": "maxtechera/orchestrator",
+  "brand": "max-techera",
+  "locale": "en",
+  "placements": {
+    "landing_page": {
+      "slug": "https://github.com/maxtechera/orchestrator",
+      "hero": {
+        "headline": "Verified agent orchestration for Claude Code",
+        "subhead": "Dispatch worker agents, run independent verification, and only ship tickets that actually pass.",
+        "hero_image": "artifacts/MAX-525/orchestrator-social-card.png"
+      },
+      "features": [
+        {
+          "name": "Description tuned for developer discovery",
+          "hero_image": "artifacts/MAX-525/screenshot_desktop.png",
+          "diagram": "artifacts/MAX-525/rendered_html_screenshot.png",
+          "demo_media": "artifacts/MAX-525/final_mp4_attachment.mp4"
+        },
+        {
+          "name": "Topic coverage for search visibility",
+          "hero_image": "artifacts/MAX-525/screenshot_mobile.png",
+          "diagram": "artifacts/MAX-525/rendered_html_preview_screenshot.png",
+          "demo_media": "artifacts/MAX-525/final_mp4_attachment.mp4"
+        }
+      ],
+      "ctas": {
+        "primary": "Run /orchestrator sweep",
+        "secondary": "Read the course outline"
+      },
+      "tracking_events": [
+        "repo_view",
+        "topic_click",
+        "homepage_click"
+      ],
+      "meta": {
+        "title": "/orchestrator | verified AI-agent workflow orchestrator",
+        "description": "GitHub repo optimization for launch discovery: sharper description, targeted topics, homepage, and a committed social card.",
+        "og": "artifacts/MAX-525/orchestrator-social-card.png",
+        "canonical": "https://github.com/maxtechera/orchestrator"
+      }
+    },
+    "blog_post": {
+      "slug": "/github/maxtechera/orchestrator",
+      "title": "MAX-525 GitHub repo optimization proof",
+      "meta_description": "Proof pack for the /orchestrator GitHub repo metadata refresh and social card asset.",
+      "hero_og": "artifacts/MAX-525/orchestrator-social-card.png",
+      "body_md": "artifacts/MAX-525/proof-pack.md",
+      "faq": [
+        {
+          "q": "What changed in the repo settings?",
+          "a": "The repo description, homepage, and search topics were updated on GitHub to improve launch discovery."
+        },
+        {
+          "q": "What was committed to the repo?",
+          "a": "A 1280x640 social preview card plus the proof pack, screenshots, preview HTML, and MP4 attachment under artifacts/MAX-525."
+        }
+      ]
+    }
+  },
+  "proof": {
+    "pr_url": "TBD",
+    "deployed_url": "https://github.com/maxtechera/orchestrator",
+    "preview_urls": [
+      "https://github.com/maxtechera/orchestrator",
+      "https://github.com/maxtechera/orchestrator/blob/main/docs/course-outline.md"
+    ],
+    "screenshots": {
+      "desktop": "artifacts/MAX-525/screenshot_desktop.png",
+      "mobile": "artifacts/MAX-525/screenshot_mobile.png",
+      "rendered_html_screenshot": "artifacts/MAX-525/rendered_html_screenshot.png",
+      "rendered_html_preview_screenshot": "artifacts/MAX-525/rendered_html_preview_screenshot.png",
+      "rendered_github_markdown_screenshot": "artifacts/MAX-525/rendered_github_markdown_screenshot.png"
+    },
+    "mp4_attachments": [
+      "artifacts/MAX-525/final_mp4_attachment.mp4"
+    ]
+  }
+}

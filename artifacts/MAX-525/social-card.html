@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MAX-525 social card</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: radial-gradient(circle at top left, #1d4ed8 0%, #0f172a 42%, #020617 100%);
+      --panel: rgba(15, 23, 42, 0.76);
+      --border: rgba(148, 163, 184, 0.24);
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --accent: #7dd3fc;
+      --green: #86efac;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background: #020617;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+    }
+    .card {
+      width: 1280px;
+      height: 640px;
+      background: var(--bg);
+      overflow: hidden;
+      position: relative;
+      padding: 56px;
+    }
+    .glow {
+      position: absolute;
+      inset: auto -120px -180px auto;
+      width: 520px;
+      height: 520px;
+      border-radius: 999px;
+      background: rgba(56, 189, 248, 0.18);
+      filter: blur(30px);
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 28px;
+      height: 100%;
+      position: relative;
+    }
+    .left {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-width: 0;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      align-self: flex-start;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.62);
+      border: 1px solid var(--border);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 16px;
+      color: var(--accent);
+    }
+    h1 {
+      margin: 18px 0 14px;
+      font-size: 76px;
+      line-height: 0.94;
+      letter-spacing: -0.05em;
+      max-width: 600px;
+    }
+    .tagline {
+      max-width: 690px;
+      font-size: 30px;
+      line-height: 1.25;
+      color: #dbeafe;
+      margin: 0;
+    }
+    .footer {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      color: var(--muted);
+      font-size: 20px;
+    }
+    .chip {
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(15, 23, 42, 0.72);
+    }
+    .right {
+      display: grid;
+      grid-template-rows: 1fr auto;
+      gap: 18px;
+    }
+    .panel {
+      border: 1px solid var(--border);
+      background: var(--panel);
+      backdrop-filter: blur(12px);
+      border-radius: 28px;
+      padding: 28px;
+      box-shadow: 0 24px 80px rgba(2, 6, 23, 0.45);
+    }
+    .metric-label {
+      color: var(--muted);
+      font-size: 18px;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .metric-value {
+      font-size: 110px;
+      line-height: 1;
+      letter-spacing: -0.06em;
+      margin: 0;
+    }
+    .metric-sub {
+      margin-top: 10px;
+      color: #bfdbfe;
+      font-size: 24px;
+    }
+    .list {
+      display: grid;
+      gap: 14px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .list li {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: rgba(15, 23, 42, 0.6);
+      color: var(--text);
+      font-size: 20px;
+    }
+    .list strong { color: var(--green); font-weight: 650; }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <div class="glow"></div>
+    <section class="grid">
+      <div class="left">
+        <div>
+          <div class="eyebrow">maxtechera/orchestrator</div>
+          <h1>Verified agent orchestration</h1>
+          <p class="tagline">Dispatch worker agents, run independent verification, and only ship tickets that actually pass.</p>
+        </div>
+        <div class="footer">
+          <span class="chip">Linear, GitHub, Notion, Jira</span>
+          <span class="chip">Claude Code + OpenClaw</span>
+        </div>
+      </div>
+      <div class="right">
+        <div class="panel">
+          <div class="metric-label">Key skills included</div>
+          <p class="metric-value">8</p>
+          <div class="metric-sub">content, ecommerce, engineering, finance, gtm, seo, sales-outreach, product</div>
+        </div>
+        <div class="panel">
+          <div class="metric-label">Why it gets clicked</div>
+          <ul class="list">
+            <li><span>Ticket contract drives execution</span><strong>Clear scope</strong></li>
+            <li><span>Separate verification harness</span><strong>No self-grading</strong></li>
+            <li><span>Works with your existing board</span><strong>Zero-config start</strong></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
