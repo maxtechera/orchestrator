@@ -1,0 +1,19 @@
+{
+  "ticket": "MAX-542",
+  "artifact_path": "artifacts/MAX-542/course-outline-orchestrate-ai-agents.md",
+  "affected_runtime_path": "/orchestrator",
+  "deliverable_type": "content_asset",
+  "delivery_surface": "repo:orchestrator",
+  "target_repo": "maxtechera/orchestrator",
+  "target_system": "mailerlite",
+  "proof_requirements": [
+    "pr_url",
+    "linear_attached_visual_proof",
+    "rendered_html_screenshot",
+    "deployed_url",
+    "screenshot_desktop",
+    "screenshot_mobile",
+    "final_mp4_attachment",
+    "rendered_github_markdown_screenshot"
+  ]
+}

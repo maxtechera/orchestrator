@@ -1,0 +1,186 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>MAX-542 Course Outline</title>
+<style>
+body{font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:#f6f8fa;margin:0;padding:40px;}
+.article{max-width:980px;margin:0 auto;background:#fff;border:1px solid #d0d7de;border-radius:12px;padding:40px;box-shadow:0 1px 3px rgba(0,0,0,.08);}
+.article img{max-width:100%;}
+.article pre{white-space:pre-wrap;}
+.article code{background:#f6f8fa;padding:.2em .4em;border-radius:6px;}
+.article table{border-collapse:collapse;}
+.article th,.article td{border:1px solid #d0d7de;padding:6px 12px;}
+</style></head><body><div class="article markdown-body"><h1>MAX-542 Course Outline</h1>
+<p>Offer stack: <code class="notranslate">/orchestrator</code><br>
+Course title EN: <strong>Orchestrate AI Agents</strong><br>
+Course title ES: <strong>Orquesta tus Agentes IA</strong><br>
+Price: <strong>$197</strong><br>
+Tagline EN: <strong>Stop being the QA department for your own AI agents</strong><br>
+Tagline ES: <strong>Deja de ser el QA de tus propios agentes</strong></p>
+<h2>Course promise</h2>
+<p>This course teaches operators, founders, and technical leads how to run AI agents with a real delivery system instead of vibe-based prompting. Students will learn how to define tickets, enforce verification, route work across tools, and review outputs with clear operational controls.</p>
+<h2>Ideal student</h2>
+<ul>
+<li>Builders already using AI agents but frustrated by inconsistent delivery</li>
+<li>Operators managing recurring work across content, engineering, and internal ops</li>
+<li>Founders who want leverage without becoming the bottleneck reviewer for every output</li>
+<li>Teams moving from single-chat prompting to durable, ticket-based execution</li>
+</ul>
+<h2>Transformation</h2>
+<h3>Before</h3>
+<ul>
+<li>Agents do work, but quality varies wildly</li>
+<li>The human becomes the final QA layer every time</li>
+<li>Tasks get redone because context is missing or unverifiable</li>
+<li>Tool sprawl creates confusion instead of throughput</li>
+</ul>
+<h3>After</h3>
+<ul>
+<li>Agents execute against scoped tickets with explicit verification criteria</li>
+<li>Work moves through a repeatable lifecycle instead of ad hoc prompting</li>
+<li>The human reviews exceptions, not everything</li>
+<li>AI labor becomes inspectable, auditable, and easier to scale</li>
+</ul>
+<h2>Course outcomes</h2>
+<p>By the end of the course, students will be able to:</p>
+<ol>
+<li>Explain why self-grading agents fail without external verification.</li>
+<li>Set up a practical board across Linear, GitHub Issues, Notion, or Jira.</li>
+<li>Define a 5-stage agent delivery lifecycle from intake to done.</li>
+<li>Write verification criteria that reduce ambiguity and rework.</li>
+<li>Route work between execution agents, verifier agents, and human review.</li>
+<li>Build a lightweight operating system for repeatable agent work.</li>
+</ol>
+<h2>Module outline</h2>
+<h2>Module 1. The verification problem</h2>
+<p><strong>Goal:</strong> Show why prompting alone does not create reliable operations.</p>
+<h3>Lessons</h3>
+<ol>
+<li>Why capable agents still produce low-trust output</li>
+<li>The trap of AI self-grading</li>
+<li>Failure modes: hallucinated completion, false confidence, shallow checks</li>
+<li>Why external artifacts beat agent claims</li>
+</ol>
+<h3>Takeaways</h3>
+<ul>
+<li>Reliability comes from system design, not model optimism</li>
+<li>Verification must be separated from execution</li>
+<li>Trust increases when work produces inspectable proof</li>
+</ul>
+<h3>Exercise</h3>
+<p>Audit one recent agent-delivered task and identify where execution and verification were mixed together.</p>
+<hr>
+<h2>Module 2. Board setup: Linear, GitHub Issues, Notion, Jira</h2>
+<p><strong>Goal:</strong> Give students a practical substrate for routing agent work.</p>
+<h3>Lessons</h3>
+<ol>
+<li>What makes a board usable for AI operations</li>
+<li>Choosing between Linear, GitHub Issues, Notion, and Jira</li>
+<li>Required ticket fields: objective, surface, proof, owner, state</li>
+<li>Designing a board that humans and agents can both understand</li>
+</ol>
+<h3>Takeaways</h3>
+<ul>
+<li>The board is the source of truth for agent work</li>
+<li>Clean ticket structure lowers coordination cost</li>
+<li>Good fields prevent hidden assumptions during execution</li>
+</ul>
+<h3>Exercise</h3>
+<p>Create a template ticket in the student’s preferred system with objective, proof requirements, and delivery surface.</p>
+<hr>
+<h2>Module 3. The 5-stage ticket lifecycle</h2>
+<p><strong>Goal:</strong> Teach the operating model that makes agent work reviewable.</p>
+<h3>Lifecycle</h3>
+<ol>
+<li><strong>Intake</strong>: clarify the business request and target surface</li>
+<li><strong>Execute</strong>: produce the artifact or implementation</li>
+<li><strong>Verify</strong>: independently check the claimed result</li>
+<li><strong>Review</strong>: human or designated approver inspects exceptions and tradeoffs</li>
+<li><strong>Done</strong>: close only when business intent and proof align</li>
+</ol>
+<h3>Lessons</h3>
+<ol>
+<li>What belongs in each stage</li>
+<li>Hand-offs between executor, verifier, and reviewer</li>
+<li>State transitions that reduce ambiguity</li>
+<li>Common anti-patterns, including premature “Done” states</li>
+</ol>
+<h3>Takeaways</h3>
+<ul>
+<li>A ticket lifecycle is an operational control layer</li>
+<li>Verification deserves its own explicit stage</li>
+<li>Review is faster when upstream proof is consistent</li>
+</ul>
+<h3>Exercise</h3>
+<p>Map one existing team workflow into the 5-stage model and note what is missing.</p>
+<hr>
+<h2>Module 4. Writing verification criteria</h2>
+<p><strong>Goal:</strong> Help students create checks that agents can execute and humans can trust.</p>
+<h3>Lessons</h3>
+<ol>
+<li>The anatomy of strong verification criteria</li>
+<li>Artifact proof vs. business proof vs. surface correctness</li>
+<li>Converting vague requests into testable completion standards</li>
+<li>Examples for content, code, operations, and research tasks</li>
+</ol>
+<h3>Verification framework</h3>
+<p>For each ticket, define:</p>
+<ul>
+<li><strong>Artifact delta</strong>: what changed, created, or shipped</li>
+<li><strong>Business delta</strong>: why the change matters or what outcome it enables</li>
+<li><strong>Surface correctness</strong>: how we know it landed in the right place and format</li>
+</ul>
+<h3>Takeaways</h3>
+<ul>
+<li>Verification criteria should be observable, not interpretive</li>
+<li>Strong proof reduces reviewer load dramatically</li>
+<li>The ticket should tell the verifier what “done” actually means</li>
+</ul>
+<h3>Exercise</h3>
+<p>Rewrite three vague requests into tickets with explicit verification criteria and required proof.</p>
+<hr>
+<h2>Suggested bonus module. Orchestrating specialist agents</h2>
+<p><strong>Goal:</strong> Show how execution, verification, and review agents work together in practice.</p>
+<h3>Lessons</h3>
+<ol>
+<li>Executor vs. verifier vs. supervisor roles</li>
+<li>When to parallelize work and when not to</li>
+<li>Escalation rules for blockers and human decisions</li>
+<li>Keeping context small while preserving continuity</li>
+</ol>
+<h3>Exercise</h3>
+<p>Design a mini multi-agent workflow for one recurring business process.</p>
+<h2>Delivery format</h2>
+<ul>
+<li>4 core modules, 1 optional bonus module</li>
+<li>Each lesson designed for short video delivery</li>
+<li>Each module ends with an implementation exercise</li>
+<li>English and Spanish versions share the same operational skeleton</li>
+</ul>
+<h2>Recommended lesson pacing</h2>
+<ul>
+<li>Module 1: 20 to 25 minutes</li>
+<li>Module 2: 25 to 30 minutes</li>
+<li>Module 3: 25 to 30 minutes</li>
+<li>Module 4: 25 to 30 minutes</li>
+<li>Bonus module: 15 to 20 minutes</li>
+</ul>
+<p>Estimated total runtime: <strong>1 hour 50 minutes to 2 hours 15 minutes</strong></p>
+<h2>Production notes</h2>
+<h3>English hooks</h3>
+<ul>
+<li>Your AI agent is not failing because it is dumb. It is failing because your system has no verification layer.</li>
+<li>If you are checking every agent output yourself, you do not have leverage. You have a new intern.</li>
+<li>The goal is not more prompts. The goal is a delivery system.</li>
+</ul>
+<h3>Spanish hooks</h3>
+<ul>
+<li>Tu agente no falla por falta de inteligencia. Falla porque tu sistema no tiene una capa de verificación.</li>
+<li>Si estás revisando cada entrega del agente, no tienes apalancamiento. Tienes otro trabajo.</li>
+<li>La meta no es escribir más prompts. La meta es construir un sistema de entrega.</li>
+</ul>
+<h2>Final deliverable recommendation</h2>
+<p>Turn this outline into:</p>
+<ol>
+<li>a lesson-by-lesson script brief,</li>
+<li>a worksheet with ticket and verification templates,</li>
+<li>a companion board template for <code class="notranslate">/orchestrator</code> users.</li>
+</ol></div></body></html>
