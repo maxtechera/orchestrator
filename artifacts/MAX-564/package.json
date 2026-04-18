@@ -1,0 +1,84 @@
+{
+  "ticket_id": "MAX-564",
+  "content_type": "course-outline",
+  "target_repo": "maxtechera/orchestrator",
+  "target_system": "mailerlite",
+  "brand": "max-techera",
+  "locale": "en-es",
+  "offer_stack": {
+    "free": "/memory OSS tool",
+    "paid": "/memory course",
+    "price_usd": 97,
+    "funnel": [
+      "GitHub star",
+      "install",
+      "friction point",
+      "README CTA",
+      "newsletter",
+      "course"
+    ]
+  },
+  "friction_point": {
+    "pain": "Install works, but the user still does not know what a good memory architecture looks like or how to keep recall useful instead of noisy.",
+    "course_entry": "The free tool solves mechanics. The course solves the operating model."
+  },
+  "modules": [
+    {
+      "title": "Why agents forget, and why naive note dumps fail",
+      "learning_outcome": "Understand session amnesia, compaction loss, and context-window overload.",
+      "demo_or_exercise": "Compare one task with no memory vs minimal HOT memory and document where state gets lost."
+    },
+    {
+      "title": "The 3-tier architecture, HOT, WARM, COLD",
+      "learning_outcome": "Design a memory stack that keeps active context small while preserving durable recall.",
+      "demo_or_exercise": "Build the folder layout and classify sample facts into HOT, WARM, and COLD."
+    },
+    {
+      "title": "Hooks, setup, and the sync pipeline in real life",
+      "learning_outcome": "Trace what actually happens on start, compaction, and stop.",
+      "demo_or_exercise": "Run setup, inspect hooks, and validate one sync report."
+    },
+    {
+      "title": "Build a retrieval system that Claude can actually use",
+      "learning_outcome": "Structure topics, journals, and wiki pages for reliable recall.",
+      "demo_or_exercise": "Create topic files, a journal, and one wiki page, then practice targeted retrieval."
+    },
+    {
+      "title": "Cross-session, cross-agent, cross-platform memory",
+      "learning_outcome": "Use memory as infrastructure for long projects and helper handoffs.",
+      "demo_or_exercise": "Simulate a parent session handing off cleanly to a helper across environments."
+    },
+    {
+      "title": "Prevent memory rot, drift, and note sludge",
+      "learning_outcome": "Keep the system trustworthy over time with TTL, audits, and dream cycles.",
+      "demo_or_exercise": "Run an audit, prune stale entries, and promote one durable insight to the wiki."
+    },
+    {
+      "title": "The full working system, from install to trusted recall",
+      "learning_outcome": "Assemble the complete persistent-memory workflow end to end.",
+      "demo_or_exercise": "Run a two-session workflow and recover context without manual re-briefing."
+    }
+  ],
+  "cta_copy": {
+    "readme": [
+      "Installed /memory, but still not sure what should live in memory and what should stay out? The course shows the full system in action, HOT/WARM/COLD tiers, hooks, sync pipeline, wiki, and the maintenance loop that keeps memory useful instead of noisy.",
+      "/memory gives you the engine. The course gives you the operating model. If setup worked but you still do not trust the system yet, the /memory course walks you through the exact architecture, retrieval patterns, and sync workflow behind a memory setup you can use every day."
+    ],
+    "newsletter": [
+      "You installed /memory. Great. But the real unlock is not the install, it is knowing how to structure the system so Claude can recover the right context at the right time.",
+      "Most people stop after /memory setup. That gets the hooks running. It does not teach you what to store, how to organize the tiers, how to query old work, or how to keep the system clean when projects get long."
+    ]
+  },
+  "proof": {
+    "branch": "feat/MAX-564-memory-course-outline",
+    "pr_url": "https://github.com/maxtechera/orchestrator/pull/TBD",
+    "deployed_url": "https://cdn.jsdelivr.net/gh/maxtechera/orchestrator@feat/MAX-564-memory-course-outline/artifacts/MAX-564/preview.html",
+    "linear_attached_visual_proof": "artifacts/MAX-564/linear_attached_visual_proof.png",
+    "rendered_html_screenshot": "artifacts/MAX-564/rendered_html_screenshot.png",
+    "rendered_html_preview_screenshot": "artifacts/MAX-564/rendered_html_preview_screenshot.png",
+    "rendered_github_markdown_screenshot": "artifacts/MAX-564/rendered_github_markdown_screenshot.png",
+    "screenshot_desktop": "artifacts/MAX-564/screenshot_desktop.png",
+    "screenshot_mobile": "artifacts/MAX-564/screenshot_mobile.png",
+    "final_mp4_attachment": "artifacts/MAX-564/final_mp4_attachment.mp4"
+  }
+}
