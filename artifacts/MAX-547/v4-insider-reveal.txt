@@ -1,0 +1,5 @@
+Lead with the architectural
+reveal. Show HOT working
+state, WARM durable decisions,
+and COLD compiled wiki, with
+WAL surviving compaction.
