@@ -51,6 +51,16 @@ git clone https://github.com/maxtechera/orchestrator.git ~/.claude/skills/orches
 
 That's it. Run `/orchestrator sweep` to get started. If no board is connected, the orchestrator will prompt you to run `/orchestrator setup`. See [Your First Ticket](#your-first-ticket) below for a copy-paste template.
 
+## Learn `/orchestrator`
+
+Want the full operating system behind reliable agent teams?
+
+- **Course:** [`/orchestrator` course outline](docs/course-outline.md)
+- **Free lesson workbook:** [The context-limit wall and why single-agent workflows break](docs/sample-lessons/module-1-lesson-1-context-limit-wall.md)
+- **Paid course CTA:** **Aprendé a orquestar equipos de agentes → curso `/orchestrator` ($197)**
+
+The free OSS skill helps you run the workflow. The paid course teaches you how to design the contracts, memory, reliability layers, and production patterns behind it.
+
 ---
 
 ## What people use it for
