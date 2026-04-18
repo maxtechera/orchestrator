@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1100" viewBox="0 0 1440 1100" font-family="DejaVu Sans">
+  <rect width="1440" height="1100" fill="#0d1117"/>
+  <rect x="0" y="0" width="1440" height="76" fill="#161b22"/>
+  <text x="48" y="48" font-size="28" fill="#f0f6fc" font-weight="700">GitHub</text>
+  <rect x="80" y="132" width="1280" height="880" rx="16" fill="#0d1117" stroke="#30363d"/>
+  <text x="120" y="200" font-size="38" font-weight="700" fill="#f0f6fc">maxtechera / orchestrator</text>
+  <text x="120" y="248" font-size="26" fill="#8b949e">Verified AI-agent workflow orchestrator for Claude Code. Dispatch workers, run independent checks, ship only what passes.</text>
+  <text x="120" y="296" font-size="22" fill="#58a6ff">https://github.com/maxtechera/orchestrator/blob/main/docs/course-outline.md</text>
+  <rect x="120" y="334" width="96" height="34" rx="17" fill="#1f6feb"/><text x="144" y="357" font-size="18" fill="#ffffff">Code</text>
+  <rect x="120" y="394" width="94" height="34" rx="17" fill="#1b1f24" stroke="#30363d"/><text x="142" y="417" font-size="16" fill="#c9d1d9">gtm</text>
+  <rect x="226" y="394" width="146" height="34" rx="17" fill="#1b1f24" stroke="#30363d"/><text x="248" y="417" font-size="16" fill="#c9d1d9">ai-agents</text>
+  <rect x="384" y="394" width="156" height="34" rx="17" fill="#1b1f24" stroke="#30363d"/><text x="406" y="417" font-size="16" fill="#c9d1d9">claude-code</text>
+  <rect x="552" y="394" width="98" height="34" rx="17" fill="#1b1f24" stroke="#30363d"/><text x="576" y="417" font-size="16" fill="#c9d1d9">skill</text>
+  <rect x="662" y="394" width="122" height="34" rx="17" fill="#1b1f24" stroke="#30363d"/><text x="686" y="417" font-size="16" fill="#c9d1d9">pipeline</text>
+  <rect x="796" y="394" width="150" height="34" rx="17" fill="#1b1f24" stroke="#30363d"/><text x="820" y="417" font-size="16" fill="#c9d1d9">ship-engine</text>
+  <rect x="958" y="394" width="122" height="34" rx="17" fill="#1b1f24" stroke="#30363d"/><text x="982" y="417" font-size="16" fill="#c9d1d9">content</text>
+  <text x="120" y="488" font-size="20" fill="#8b949e">README preview</text>
+  <rect x="120" y="516" width="930" height="420" rx="18" fill="#161b22" stroke="#30363d"/>
+  <text x="154" y="572" font-size="34" font-weight="700" fill="#f0f6fc">/orchestrator</text>
+  <text x="154" y="620" font-size="24" fill="#c9d1d9">Expert orchestrator of agentic teams. The ticket contract defines work.</text>
+  <text x="154" y="656" font-size="24" fill="#c9d1d9">The verification harness rules completion.</text>
+  <text x="154" y="732" font-size="24" fill="#58a6ff">/plugin marketplace add maxtechera/orchestrator</text>
+  <text x="154" y="774" font-size="24" fill="#58a6ff">clawhub install orchestrator</text>
+  <rect x="1080" y="516" width="240" height="120" rx="12" fill="#111827" stroke="#334155"/>
+  <text x="1112" y="584" font-size="22" fill="#e2e8f0">social card</text>
+</svg>

@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1400" viewBox="0 0 1440 1400" font-family="DejaVu Sans">
+  <rect width="1440" height="1400" fill="#020617"/>
+  <text x="64" y="88" font-size="44" font-weight="700" fill="#f8fafc">MAX-525, GitHub repo optimization proof</text>
+  <g>
+    <rect x="64" y="130" width="620" height="180" rx="22" fill="#0f172a" stroke="#1e293b"/>
+    <text x="92" y="178" font-size="28" font-weight="700" fill="#f8fafc">Updated description</text>
+    <text x="92" y="220" font-size="24" font-weight="400" fill="#e2e8f0">Verified AI-agent workflow orchestrator for</text>
+<text x="92" y="252" font-size="24" font-weight="400" fill="#e2e8f0">Claude Code. Dispatch workers, run</text>
+<text x="92" y="284" font-size="24" font-weight="400" fill="#e2e8f0">independent checks, ship only what passes.</text>
+    <text x="92" y="284" font-size="20" fill="#94a3b8">119 characters</text>
+  </g>
+  <g>
+    <rect x="720" y="130" width="656" height="180" rx="22" fill="#0f172a" stroke="#1e293b"/>
+    <text x="748" y="178" font-size="28" font-weight="700" fill="#f8fafc">Homepage</text>
+    <text x="748" y="222" font-size="22" font-weight="400" fill="#7dd3fc">https://github.com/maxtechera/orchestrator/blob/main/docs/course-outline.md</text>
+  </g>
+  <g>
+    <rect x="64" y="340" width="620" height="160" rx="22" fill="#0f172a" stroke="#1e293b"/>
+    <text x="92" y="388" font-size="28" font-weight="700" fill="#f8fafc">Topics</text>
+    <text x="92" y="432" font-size="22" fill="#bae6fd">gtm  ·  ai-agents  ·  claude-code  ·  skill</text>
+    <text x="92" y="468" font-size="22" fill="#bae6fd">pipeline  ·  ship-engine  ·  content</text>
+  </g>
+  <g>
+    <rect x="720" y="340" width="656" height="160" rx="22" fill="#0f172a" stroke="#1e293b"/>
+    <text x="748" y="388" font-size="28" font-weight="700" fill="#f8fafc">Key skill count</text>
+    <text x="748" y="448" font-size="64" font-weight="700" fill="#86efac">8</text>
+    <text x="818" y="448" font-size="24" fill="#cbd5e1">domain skills in skills/</text>
+  </g>
+  <rect x="64" y="540" width="1312" height="780" rx="26" fill="#0f172a" stroke="#1e293b"/>
+  <text x="92" y="590" font-size="30" font-weight="700" fill="#f8fafc">Social preview card</text>
+  <rect x="92" y="620" width="1256" height="628" rx="24" fill="#111827" stroke="#334155"/>
+  <text x="128" y="684" font-size="34" font-weight="700" fill="#f8fafc">Committed asset: artifacts/MAX-525/orchestrator-social-card.png</text>
+  <text x="128" y="734" font-size="24" fill="#cbd5e1">The final PNG is composited into this proof render during generation.</text>
+</svg>
