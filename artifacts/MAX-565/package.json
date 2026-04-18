@@ -62,9 +62,11 @@
     }
   },
   "proof": {
-    "pr_url": "TBD",
+    "pr_url": "https://github.com/maxtechera/orchestrator/pull/9",
     "preview_urls": [
-      "TBD"
+      "https://github.com/maxtechera/orchestrator/blob/feat/MAX-565-orchestrator-course-outline/artifacts/MAX-565/landing-preview.html",
+      "https://github.com/maxtechera/orchestrator/blob/feat/MAX-565-orchestrator-course-outline/artifacts/MAX-565/course-outline.html",
+      "https://github.com/maxtechera/orchestrator/blob/feat/MAX-565-orchestrator-course-outline/artifacts/MAX-565/sample-lesson.html"
     ],
     "screenshots": {
       "desktop": "artifacts/MAX-565/desktop-preview.png",
