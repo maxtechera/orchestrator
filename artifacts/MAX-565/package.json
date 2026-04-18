@@ -1,0 +1,82 @@
+{
+  "ticket_id": "MAX-565",
+  "content_type": "course-outline",
+  "target_repo": "maxtechera/orchestrator",
+  "brand": "max-techera",
+  "locale": "es",
+  "placements": {
+    "landing_page": {
+      "slug": "/academia/orchestrator/preview",
+      "hero": {
+        "headline": "Run reliable multi-agent workflows in 1 week",
+        "subhead": "El curso /orchestrator te enseña a pasar de prompts sueltos a equipos de agentes con contratos, memoria y guardrails.",
+        "hero_image": "artifacts/MAX-565/landing-page-hero.png"
+      },
+      "features": [
+        {
+          "name": "6 módulos para pasar de single-agent a orquestación en producción",
+          "hero_image": "artifacts/MAX-565/course-outline-render.png",
+          "diagram": "artifacts/MAX-565/course-outline-render.png",
+          "demo_media": "artifacts/MAX-565/orchestrator-preview.mp4"
+        },
+        {
+          "name": "Lección gratuita sobre el context-limit wall",
+          "hero_image": "artifacts/MAX-565/sample-lesson-render.png",
+          "diagram": "artifacts/MAX-565/sample-lesson-render.png",
+          "demo_media": "artifacts/MAX-565/orchestrator-preview.mp4"
+        }
+      ],
+      "ctas": {
+        "primary": "Inscribirme al curso /orchestrator",
+        "secondary": "Ver la lección gratuita"
+      },
+      "tracking_events": [
+        "page_view",
+        "cta_click_primary",
+        "cta_click_secondary",
+        "preview_lesson_play"
+      ],
+      "meta": {
+        "title": "/orchestrator course preview | Max Techera",
+        "description": "Curso de multi-agent orchestration para Claude Code users que quieren correr workflows paralelos confiables.",
+        "og": "artifacts/MAX-565/landing-page-hero.png",
+        "canonical": "/academia/orchestrator/preview"
+      }
+    },
+    "blog_post": {
+      "slug": "/blog/orchestrator-course-outline",
+      "title": "/orchestrator course outline",
+      "meta_description": "Outline del curso /orchestrator con 6 módulos, sample lesson gratis y CTA para la cohorte de $197.",
+      "hero_og": "artifacts/MAX-565/course-outline-render.png",
+      "body_md": "docs/course-outline.md",
+      "faq": [
+        {
+          "q": "Who is /orchestrator for?",
+          "a": "Claude Code users, indie devs, AI-forward engineers, and small agencies ready to scale from one agent to reliable agent teams."
+        },
+        {
+          "q": "What makes this course different from the free OSS tool?",
+          "a": "The OSS tool gives you the execution layer. The course teaches the operating model, templates, memory system, and verification patterns behind reliable orchestration."
+        }
+      ]
+    }
+  },
+  "proof": {
+    "pr_url": "TBD",
+    "preview_urls": [
+      "TBD"
+    ],
+    "screenshots": {
+      "desktop": "artifacts/MAX-565/desktop-preview.png",
+      "mobile": "artifacts/MAX-565/mobile-preview.png",
+      "rendered_html_screenshot": "artifacts/MAX-565/course-outline-render.png",
+      "rendered_html_preview_screenshot": "artifacts/MAX-565/sample-lesson-render.png",
+      "rendered_github_markdown_screenshot": "artifacts/MAX-565/github-markdown-readme.png"
+    },
+    "mp4_attachments": [
+      "artifacts/MAX-565/orchestrator-preview.mp4"
+    ],
+    "outline_doc": "docs/course-outline.md",
+    "sample_lesson": "docs/sample-lessons/module-1-lesson-1-context-limit-wall.md"
+  }
+}
