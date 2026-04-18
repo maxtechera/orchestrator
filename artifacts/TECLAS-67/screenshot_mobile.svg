@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="375" height="812" viewBox="0 0 375 812">
+  <rect width="375" height="812" fill="#0b1020"/>
+  <rect x="10" y="10" width="355" height="792" rx="36" fill="#0f172a"/>
+  <rect x="24" y="24" width="327" height="764" rx="28" fill="#f8fafc"/>
+  <rect x="24" y="24" width="327" height="72" fill="#ffffff"/>
+  <text x="46" y="68" fill="#111827" font-family="DejaVu Sans" font-size="26" font-weight="700">Tu carrito</text>
+  <rect x="42" y="118" width="291" height="76" rx="18" fill="#ffffff" stroke="#e5e7eb" stroke-width="2"/>
+  <rect x="54" y="130" width="56" height="56" rx="16" fill="#d8b4fe"/>
+  <text x="124" y="153" fill="#111827" font-family="DejaVu Sans" font-size="18" font-weight="700">AULA F99 Pro</text>
+  <text x="124" y="176" fill="#6b7280" font-family="DejaVu Sans" font-size="15">$170</text>
+  <rect x="42" y="214" width="291" height="96" rx="18" fill="#faf5ff" stroke="#ddd6fe" stroke-width="2"/>
+  <text x="58" y="238" fill="#6d28d9" font-family="DejaVu Sans" font-size="14" font-weight="700">Compatible con tu teclado</text>
+  <text x="58" y="265" fill="#111827" font-family="DejaVu Sans" font-size="18" font-weight="700">Se suma a tu pedido con 1 clic</text>
+  <text x="58" y="288" fill="#4b5563" font-family="DejaVu Sans" font-size="13">Colapsado por defecto para mantener visible el CTA principal.</text>
+  <rect x="42" y="690" width="291" height="60" rx="18" fill="#111827"/>
+  <text x="140" y="727" fill="#ffffff" font-family="DejaVu Sans" font-size="20" font-weight="700">Ir a pagar</text>
+</svg>
