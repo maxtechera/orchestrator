@@ -1,0 +1,67 @@
+[
+  {
+    "variant": 1,
+    "slug": "problem-agitate-solve",
+    "title": "Your AI said done. It wasn't.",
+    "hooks": [
+      "Your AI said done. It wasn't.",
+      "The ticket closed. The bug survived.",
+      "Most agents grade their own homework."
+    ],
+    "cta": "DM ORCHESTRATOR for the free install guide",
+    "mp4": "docs/assets/MAX-548/MAX-548-01-problem-agitate-solve.mp4",
+    "thumbnail": "docs/assets/MAX-548/MAX-548-01-problem-agitate-solve-thumbnail.png"
+  },
+  {
+    "variant": 2,
+    "slug": "contrarian",
+    "title": "Better prompting is not the fix.",
+    "hooks": [
+      "Better prompting is not the fix.",
+      "The fix is verification, not vibes.",
+      "Prompting harder will not catch a broken link."
+    ],
+    "cta": "Link in bio for the repo and install guide",
+    "mp4": "docs/assets/MAX-548/MAX-548-02-contrarian.mp4",
+    "thumbnail": "docs/assets/MAX-548/MAX-548-02-contrarian-thumbnail.png"
+  },
+  {
+    "variant": 3,
+    "slug": "specific-number",
+    "title": "10 tickets. 3 caught.",
+    "hooks": [
+      "10 tickets. 3 caught before prod.",
+      "One sweep found 3 fake dones.",
+      "7 closed. 3 flagged. That's the point."
+    ],
+    "cta": "Comment sweep and I'll send the repo",
+    "mp4": "docs/assets/MAX-548/MAX-548-03-specific-number.mp4",
+    "thumbnail": "docs/assets/MAX-548/MAX-548-03-specific-number-thumbnail.png"
+  },
+  {
+    "variant": 4,
+    "slug": "insider-reveal",
+    "title": "How agent teams actually scale.",
+    "hooks": [
+      "The insider trick: stop trusting self-reported done.",
+      "How agent teams scale without chaos.",
+      "You do not need more reviewers. You need better verification."
+    ],
+    "cta": "DM ORCHESTRATOR for the install guide",
+    "mp4": "docs/assets/MAX-548/MAX-548-04-insider-reveal.mp4",
+    "thumbnail": "docs/assets/MAX-548/MAX-548-04-insider-reveal-thumbnail.png"
+  },
+  {
+    "variant": 5,
+    "slug": "testimonial",
+    "title": "The moment I stopped trusting done.",
+    "hooks": [
+      "I stopped trusting done after one broken launch.",
+      "One fake done was enough for me.",
+      "This is the system I wish I had sooner."
+    ],
+    "cta": "Link in bio, then DM ORCHESTRATOR",
+    "mp4": "docs/assets/MAX-548/MAX-548-05-testimonial.mp4",
+    "thumbnail": "docs/assets/MAX-548/MAX-548-05-testimonial-thumbnail.png"
+  }
+]
