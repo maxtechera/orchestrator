@@ -1,0 +1,116 @@
+# Module 1, Lesson 1 — The context-limit wall and why single-agent workflows break
+
+**Course:** /orchestrator — Run reliable multi-agent workflows in 1 week  
+**Lesson type:** Free public lesson workbook + recording guide  
+**Estimated video length:** 12 to 15 minutes  
+**Placement:** `/academia/orchestrator/preview`
+
+## Lesson promise
+By the end of this lesson, the student will understand why a single agent feels magical at first and then quietly becomes unreliable as tasks get larger, longer, and more interdependent.
+
+## What the student should walk away with
+- A clear mental model of the context-limit wall
+- Four common failure modes in single-agent execution
+- A simple rule for deciding when to keep one agent versus orchestrate a team
+- A worksheet they can use on one of their own workflows today
+
+## Teaching arc
+### 1. Hook
+Open with a familiar moment:
+
+> “Your agent looked brilliant for the first 20 minutes. Then it forgot part of the brief, rewrote something another step already handled, and confidently moved forward like nothing broke.”
+
+Frame the lesson around one idea: the problem is not that the model is bad, it is that you are asking one worker to hold too much state, too many goals, and too many dependencies at once.
+
+### 2. Core concept
+**The context-limit wall** is the point where a single agent can no longer reliably carry all of the instructions, decisions, intermediate outputs, and changing constraints required to finish the job well.
+
+When that wall shows up, performance does not usually fail all at once. It degrades gradually:
+- details disappear
+- handoffs stay implicit
+- repeated work increases
+- confidence stays high while correctness drops
+
+### 3. The four failure modes
+#### Failure mode 1 — context loss
+The agent drops an earlier requirement because the active context shifted toward newer instructions.
+
+#### Failure mode 2 — duplicate work
+The agent recreates something that already exists because the task history is no longer salient.
+
+#### Failure mode 3 — drift
+The agent keeps working, but the output slowly diverges from the original goal, repo, or delivery surface.
+
+#### Failure mode 4 — invisible blockers
+The agent encounters uncertainty, makes an unstated assumption, and continues without exposing the decision.
+
+## Whiteboard example
+Use one concrete workflow:
+1. Research positioning
+2. Draft a landing page
+3. Update the README
+4. Create screenshots
+5. Open a PR
+6. Attach proof to the ticket
+
+Then show why one agent struggles to do all six reliably without a contract, scoped ownership, and verification.
+
+## The rule of thumb
+Stay with a single agent when:
+- the task is short
+- the output is one artifact
+- dependencies are low
+- failure is cheap
+
+Move to orchestration when:
+- the task spans multiple artifacts or surfaces
+- proof matters as much as the artifact
+- handoffs or retries are likely
+- you need parallel speed without output collisions
+
+## Workbook exercise
+### Part 1 — Audit one workflow
+Pick a real workflow you run with one agent today.
+
+- What is the task?
+- How many distinct artifacts does it produce?
+- How many tools or systems does it touch?
+- Where does the agent usually forget details?
+- Where does it repeat work?
+- Where does it make hidden assumptions?
+
+### Part 2 — Mark the pressure points
+Score each item from 1 to 5:
+- Context load
+- Number of dependencies
+- Number of deliverables
+- Cost of failure
+- Need for proof or verification
+
+If the total is 16 or more, the workflow is a strong orchestration candidate.
+
+### Part 3 — Redesign prompt
+Write one sentence answering:
+
+> “If I split this into a coordinator plus scoped executors, what would each worker own?”
+
+## Instructor notes
+- Keep this lesson tactical, not philosophical
+- Use concrete delivery examples, not abstract AI talk
+- Make the student feel relief: the chaos they feel is structural, not personal
+- End by pointing directly into Module 2, where ticket contracts solve the drift problem
+
+## Suggested closing CTA
+> If this feels familiar, good. You do not need a smarter monolithic prompt. You need a better operating model. In the next module, we build the ticket contract that makes multi-agent work reliable.
+
+## Recording checklist
+- [ ] Show one failed single-agent workflow example
+- [ ] Draw the four failure modes on screen
+- [ ] Walk through the scoring worksheet
+- [ ] Give the keep-one-agent versus orchestrate rule
+- [ ] Bridge into ticket contracts
+
+## Reusable pull quotes
+- “Context windows are not operating systems.”
+- “Single-agent magic breaks the moment the task becomes a system.”
+- “Orchestration starts when proof matters, not just output.”
