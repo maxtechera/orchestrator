@@ -176,6 +176,47 @@
         "og": "proof/MAX-570/max570-reel-2-fix-thumb.png",
         "canonical": "https://github.com/maxtechera/ship"
       }
+    },
+    "instagram_carousel": {
+      "hook": "Your launch is not broken because you need more prompts. It is broken because every handoff lives in a different place.",
+      "slide_count": 5,
+      "slides": [
+        {
+          "slide": 1,
+          "headline": "Your product is not blocked by code",
+          "body": "Most launch delays come from fragmented intake, strategy, content, and publishing.",
+          "visual_ref": "proof/MAX-570/max570-reel-1-problem-proof.png"
+        },
+        {
+          "slide": 2,
+          "headline": "Manual GTM chaos leaks momentum",
+          "body": "Every handoff that stays in your head adds delay, context loss, and launch stress.",
+          "visual_ref": "proof/MAX-570/max570-reel-1-problem-thumb.png"
+        },
+        {
+          "slide": 3,
+          "headline": "The fix is one coordinated pipeline",
+          "body": "`/ship` moves from intake to validate to strategy to content to launch to measure without losing the thread.",
+          "visual_ref": "proof/MAX-570/max570-reel-2-fix-proof.png"
+        },
+        {
+          "slide": 4,
+          "headline": "Named agents make handoffs explicit",
+          "body": "Validator, strategist, copywriter, launcher, and analyst each own a stage instead of you juggling all of them.",
+          "visual_ref": "proof/MAX-570/max570-reel-2-fix-thumb.png"
+        },
+        {
+          "slide": 5,
+          "headline": "Steal the operating model",
+          "body": "DM SHIP for the OSS repo. Reply COURSE for the $497 training that breaks down the full architecture.",
+          "visual_ref": "proof/MAX-570/max570-reel-3-architecture-thumb.png"
+        }
+      ],
+      "caption": "Launch chaos is usually a handoff problem, not a talent problem. This carousel breaks down the problem, the /ship fix, and the architecture behind the $497 course.",
+      "cta": {
+        "action": "DM \"SHIP\" or reply \"COURSE\"",
+        "reason_for_now": "because the next launch usually breaks on coordination before it breaks on execution"
+      }
     }
   },
   "proof": {
