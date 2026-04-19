@@ -1,0 +1,105 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+:root { color-scheme: dark; }
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Inter, ui-sans-serif, system-ui, sans-serif; background: #07111f; color: #e5eefc; }
+.wrap { max-width: 1140px; margin: 0 auto; padding: 48px 32px 88px; }
+.hero { padding: 44px; border-radius: 32px; background: linear-gradient(135deg, #0f172a, #172554 45%, #0f766e); border: 1px solid rgba(255,255,255,.08); box-shadow: 0 20px 80px rgba(0,0,0,.35); }
+.eyebrow { color: #93c5fd; text-transform: uppercase; letter-spacing: .12em; font-size: 12px; font-weight: 700; margin-bottom: 14px; }
+h1,h2,h3 { margin: 0 0 16px; }
+p { color: #d7e6ff; line-height: 1.6; }
+.grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 24px; margin-top: 24px; }
+.card { border-radius: 24px; padding: 24px; background: rgba(15,23,42,.86); border: 1px solid rgba(255,255,255,.08); box-shadow: 0 12px 40px rgba(0,0,0,.22); }
+.btnrow { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 24px; }
+.btn { display:inline-flex; padding:14px 20px; border-radius:999px; font-weight:700; text-decoration:none; }
+.btn.primary { background:#67e8f9; color:#082f49; }
+.btn.secondary { border:1px solid rgba(103,232,249,.4); color:#cffafe; }
+pre { white-space: pre-wrap; word-wrap: break-word; margin: 0; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 15px; line-height: 1.55; color: #dbeafe; }
+.kpi { display:inline-block; padding: 7px 12px; border-radius: 999px; background: rgba(103,232,249,.12); color: #a5f3fc; font-weight: 700; margin-right: 10px; margin-bottom: 10px; }
+.email { background: #f8fafc; color:#0f172a; }
+.email p, .email li, .email h1, .email h2, .email h3 { color:#0f172a; }
+.email .shell { max-width: 760px; margin: 32px auto; background:white; border-radius: 24px; padding: 40px; box-shadow: 0 18px 60px rgba(15,23,42,.18); }
+.github { background: #0d1117; }
+.github .card { background: #0d1117; border-color: #30363d; }
+.github pre { color: #c9d1d9; }
+.slide { width: 1080px; height: 1920px; padding: 90px 80px; background: linear-gradient(180deg, #020617, #0f172a 45%, #164e63); color: white; display:flex; flex-direction:column; justify-content:space-between; }
+.slide h1 { font-size: 82px; line-height: 1.04; }
+.slide h2 { font-size: 54px; line-height: 1.1; color:#a5f3fc; }
+.slide p { font-size: 42px; line-height: 1.3; color:#dbeafe; }
+.slide .footer { font-size: 34px; color:#67e8f9; }
+</style></head><body><div class="wrap"><section class="hero"><div class="eyebrow">Rendered course outline</div><h1>AI Memory Systems / Memoria para Agentes IA</h1><p>Six modules covering failure modes, architecture, WAL safety, Obsidian setup, cross-platform sync, and the weekly memory ritual.</p></section><section class="grid" style="grid-template-columns:1fr; margin-top:28px"><section class="card"><h2># AI Memory Systems / Memoria para Agentes IA</h2><pre></pre></section>
+<section class="card"><h2>Positioning</h2><pre>- Offer stack: `/memory`
+- Free tool: `github.com/maxtechera/memory`
+- Course price: `$97`
+- Tagline EN: `Build the memory layer your AI agents are missing`
+- Tagline ES: `Construye el sistema de memoria que tus agentes necesitan`
+- Funnel trigger: GitHub install succeeds, then the user hits the Obsidian configuration wall and wants the full working system.</pre></section>
+<section class="card"><h2>Promise</h2><pre>In one compact course, the student goes from "my agent forgets everything between sessions" to a durable memory stack with HOT routing, WARM topic memory, a COLD vault, WAL safety, Obsidian sync, and a weekly memory-maintenance ritual.</pre></section>
+<section class="card"><h2>Ideal student</h2><pre>- Claude Code, OpenClaw, and Gemini CLI users
+- Builders shipping multi-session agents
+- Founders or operators who keep losing context between runs
+- People who want a practical memory system, not just RAG theory</pre></section>
+<section class="card"><h2>Core transformation</h2><pre>Before: fragile agent sessions, repeated setup, context drift, and handoff loss.
+After: persistent memory writes, cleaner continuity across tools, durable notes in Obsidian, and a repeatable protocol for keeping agent context alive.</pre></section>
+<section class="card"><h2>Module 1. Why agents forget</h2><pre>### Outcome
+Understand why context windows, compaction, and session loss break otherwise-good agent workflows.
+### Lessons
+1. Context windows are not memory
+2. Why compaction loses the exact details you need later
+3. Session loss, retries, and handoff drift in real agent work
+4. What “durable context” actually needs to preserve
+### Exercise
+Map a recent workflow failure to one of the four memory failure modes.</pre></section>
+<section class="card"><h2>Module 2. The 3-tier architecture</h2><pre>### Outcome
+Design the HOT router, WARM topic memory, and COLD vault for a working memory stack.
+### Lessons
+1. HOT memory, what stays in-session and what gets routed out
+2. WARM memory, topic files and working summaries
+3. COLD memory, durable archives and source-of-truth notes
+4. Routing rules, freshness, and retrieval paths
+### Exercise
+Draft a personal 3-tier map for one live project.</pre></section>
+<section class="card"><h2>Module 3. WAL protocol</h2><pre>### Outcome
+Use write-ahead logging so critical facts survive compaction and crashes.
+### Lessons
+1. Why write-before-compaction matters
+2. WAL entries, structure, and minimum metadata
+3. Crash recovery and replay flows
+4. Safe checkpoints before summarization
+### Exercise
+Write a WAL template for decisions, blockers, and next actions.</pre></section>
+<section class="card"><h2>Module 4. Install /memory + configure Obsidian</h2><pre>### Outcome
+Get `/memory` running with Obsidian as the durable source of truth.
+### Lessons
+1. Install the free tool from GitHub
+2. Folder structure and topic conventions
+3. Obsidian vault setup for agent-readable notes
+4. First sync and first successful recall
+### Exercise
+Connect one repo workflow to a vault and confirm notes appear in the right topic file.</pre></section>
+<section class="card"><h2>Module 5. Cross-platform sync</h2><pre>### Outcome
+Move memory cleanly across Claude Code, OpenClaw, and Gemini CLI.
+### Lessons
+1. Shared memory conventions across tools
+2. What travels well between assistants and what should not
+3. Prompt contracts for writes, reads, and recalls
+4. Handoff patterns for multi-tool continuity
+### Exercise
+Run one task across all three tools while preserving the same project memory.</pre></section>
+<section class="card"><h2>Module 6. TTL decay + the weekly /memory dream ritual</h2><pre>### Outcome
+Keep memory fresh without letting the vault bloat or rot.
+### Lessons
+1. TTL decay for stale context
+2. What to summarize, archive, or delete
+3. Weekly dream ritual for consolidation
+4. Measuring memory quality over time
+### Exercise
+Schedule and run the first weekly memory-maintenance ritual.</pre></section>
+<section class="card"><h2>Bonuses</h2><pre>- Ready-to-copy WAL templates
+- Obsidian folder map
+- Cross-platform prompt snippets
+- Weekly memory review checklist</pre></section>
+<section class="card"><h2>English sales angle</h2><pre>Build the memory layer your AI agents are missing. Stop re-explaining your project every session.</pre></section>
+<section class="card"><h2>Spanish sales angle</h2><pre>Construye el sistema de memoria que tus agentes necesitan. Deja de reiniciar el contexto cada vez que vuelves a trabajar.</pre></section>
+<section class="card"><h2>CTA stack</h2><pre>- Primary CTA: Enroll in AI Memory Systems
+- Secondary CTA: Watch the free memory lesson
+- GitHub CTA: Installed `/memory` but got stuck at Obsidian? Take the full course.</pre></section></section></div></body></html>

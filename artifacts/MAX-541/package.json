@@ -1,0 +1,126 @@
+{
+  "ticket_id": "MAX-541",
+  "content_type": "course-outline",
+  "target_repo": "maxtechera/orchestrator",
+  "target_system": "mailerlite",
+  "brand": "max-techera",
+  "locale": "bilingual",
+  "offer": {
+    "slug": "/memory",
+    "name": "AI Memory Systems / Memoria para Agentes IA",
+    "price_usd": 97,
+    "tagline_en": "Build the memory layer your AI agents are missing",
+    "tagline_es": "Construye el sistema de memoria que tus agentes necesitan"
+  },
+  "placements": {
+    "instagram_reel": {
+      "caption": "Your AI agent is not forgetting because the model is weak. It is forgetting because you never gave it a memory system.\n\nIn AI Memory Systems, I show the 3-tier stack, WAL before compaction, Obsidian as source of truth, and the weekly ritual that keeps memory clean across Claude Code, OpenClaw, and Gemini CLI.\n\nIf you installed /memory and got stuck at the Obsidian step, this is the missing layer.",
+      "cta": "Enroll in AI Memory Systems for $97",
+      "hashtags": ["#AIMemory", "#AIAgents", "#Obsidian", "#ClaudeCode", "#OpenClaw", "#GeminiCLI", "#Automation", "#BuildInPublic"],
+      "hook_variants": [
+        "Your AI agent does not have a memory problem. You do.",
+        "Installed /memory, then got stuck at Obsidian?",
+        "This is the missing memory layer behind reliable AI agents."
+      ],
+      "media": {
+        "mp4": "artifacts/MAX-541/final_mp4_attachment.mp4",
+        "thumbnail": "artifacts/MAX-541/reel-cover.png"
+      }
+    },
+    "instagram_carousel": {
+      "slides": [
+        "Why agents forget: context windows are not memory.",
+        "The 3-tier stack: HOT router, WARM topics, COLD vault.",
+        "WAL before compaction so key facts survive crashes.",
+        "Obsidian becomes the durable source of truth.",
+        "Cross-platform sync across Claude Code, OpenClaw, and Gemini CLI.",
+        "TTL decay + weekly dream ritual keep memory clean."
+      ],
+      "caption": "A practical course for builders who are tired of re-explaining the project every session.",
+      "cta": "Watch the free lesson or enroll for $97"
+    },
+    "tiktok": {
+      "script": "If your agent keeps losing context, the fix is not a longer prompt. The fix is a real memory system. In this course I break down the 3-tier architecture, WAL before compaction, Obsidian sync, and how to keep memory alive across Claude Code, OpenClaw, and Gemini CLI.",
+      "cta": "Comment MEMORY or grab the course for $97"
+    },
+    "youtube_short": {
+      "title": "Why AI agents forget and how to fix it",
+      "description": "A short preview of AI Memory Systems, the course behind /memory. Learn HOT/WARM/COLD memory, WAL safety, Obsidian sync, and weekly cleanup.",
+      "cta": "Full course at $97"
+    },
+    "x_thread": {
+      "tweets": [
+        { "text": "Most AI agents do not fail because the model is weak. They fail because context disappears between sessions." },
+        { "text": "AI Memory Systems is a practical course built around /memory: HOT routing, WARM topic files, and a COLD vault for durable context." },
+        { "text": "It also shows why WAL before compaction matters. If you do not write the important facts before summarization, they are gone when the session crashes." },
+        { "text": "You will wire Obsidian as the source of truth, sync across Claude Code, OpenClaw, and Gemini CLI, and learn a weekly ritual for keeping memory clean." },
+        { "text": "If you installed /memory but got stuck at the Obsidian wall, this course is the missing layer. $97." }
+      ],
+      "cta": "Build the memory layer your AI agents are missing"
+    },
+    "linkedin_post": {
+      "headline": "Build the memory layer your AI agents are missing",
+      "body": "A lot of agent workflows break for a simple reason: the team confuses context with memory.\n\nIn AI Memory Systems, I teach a practical stack for durable context: HOT routing inside the live session, WARM topic memory for active work, and a COLD vault for long-term recall. We also cover WAL before compaction, Obsidian as source of truth, cross-platform sync across Claude Code, OpenClaw, and Gemini CLI, plus a weekly maintenance ritual.\n\nIf you installed /memory and realized the hard part starts after the install, this course is for you.",
+      "cta": "Enroll for $97"
+    },
+    "email": {
+      "provider": "mailerlite",
+      "subject": "Installed /memory, but stuck at Obsidian?",
+      "preview_text": "The free repo gets you started. This course gives you the full memory system.",
+      "body_markdown": "You installed /memory. Great.\n\nThen the real problem showed up.\n\nHow do you structure the vault? What should live in HOT memory versus WARM topic files? When should you write before compaction? How do you keep Claude Code, OpenClaw, and Gemini CLI aligned without turning your notes into a mess?\n\nThat is exactly what AI Memory Systems covers.\n\nInside the course:\n- Why agents forget\n- The 3-tier memory architecture\n- WAL before compaction\n- Obsidian as source of truth\n- Cross-platform sync\n- TTL decay and the weekly memory ritual\n\nIf you hit the Obsidian wall after installing /memory, this is the next step.\n\n**Enroll for $97**",
+      "utm": {
+        "source": "mailerlite",
+        "medium": "email",
+        "campaign": "max-541-ai-memory-systems"
+      }
+    },
+    "blog_post": {
+      "slug": "/blog/ai-memory-systems-course-outline",
+      "title": "AI Memory Systems course outline",
+      "meta_description": "A practical course outline for builders who want durable memory across Claude Code, OpenClaw, and Gemini CLI.",
+      "hero_og": "artifacts/MAX-541/course-outline-render.png",
+      "body_md": "docs/memory-course-outline.md"
+    },
+    "landing_page": {
+      "slug": "/courses/ai-memory-systems",
+      "hero": {
+        "headline": "Build the memory layer your AI agents are missing",
+        "subhead": "A practical course for durable agent memory, Obsidian sync, and cross-platform continuity.",
+        "hero_image": "artifacts/MAX-541/landing-hero.png"
+      },
+      "features": [
+        { "name": "6 modules from failure modes to weekly cleanup", "diagram": "artifacts/MAX-541/course-outline-render.png" },
+        { "name": "Implementation-first lessons using /memory and Obsidian", "diagram": "artifacts/MAX-541/email-render.png" }
+      ],
+      "ctas": {
+        "primary": "Enroll for $97",
+        "secondary": "Watch the free lesson"
+      },
+      "tracking_events": ["page_view", "cta_click_primary", "cta_click_secondary", "email_click"],
+      "meta": {
+        "title": "AI Memory Systems | Max Techera",
+        "description": "Build a durable memory layer for AI agents with /memory, Obsidian, WAL, and cross-platform sync.",
+        "og": "artifacts/MAX-541/landing-hero.png",
+        "canonical": "/courses/ai-memory-systems"
+      }
+    }
+  },
+  "proof": {
+    "pr_url": "TBD",
+    "deployed_url": "artifacts/MAX-541/landing-preview.html",
+    "preview_urls": [
+      "artifacts/MAX-541/landing-preview.html",
+      "artifacts/MAX-541/course-outline.html",
+      "artifacts/MAX-541/email-preview.html",
+      "artifacts/MAX-541/github-readme.html"
+    ],
+    "screenshots": {
+      "screenshot_desktop": "artifacts/MAX-541/screenshot_desktop.png",
+      "screenshot_mobile": "artifacts/MAX-541/screenshot_mobile.png",
+      "rendered_html_screenshot": "artifacts/MAX-541/course-outline-render.png",
+      "rendered_html_preview_screenshot": "artifacts/MAX-541/email-render.png",
+      "rendered_github_markdown_screenshot": "artifacts/MAX-541/rendered_github_markdown_screenshot.png"
+    },
+    "final_mp4_attachment": "artifacts/MAX-541/final_mp4_attachment.mp4"
+  }
+}
