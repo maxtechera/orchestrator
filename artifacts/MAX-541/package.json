@@ -106,7 +106,7 @@
     }
   },
   "proof": {
-    "pr_url": "TBD",
+    "pr_url": "https://github.com/maxtechera/orchestrator/pull/23",
     "deployed_url": "artifacts/MAX-541/landing-preview.html",
     "preview_urls": [
       "artifacts/MAX-541/landing-preview.html",
