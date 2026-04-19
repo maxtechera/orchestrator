@@ -3,9 +3,9 @@
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Version](https://img.shields.io/badge/version-1.0.0-green.svg)](CHANGELOG.md)
 
-**AI teams do not usually fail because they are incapable. They fail because they go idle, pick the wrong next ticket, and declare work finished without proof.**
+**Most AI teams do not fail because the model is weak. They fail because work goes idle, the wrong ticket gets picked up, and status updates substitute for proof.**
 
-**/orchestrator is the workflow engine for that gap. It keeps ticketed work moving, routes it to the right domain specialist, and refuses completion until a proof pack exists.**
+**/orchestrator is the workflow engine for that gap. It keeps ticketed work moving, routes execution by domain, and refuses completion until a proof pack exists.**
 
 Claude Code:
 ```bash
@@ -168,7 +168,7 @@ These are the memorable part of the system, and they were written after real inc
    Dispatch loops burn time and duplicate effort. *(incident: 2026-03-10)*
 
 2. **Never merge PRs**  
-   The orchestrator can prepare the change and the proof, but merge stays human. *(battle-tested across multiple incidents)*
+   The orchestrator can prepare the change and the proof, but merge stays human. *(incident: 2026-04-16)*
 
 3. **Never modify your own cron job**  
    Self-editing automation creates recovery nightmares. *(incident: 2026-02-25)*
