@@ -44,7 +44,16 @@
         }
       ],
       "caption": "Manual GTM chaos is not a founder personality flaw. It is a systems problem. This /ship reel set shows the problem, the fix, and the architecture behind a coordinated launch pipeline. DM SHIP for the repo, reply COURSE for the $497 training.",
-      "hashtags": ["#ship", "#gtm", "#aiagents", "#opensource", "#indiehackers", "#claudecode", "#productlaunch", "#mailerlite"]
+      "hashtags": [
+        "#ship",
+        "#gtm",
+        "#aiagents",
+        "#opensource",
+        "#indiehackers",
+        "#claudecode",
+        "#productlaunch",
+        "#mailerlite"
+      ]
     },
     "tiktok": {
       "caption": "If intake, strategy, content, and launch all live in different tools, your GTM is leaking time. This is the /ship system that fixes it. Comment COURSE for the training.",
@@ -68,10 +77,18 @@
     },
     "x_thread": {
       "tweets": [
-        {"text": "Most solo founders do not have a product problem. They have a launch coordination problem."},
-        {"text": "Intake lives in one tab, strategy in another, content in another, and launch still depends on a human carrying context across the whole thing."},
-        {"text": "That is what /ship is built to fix. One command kicks off intake, validation, strategy, content, launch, and measurement as a coordinated system."},
-        {"text": "The new OSS demo-first content bundle breaks it into 3 reels: the problem, the fix, and the architecture. DM SHIP for the repo. Reply COURSE for the $497 training."}
+        {
+          "text": "Most solo founders do not have a product problem. They have a launch coordination problem."
+        },
+        {
+          "text": "Intake lives in one tab, strategy in another, content in another, and launch still depends on a human carrying context across the whole thing."
+        },
+        {
+          "text": "That is what /ship is built to fix. One command kicks off intake, validation, strategy, content, launch, and measurement as a coordinated system."
+        },
+        {
+          "text": "The new OSS demo-first content bundle breaks it into 3 reels: the problem, the fix, and the architecture. DM SHIP for the repo. Reply COURSE for the $497 training."
+        }
       ],
       "cta": {
         "action": "Reply \"COURSE\"",
@@ -106,8 +123,14 @@
       "hero_og": "proof/MAX-570/max570-reel-3-architecture-thumb.png",
       "body_md": "content/reels/MAX-570-ship-oss-demo-first-package.md",
       "faq": [
-        {"q": "Who is /ship for?", "a": "Solo founders, indie hackers, AI builders, and Claude Code users who want a repeatable launch workflow."},
-        {"q": "What does the course add beyond the OSS repo?", "a": "The $497 course teaches the full operating model, stage gates, and how to run the handoffs behind the demo."}
+        {
+          "q": "Who is /ship for?",
+          "a": "Solo founders, indie hackers, AI builders, and Claude Code users who want a repeatable launch workflow."
+        },
+        {
+          "q": "What does the course add beyond the OSS repo?",
+          "a": "The $497 course teaches the full operating model, stage gates, and how to run the handoffs behind the demo."
+        }
       ]
     },
     "landing_page": {
@@ -141,7 +164,12 @@
         "primary": "DM SHIP",
         "secondary": "Reply COURSE"
       },
-      "tracking_events": ["page_view", "cta_click_primary", "cta_click_secondary", "video_play"],
+      "tracking_events": [
+        "page_view",
+        "cta_click_primary",
+        "cta_click_secondary",
+        "video_play"
+      ],
       "meta": {
         "title": "/ship OSS demo-first content bundle",
         "description": "Three reels, hook library, newsletter, and CTA copy for the /ship launch pipeline.",
@@ -151,7 +179,7 @@
     }
   },
   "proof": {
-    "pr_url": "TBD",
+    "pr_url": "https://github.com/maxtechera/orchestrator/pull/20",
     "preview_urls": [
       "artifacts/MAX-570/preview.html",
       "artifacts/MAX-570/rendered-markdown.html"
