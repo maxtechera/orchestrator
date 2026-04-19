@@ -1,0 +1,74 @@
+{
+  "ticket_id": "MAX-533",
+  "content_type": "content_asset",
+  "target_repo": "maxtechera/orchestrator",
+  "brand": "max-techera",
+  "locale": "en",
+  "placements": {
+    "instagram_reel": {
+      "text": "Your AI workflow is not breaking because the model is weak. It is breaking because context disappears between sessions.\n\nIn this memory demo, SESSION-STATE.md gets created automatically mid-session, the key decision is written to durable memory, and the note shows up in Obsidian without manual cleanup.\n\nIf you want the system behind it, subscribe to NODO for weekly agent workflows, memory patterns, and launch ops.",
+      "cta": {
+        "action": "Subscribe to NODO",
+        "reason_for_now": "because most multi-session agent work fails on memory drift before it fails on raw capability"
+      },
+      "hashtags": [
+        "#memory",
+        "#aiagents",
+        "#obsidian",
+        "#claudecode",
+        "#buildinpublic",
+        "#nodo",
+        "#workflow",
+        "#automation"
+      ],
+      "media": {
+        "mp4": "artifacts/MAX-533/final_mp4_attachment.mp4",
+        "thumbnail": "artifacts/MAX-533/reel-cover.png"
+      },
+      "hook_variants": [
+        "Your AI workflow is not breaking because the model is weak. It is breaking because context disappears.",
+        "Watch SESSION-STATE.md appear mid-session and sync into Obsidian.",
+        "This is what durable memory looks like in a real agent workflow."
+      ],
+      "manychat_trigger": {
+        "keyword": "NODO",
+        "flow_id": "TBD_MAX_PROVIDES"
+      }
+    },
+    "x_thread": {
+      "tweets": [
+        {
+          "text": "Most agent workflows do not fail on intelligence. They fail when context evaporates between sessions."
+        },
+        {
+          "text": "In this memory demo, SESSION-STATE.md is created automatically while the work is still live, so the session has a real working-memory trail instead of a vague recap at the end."
+        },
+        {
+          "text": "Then the key decision lands in Obsidian, which means the next session starts with durable context instead of re-discovery."
+        },
+        {
+          "text": "That is the real win: less drift, cleaner handoffs, and fewer 'wait, what were we doing?' moments in multi-agent work."
+        },
+        {
+          "text": "If you want more systems like this, subscribe to NODO. I share the workflows, memory patterns, and launch mechanics behind what actually ships."
+        }
+      ],
+      "cta": {
+        "action": "Subscribe to NODO",
+        "reason_for_now": "to steal the memory layer before your next agent run loses state again"
+      }
+    }
+  },
+  "proof": {
+    "pr_url": "https://github.com/maxtechera/orchestrator/pull/21",
+    "preview_urls": [
+      "artifacts/MAX-533/preview.html",
+      "artifacts/MAX-533/rendered-markdown.html"
+    ],
+    "screenshots": {
+      "rendered_html_screenshot": "artifacts/MAX-533/rendered_html_screenshot.png",
+      "rendered_html_preview_screenshot": "artifacts/MAX-533/rendered_html_preview_screenshot.png"
+    },
+    "final_mp4_attachment": "artifacts/MAX-533/final_mp4_attachment.mp4"
+  }
+}
