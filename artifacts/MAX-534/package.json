@@ -1,0 +1,48 @@
+{
+  "ticket_id": "MAX-534",
+  "content_type": "marketplace-optimization-pack",
+  "target_repo": "maxtechera/orchestrator",
+  "brand": "max-techera",
+  "locale": "en",
+  "placements": {
+    "github_repo": {
+      "target_repo": "maxtechera/memory",
+      "description": "Durable memory for AI agents with Obsidian sync, session hooks, and recall flows.",
+      "description_length": 81,
+      "topics": [
+        "memory",
+        "ai-agents",
+        "claude-code",
+        "obsidian",
+        "session-hooks",
+        "knowledge-management"
+      ],
+      "social_preview_card": "artifacts/MAX-534/social-preview-card.png"
+    },
+    "claude_marketplace": {
+      "install_command": "/plugin marketplace add maxtechera/memory",
+      "manifest_files": [
+        ".claude-plugin/plugin.json",
+        ".claude-plugin/marketplace.json"
+      ],
+      "install_test_status": "ready-to-run",
+      "readme_doc": "docs/memory-marketplace-package.md"
+    }
+  },
+  "proof": {
+    "pr_url": "https://github.com/maxtechera/orchestrator/pull/27",
+    "preview_urls": [
+      "artifacts/MAX-534/preview.html",
+      "artifacts/MAX-534/github-readme.html"
+    ],
+    "screenshots": {
+      "social_preview_card": "artifacts/MAX-534/social-preview-card.png",
+      "rendered_github_markdown_screenshot": "artifacts/MAX-534/rendered_github_markdown_screenshot.png",
+      "rendered_preview_screenshot": "artifacts/MAX-534/rendered_preview_screenshot.png"
+    },
+    "docs": [
+      "docs/memory-marketplace-package.md",
+      "artifacts/MAX-534/proof-pack.md"
+    ]
+  }
+}

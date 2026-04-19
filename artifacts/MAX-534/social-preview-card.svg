@@ -1,0 +1,28 @@
+<svg width="1280" height="640" viewBox="0 0 1280 640" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1280" y2="640" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0B1020"/>
+      <stop offset="1" stop-color="#1E3A6D"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="640" fill="url(#bg)"/>
+  <rect x="56" y="52" width="1168" height="536" rx="28" fill="#10182E" stroke="#5C82FF" stroke-width="2"/>
+  <text x="96" y="110" fill="#8FB7FF" font-family="Arial, Helvetica, sans-serif" font-size="24">memory</text>
+  <text x="96" y="190" fill="#F0F4FF" font-family="Arial, Helvetica, sans-serif" font-size="64" font-weight="700">Durable memory for AI agents</text>
+  <text x="96" y="250" fill="#CEDCFF" font-family="Arial, Helvetica, sans-serif" font-size="30">Obsidian sync, session hooks, and recall flows</text>
+
+  <circle cx="108" cy="352" r="9" fill="#72E6AA"/>
+  <text x="132" y="360" fill="#E6ECFC" font-family="Arial, Helvetica, sans-serif" font-size="28">Claude marketplace ready</text>
+  <circle cx="108" cy="410" r="9" fill="#72E6AA"/>
+  <text x="132" y="418" fill="#E6ECFC" font-family="Arial, Helvetica, sans-serif" font-size="28">GitHub topics tuned</text>
+  <circle cx="108" cy="468" r="9" fill="#72E6AA"/>
+  <text x="132" y="476" fill="#E6ECFC" font-family="Arial, Helvetica, sans-serif" font-size="28">README install block included</text>
+
+  <rect x="96" y="510" width="680" height="64" rx="18" fill="#0B1020" stroke="#4363C1" stroke-width="2"/>
+  <text x="124" y="551" fill="#D2DEFF" font-family="Courier New, monospace" font-size="24">/plugin marketplace add maxtechera/memory</text>
+
+  <rect x="930" y="130" width="220" height="240" rx="24" fill="#16203D" stroke="#5C82FF" stroke-width="2"/>
+  <text x="988" y="202" fill="#FFB55C" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700">HOT</text>
+  <text x="976" y="262" fill="#72E6AA" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700">WARM</text>
+  <text x="983" y="322" fill="#8FB7FF" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700">COLD</text>
+</svg>
