@@ -1,0 +1,80 @@
+{
+  "ticket_id": "MAX-530",
+  "content_type": "social-pack",
+  "target_repo": "maxtechera/orchestrator",
+  "brand": "max-techera",
+  "locale": "en",
+  "placements": {
+    "instagram_reel": {
+      "text": "We broke prod, then turned the postmortem into five operating rules for AI teams.\n\n1. No direct prod writes from autonomous flows.\n2. Human approval for risky actions.\n3. Proof before status changes.\n4. Rollback paths before confidence.\n5. Short feedback loops over blind autonomy.\n\nIf you want more operator systems built from real incidents, subscribe to NODO. Reply RULES if you want the checklist.",
+      "cta": {
+        "action": "Subscribe to NODO",
+        "reason_for_now": "because most AI teams need operating rules before they need more prompts"
+      },
+      "hashtags": [
+        "#aiops",
+        "#postmortem",
+        "#buildinpublic",
+        "#aiagents",
+        "#devops",
+        "#nodo",
+        "#operators",
+        "#workflow"
+      ],
+      "media": {
+        "mp4": "artifacts/MAX-530/final_mp4_attachment.mp4",
+        "thumbnail": "artifacts/MAX-530/reel-cover.png"
+      },
+      "hook_variants": [
+        "We broke prod, then wrote 5 rules every AI team should have.",
+        "The incident was painful. The rules that came out of it are now non-negotiable.",
+        "If AI is touching prod, you need rules before you need more prompts."
+      ],
+      "secondary_cta": {
+        "action": "Reply RULES",
+        "reason_for_now": "to get the operator checklist version of the postmortem"
+      }
+    },
+    "x_thread": {
+      "tweets": [
+        {
+          "text": "We broke prod, and the useful outcome was not the incident itself. It was the five operating rules we wrote immediately after."
+        },
+        {
+          "text": "Rule 1: no direct prod writes from autonomous flows. If the action is live and reversible costs are high, the system should stop short."
+        },
+        {
+          "text": "Rule 2: risky actions need a human approval step. Not because humans are perfect, but because irreversible mistakes compound fast."
+        },
+        {
+          "text": "Rule 3: proof before status changes. Do not mark work done, reviewed, or shipped until the artifact and the evidence actually exist."
+        },
+        {
+          "text": "Rule 4: every critical path needs a rollback. Confidence is not a rollback plan."
+        },
+        {
+          "text": "Rule 5: optimize for short feedback loops, not blind autonomy. Faster verification beats bigger cleanup."
+        },
+        {
+          "text": "If you are building with AI in live systems, these rules are worth stealing. Subscribe to NODO for more operator workflows built from real incidents. Reply RULES if you want the checklist."
+        }
+      ],
+      "cta": {
+        "action": "Subscribe to NODO",
+        "reason_for_now": "to steal the operating system before your own avoidable incident writes it for you"
+      }
+    }
+  },
+  "proof": {
+    "pr_url": "https://github.com/maxtechera/orchestrator/pull/28",
+    "preview_urls": [
+      "artifacts/MAX-530/preview.html",
+      "artifacts/MAX-530/rendered-markdown.html"
+    ],
+    "screenshots": {
+      "rendered_html_screenshot": "artifacts/MAX-530/rendered_html_screenshot.png",
+      "rendered_html_preview_screenshot": "artifacts/MAX-530/rendered_html_preview_screenshot.png"
+    },
+    "final_mp4_attachment": "artifacts/MAX-530/final_mp4_attachment.mp4"
+  }
+}
