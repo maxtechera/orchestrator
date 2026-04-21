@@ -51,10 +51,10 @@ fs.writeFileSync(path.join(outDir, 'rendered-markdown.html'), mdHtml);
   const font = '/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf';
   const normal = '/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf';
   const slides = [
-    { title: 'Your workflow is losing context', body: 'Not because the model is weak. Because session state disappears between runs.' },
-    { title: 'SESSION-STATE.md appears mid-session', body: 'Working memory gets written while the task is live, not reconstructed after the fact.' },
-    { title: 'Obsidian gets the durable note', body: 'The decision is synced into memory so the next session starts with context instead of guesswork.' },
-    { title: 'Subscribe to NODO', body: 'Weekly systems, agent workflows, and memory patterns behind what actually ships.' }
+    { title: 'Your agent is losing context', body: 'Session state disappears between runs.' },
+    { title: 'SESSION-STATE appears live', body: 'Working memory is written during the task.' },
+    { title: 'Obsidian gets the durable note', body: 'The next session starts with context, not guesswork.' },
+    { title: 'Subscribe to NODO', body: 'Weekly systems, agent workflows, and memory patterns behind real shipping.' }
   ];
   slides.forEach((slide, i) => {
     const idx = String(i + 1).padStart(2, '0');

@@ -1,12 +1,12 @@
 {
   "ticket_id": "MAX-533",
-  "content_type": "social-pack",
+  "content_type": "content_asset",
   "target_repo": "maxtechera/orchestrator",
   "brand": "max-techera",
-  "locale": "en",
+  "locale": "multi",
   "placements": {
     "instagram_reel": {
-      "text": "Your AI workflow is not breaking because the model is weak. It is breaking because context disappears between sessions.\n\nIn this memory demo, SESSION-STATE.md gets created automatically mid-session, the key decision is written to durable memory, and the note shows up in Obsidian without manual cleanup.\n\nIf you want the system behind it, subscribe to NODO for weekly agent workflows, memory patterns, and launch ops.",
+      "text": "La mayor\u00eda de los agentes no fallan por inteligencia. Fallan porque pierden el hilo entre sesiones.\n\nEn este demo, `SESSION-STATE.md` aparece en medio del trabajo, la decisi\u00f3n clave queda escrita en memoria durable, y despu\u00e9s termina en Obsidian sin cleanup manual.\n\nSi quer\u00e9s ver m\u00e1s workflows reales as\u00ed, suscribite a NODO.",
       "cta": {
         "action": "Subscribe to NODO",
         "reason_for_now": "because most multi-session agent work fails on memory drift before it fails on raw capability"
@@ -26,37 +26,45 @@
         "thumbnail": "artifacts/MAX-533/reel-cover.png"
       },
       "hook_variants": [
-        "Your AI workflow is not breaking because the model is weak. It is breaking because context disappears.",
-        "Watch SESSION-STATE.md appear mid-session and sync into Obsidian.",
-        "This is what durable memory looks like in a real agent workflow."
+        "El problema no es el modelo. Es que tu agente pierde contexto.",
+        "Mir\u00e1 c\u00f3mo `SESSION-STATE.md` aparece en plena sesi\u00f3n y evita que el agente se desordene.",
+        "Esto es memoria operativa real, no vibes."
       ],
       "manychat_trigger": {
         "keyword": "NODO",
         "flow_id": "TBD_MAX_PROVIDES"
-      }
+      },
+      "locale": "es-UY"
     },
     "x_thread": {
       "tweets": [
         {
-          "text": "Most agent workflows do not fail on intelligence. They fail when context evaporates between sessions."
+          "text": "A lot of AI agents do something impressive for 2 minutes, then lose the plot. The problem is not just reasoning. It is missing operational memory."
         },
         {
-          "text": "In this memory demo, SESSION-STATE.md is created automatically while the work is still live, so the session has a real working-memory trail instead of a vague recap at the end."
+          "text": "One pattern I like in OpenClaw is explicit session memory. Not 'the model probably remembers.' A real file in the repo. Visible. Auditable. Updateable."
         },
         {
-          "text": "Then the key decision lands in Obsidian, which means the next session starts with durable context instead of re-discovery."
+          "text": "The setup is simple: `MEMORY.md` stores durable facts, `SESSION-STATE.md` stores live working memory, and the agent writes to it before replying."
         },
         {
-          "text": "That is the real win: less drift, cleaner handoffs, and fewer 'wait, what were we doing?' moments in multi-agent work."
+          "text": "`SESSION-STATE.md` acts like a WAL, so the session keeps current objective, key context, pending actions, and verification state without re-deriving everything from scratch."
         },
         {
-          "text": "If you want more systems like this, subscribe to NODO. I share the workflows, memory patterns, and launch mechanics behind what actually ships."
+          "text": "What matters is not just that it remembers. You can inspect what the system thinks is true right now, which makes debugging and handoffs much less fragile."
+        },
+        {
+          "text": "Then that session memory can be flushed into longer-term journaling, including an Obsidian workflow on the archive side. Less drift now, better context later."
+        },
+        {
+          "text": "If you're building with Claude Code, OpenClaw, or multi-agent workflows, this is one of the patterns worth stealing. Explicit memory beats vibes. More real operator workflows in NODO: https://maxtechera.com/newsletter"
         }
       ],
       "cta": {
         "action": "Subscribe to NODO",
         "reason_for_now": "to steal the memory layer before your next agent run loses state again"
-      }
+      },
+      "locale": "en-US"
     }
   },
   "proof": {
