@@ -1,0 +1,18 @@
+Rendered HTML, MAX-549
+
+I Launched a Product With AI Agents in 3 Hours
+
+A proof-first breakdown of the /ship GTM pipeline, from credential checks to launch and measurement.
+
+# I launched a product with AI agents in 3 hours
+
+The headline is true, but the useful part is how. The launch only moved fast because the system started with credential checks and then ran a full GTM pipeline, validate, strategy, awareness, launch, and measure.
+
+## What changed
+Instead of stitching together prompts and tools manually, `/ship` handled the handoffs between stages.
+
+## Why it matters
+For solo founders and indie hackers, the bottleneck is rarely the product. It is the launch machine around the product.
+
+## What to do next
+If you want the install guide, DM SHIP. If you want the repo, grab github.com/maxtechera/ship.

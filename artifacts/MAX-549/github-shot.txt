@@ -1,0 +1,56 @@
+GitHub Markdown Preview, MAX-549
+
+# MAX-549 reel series, /ship
+
+## Goal
+Show the /ship GTM pipeline end-to-end and turn awareness into inbound install-guide requests.
+
+## CTA map
+- Primary: DM keyword `SHIP` for the free install guide
+- Secondary: comment `pipeline` to get the repo link
+- Tertiary: link in bio to `https://github.com/maxtechera/ship`
+
+## Variant 1, Problem → Agitate → Solve
+Hooks:
+- I launched a product with AI agents in 3 hours. Here is the pipeline.
+- Your product is not stuck in build mode. Your launch pipeline is.
+- If launch day still takes a week, steal this 3-hour agent workflow.
+
+Script:
+Start with `/ship create` and show the coordinator spinning up. Cut to the credential check surfacing hidden failures before launch. Then show the pipeline moving from validate to strategy to awareness to launch to measure. End on the solo-founder payoff, one command turns into a launch team. CTA: DM SHIP.
+
+## Variant 2, Contrarian
+Hooks:
+- Hot take, you do not need a bigger launch team. You need one better run command.
+- More GTM tools do not save launch day. Better orchestration does.
+- Most founders stack apps. I stacked agents and launched faster.
+
+Script:
+Open on the contrarian line, then reveal `/ship create` as the orchestration layer. Show credentials gating, then the validate → strategy → awareness → launch → measure handoff. Close with the claim that orchestration beats tool sprawl. CTA: comment pipeline.
+
+## Variant 3, Specific-number
+Hooks:
+- 30 integrations. 9 agents. 3 hours. That was the launch stack.
+- Here is the exact AI pipeline behind a 3-hour product launch.
+- I compressed a week of GTM work into one 3-hour agent run.
+
+Script:
+Lead with the numbers on screen. Show credentials checking 30 plus integrations, then the agent chain, then launch outputs landing in sequence. Reinforce that the stack is measurable and repeatable. CTA: link in bio.
+
+## Variant 4, Insider-reveal
+Hooks:
+- The secret is not the prompt. It is the launch pipeline behind the prompt.
+- Everyone shows the output. Almost nobody shows the GTM machine.
+- Behind every fast AI launch is a ruthless checklist. Here is mine.
+
+Script:
+Pull back the curtain on the actual pipeline. Show the credential gate, stage transitions, content generation, and launch coordination happening together. Position `/ship` as the system behind the result, not just another prompt pack. CTA: DM SHIP.
+
+## Variant 5, Testimonial
+Hooks:
+- I ran one command and it felt like a launch team showed up.
+- If you are a solo founder, this is the closest thing to hiring a launch squad overnight.
+- Best part, it did not feel like software. It felt like backup.
+
+Script:
+Tell it as first-person before and after. Before, launch work is fragmented and slow. After, `/ship create` coordinates credentials, pipeline stages, and launch outputs in one flow. CTA: reply SHIP for the setup guide.

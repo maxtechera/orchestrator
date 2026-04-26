@@ -1,0 +1,15 @@
+Preview, Content Engine style
+
+I launched a product with AI agents in 3 hours. Here is the pipeline.
+
+The trick was not one magic prompt. It was a GTM system that checked credentials, ran validate → strategy → awareness → launch → measure, and kept moving without me stitching tools together all day.
+
+If you are building solo and your launch still takes a week, DM SHIP and I will send the free install guide.
+
+---
+
+Hot take, you do not need a bigger launch team. You need one better run command. `/ship` checked the stack, ran the GTM pipeline, and got a product out in 3 hours. Comment pipeline and I will send the repo.
+
+---
+
+30 Integrations, 9 Agents, 3 Hours to Launch
