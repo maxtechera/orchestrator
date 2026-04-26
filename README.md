@@ -1,9 +1,11 @@
 # /orchestrator
 
+[![GitHub stars](https://img.shields.io/github/stars/maxtechera/orchestrator?style=flat&label=GitHub%20stars)](https://github.com/maxtechera/orchestrator/stargazers)
+[![Proof-driven workflow](https://img.shields.io/badge/proof--driven-verified%20delivery-2563eb)](https://github.com/maxtechera/orchestrator/blob/main/README.md#orchestrator)
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Version](https://img.shields.io/badge/version-1.0.0-green.svg)](CHANGELOG.md)
 
-**Expert orchestrator of agentic teams. The ticket contract defines work. The verification harness rules completion.**
+**Verified AI-agent workflow orchestrator for Claude Code. Dispatch workers, run independent checks, ship only what passes.**
 
 Claude Code:
 ```
