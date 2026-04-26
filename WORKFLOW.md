@@ -127,6 +127,33 @@ Agent CANNOT self-transition to Done without all 5 elements:
 - State transition without artifact
 - Checklist tick without evidence
 - Status comment without proof delta
+- File path references without embedded media on surfaces that support rendering
+
+### Media embedding (cross-surface rule)
+
+When posting proof or evidence to any surface that renders markdown (Linear, GitHub, Slack, Discord, Notion), embed media inline. Do not just paste filesystem paths.
+
+- **Images**: upload to the surface's file storage, then inline with `![caption](url)`
+- **Video / MP4**: upload as an attachment and include a link in the proof pack
+- **Filesystem paths** are fallback only, and count as zero-credit proof when a renderable surface is available
+
+Surface specifics:
+- **Linear**: upload via the Linear API or CLI attachment flow and use the returned public URL in `![](...)`
+- **GitHub**: attach to the PR or issue and use the resulting public attachment URL
+- **Slack / Discord / Notion**: attach the media and reference it inline where supported
+
+If embedding fails, say so explicitly in the comment and attach via the surface attachment system. Never fall back silently to raw paths.
+
+### Pre-comment hook (required before proof-pack comments)
+
+Before posting any proof-pack or verification comment, run this fail-closed lint:
+
+1. Scan the comment body for `/data/workspace/artifacts/*.png`, `.jpg`, `.jpeg`, `.gif`, or `.webp`
+2. For every local image path found, require a sibling markdown embed `![](...)` or `![alt](...)` that points to a public attachment URL for that same proof item
+3. Reject the comment if it references local media paths without an inline embed
+4. For MP4 references, require an uploaded attachment or public link in the same proof pack comment
+
+If the hook fails, do not post the comment. Upload the media first, rewrite the proof pack, then post.
 
 ### Domain Verification Checklists
 
