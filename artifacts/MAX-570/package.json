@@ -1,0 +1,242 @@
+{
+  "ticket_id": "MAX-570",
+  "content_type": "content_asset",
+  "target_repo": "maxtechera/orchestrator",
+  "target_system": "mailerlite",
+  "brand": "max-techera",
+  "locale": "en",
+  "placements": {
+    "instagram_reel": {
+      "series_name": "/ship OSS demo-first reel set",
+      "reels": [
+        {
+          "id": "problem",
+          "duration_seconds": 28,
+          "hook": "Your product is not blocked by code. It is blocked by launch chaos.",
+          "cta": "DM SHIP for the repo behind the workflow.",
+          "script_path": "content/reels/MAX-570-ship-oss-demo-first-package.md",
+          "media": {
+            "mp4": "proof/MAX-570/max570-reel-1-problem.mp4",
+            "thumbnail": "proof/MAX-570/max570-reel-1-problem-thumb.png"
+          }
+        },
+        {
+          "id": "fix",
+          "duration_seconds": 45,
+          "hook": "Here is what launch looks like when the whole pipeline runs as one system.",
+          "cta": "Reply COURSE for the $497 /ship training.",
+          "script_path": "content/reels/MAX-570-ship-oss-demo-first-package.md",
+          "media": {
+            "mp4": "proof/MAX-570/max570-reel-2-fix.mp4",
+            "thumbnail": "proof/MAX-570/max570-reel-2-fix-thumb.png"
+          }
+        },
+        {
+          "id": "architecture",
+          "duration_seconds": 58,
+          "hook": "Want the architecture, not just the claim. Here it is.",
+          "cta": "Reply COURSE and I will send the $497 /ship course.",
+          "script_path": "content/reels/MAX-570-ship-oss-demo-first-package.md",
+          "media": {
+            "mp4": "proof/MAX-570/max570-reel-3-architecture.mp4",
+            "thumbnail": "proof/MAX-570/max570-reel-3-architecture-thumb.png"
+          }
+        }
+      ],
+      "caption": "Manual GTM chaos is not a founder personality flaw. It is a systems problem. This /ship reel set shows the problem, the fix, and the architecture behind a coordinated launch pipeline. DM SHIP for the repo, reply COURSE for the $497 training.",
+      "hashtags": [
+        "#ship",
+        "#gtm",
+        "#aiagents",
+        "#opensource",
+        "#indiehackers",
+        "#claudecode",
+        "#productlaunch",
+        "#mailerlite"
+      ]
+    },
+    "tiktok": {
+      "caption": "If intake, strategy, content, and launch all live in different tools, your GTM is leaking time. This is the /ship system that fixes it. Comment COURSE for the training.",
+      "hook_variants": [
+        "Your product is not blocked by code. It is blocked by launch chaos.",
+        "This is the moment GTM stopped feeling manual.",
+        "The real moat is not the prompt. It is the operating system around it."
+      ],
+      "media": {
+        "mp4": "proof/MAX-570/max570-reel-2-fix.mp4",
+        "thumbnail": "proof/MAX-570/max570-reel-2-fix-thumb.png"
+      }
+    },
+    "youtube_short": {
+      "title": "The /ship Pipeline That Fixes Launch-Day Chaos",
+      "description": "A demo-first breakdown of the /ship launch pipeline, from intake and strategy to content, launch, and measurement, plus the $497 course CTA.",
+      "media": {
+        "mp4": "proof/MAX-570/max570-reel-3-architecture.mp4",
+        "thumbnail": "proof/MAX-570/max570-reel-3-architecture-thumb.png"
+      }
+    },
+    "x_thread": {
+      "tweets": [
+        {
+          "text": "Most solo founders do not have a product problem. They have a launch coordination problem."
+        },
+        {
+          "text": "Intake lives in one tab, strategy in another, content in another, and launch still depends on a human carrying context across the whole thing."
+        },
+        {
+          "text": "That is what /ship is built to fix. One command kicks off intake, validation, strategy, content, launch, and measurement as a coordinated system."
+        },
+        {
+          "text": "The new OSS demo-first content bundle breaks it into 3 reels: the problem, the fix, and the architecture. DM SHIP for the repo. Reply COURSE for the $497 training."
+        }
+      ],
+      "cta": {
+        "action": "Reply \"COURSE\"",
+        "reason_for_now": "to get the operating model before your next launch turns back into manual GTM chaos"
+      }
+    },
+    "linkedin_post": {
+      "text": "Most product teams do not stall because they cannot build. They stall because launch execution is fragmented. Intake, positioning, content, launch, and follow-through all sit in separate tools and separate mental models.\n\nThe /ship demo-first reel set shows the opposite approach: one intake, named agents, explicit handoffs, stage gates, and a full path from strategy to launch.\n\nThat is also the core promise behind the $497 /ship course. It is not another prompt pack. It is an operating model for turning product readiness into launch readiness.",
+      "cta": {
+        "action": "DM \"SHIP\" or reply \"COURSE\"",
+        "reason_for_now": "because the next launch usually slips on coordination, not on code"
+      }
+    },
+    "email": {
+      "subject_variants": [
+        "Your launch is probably blocked by coordination, not code",
+        "The /ship pipeline behind a cleaner launch day",
+        "From intake to launch without manual GTM chaos"
+      ],
+      "preview_text": "A demo-first breakdown of how /ship turns disconnected launch tasks into one coordinated system.",
+      "body_html": "<html><body style=\"font-family:Arial,sans-serif;max-width:640px;margin:0 auto;line-height:1.6;color:#111;\"><h1>Your launch is probably blocked by coordination, not code</h1><p>Most builders think they need better prompts. Usually, they need better handoffs.</p><p><code>/ship</code> starts with intake, validates the work, builds strategy, creates launch assets, pushes execution forward, and measures what happened after launch.</p><p>If you want the free install guide, reply with <strong>SHIP</strong>. If you want the full training, reply with <strong>COURSE</strong> and I will send the $497 course link.</p></body></html>",
+      "utm": {
+        "source": "mailerlite",
+        "campaign": "max-570-ship-oss-demo-first",
+        "medium": "email"
+      }
+    },
+    "blog_post": {
+      "slug": "/blog/ship-oss-demo-first-content-bundle",
+      "title": "How /ship turns launch chaos into a coordinated GTM machine",
+      "meta_description": "The MAX-570 content bundle covers the problem, the fix, and the architecture behind the /ship launch pipeline.",
+      "hero_og": "proof/MAX-570/max570-reel-3-architecture-thumb.png",
+      "body_md": "content/reels/MAX-570-ship-oss-demo-first-package.md",
+      "faq": [
+        {
+          "q": "Who is /ship for?",
+          "a": "Solo founders, indie hackers, AI builders, and Claude Code users who want a repeatable launch workflow."
+        },
+        {
+          "q": "What does the course add beyond the OSS repo?",
+          "a": "The $497 course teaches the full operating model, stage gates, and how to run the handoffs behind the demo."
+        }
+      ]
+    },
+    "landing_page": {
+      "slug": "/ship",
+      "hero": {
+        "headline": "Turn launch-day chaos into one coordinated GTM run",
+        "subhead": "The /ship OSS demo-first bundle shows the problem, the fix, and the architecture behind a repeatable launch machine.",
+        "hero_image": "proof/MAX-570/max570-reel-2-fix-thumb.png"
+      },
+      "features": [
+        {
+          "name": "Problem reel, manual GTM chaos",
+          "hero_image": "proof/MAX-570/max570-reel-1-problem-thumb.png",
+          "diagram": "proof/MAX-570/max570-reel-1-problem-proof.png",
+          "demo_media": "proof/MAX-570/max570-reel-1-problem.mp4"
+        },
+        {
+          "name": "Fix reel, named agents and launch handoffs",
+          "hero_image": "proof/MAX-570/max570-reel-2-fix-thumb.png",
+          "diagram": "proof/MAX-570/max570-reel-2-fix-proof.png",
+          "demo_media": "proof/MAX-570/max570-reel-2-fix.mp4"
+        },
+        {
+          "name": "Architecture reel, stage gates and course CTA",
+          "hero_image": "proof/MAX-570/max570-reel-3-architecture-thumb.png",
+          "diagram": "proof/MAX-570/max570-reel-3-architecture-proof.png",
+          "demo_media": "proof/MAX-570/max570-reel-3-architecture.mp4"
+        }
+      ],
+      "ctas": {
+        "primary": "DM SHIP",
+        "secondary": "Reply COURSE"
+      },
+      "tracking_events": [
+        "page_view",
+        "cta_click_primary",
+        "cta_click_secondary",
+        "video_play"
+      ],
+      "meta": {
+        "title": "/ship OSS demo-first content bundle",
+        "description": "Three reels, hook library, newsletter, and CTA copy for the /ship launch pipeline.",
+        "og": "proof/MAX-570/max570-reel-2-fix-thumb.png",
+        "canonical": "https://github.com/maxtechera/ship"
+      }
+    },
+    "instagram_carousel": {
+      "hook": "Your launch is not broken because you need more prompts. It is broken because every handoff lives in a different place.",
+      "slide_count": 5,
+      "slides": [
+        {
+          "slide": 1,
+          "headline": "Your product is not blocked by code",
+          "body": "Most launch delays come from fragmented intake, strategy, content, and publishing.",
+          "visual_ref": "proof/MAX-570/max570-reel-1-problem-proof.png"
+        },
+        {
+          "slide": 2,
+          "headline": "Manual GTM chaos leaks momentum",
+          "body": "Every handoff that stays in your head adds delay, context loss, and launch stress.",
+          "visual_ref": "proof/MAX-570/max570-reel-1-problem-thumb.png"
+        },
+        {
+          "slide": 3,
+          "headline": "The fix is one coordinated pipeline",
+          "body": "`/ship` moves from intake to validate to strategy to content to launch to measure without losing the thread.",
+          "visual_ref": "proof/MAX-570/max570-reel-2-fix-proof.png"
+        },
+        {
+          "slide": 4,
+          "headline": "Named agents make handoffs explicit",
+          "body": "Validator, strategist, copywriter, launcher, and analyst each own a stage instead of you juggling all of them.",
+          "visual_ref": "proof/MAX-570/max570-reel-2-fix-thumb.png"
+        },
+        {
+          "slide": 5,
+          "headline": "Steal the operating model",
+          "body": "DM SHIP for the OSS repo. Reply COURSE for the $497 training that breaks down the full architecture.",
+          "visual_ref": "proof/MAX-570/max570-reel-3-architecture-thumb.png"
+        }
+      ],
+      "caption": "Launch chaos is usually a handoff problem, not a talent problem. This carousel breaks down the problem, the /ship fix, and the architecture behind the $497 course.",
+      "cta": {
+        "action": "DM \"SHIP\" or reply \"COURSE\"",
+        "reason_for_now": "because the next launch usually breaks on coordination before it breaks on execution"
+      }
+    }
+  },
+  "proof": {
+    "pr_url": "https://github.com/maxtechera/orchestrator/pull/20",
+    "preview_urls": [
+      "artifacts/MAX-570/preview.html",
+      "artifacts/MAX-570/rendered-markdown.html"
+    ],
+    "screenshots": {
+      "desktop": "artifacts/MAX-570/screenshot-desktop.png",
+      "mobile": "artifacts/MAX-570/screenshot-mobile.png",
+      "rendered_html_screenshot": "artifacts/MAX-570/rendered-html-screenshot.png",
+      "rendered_html_preview_screenshot": "artifacts/MAX-570/rendered-html-preview-screenshot.png",
+      "rendered_github_markdown_screenshot": "artifacts/MAX-570/rendered-github-markdown-screenshot.png"
+    },
+    "mp4_attachments": [
+      "proof/MAX-570/max570-reel-1-problem.mp4",
+      "proof/MAX-570/max570-reel-2-fix.mp4",
+      "proof/MAX-570/max570-reel-3-architecture.mp4"
+    ],
+    "final_mp4_attachment": "proof/MAX-570/max570-reel-3-architecture.mp4"
+  }
+}
