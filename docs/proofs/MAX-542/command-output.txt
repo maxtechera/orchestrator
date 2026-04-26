@@ -1,0 +1,23 @@
+$ python3 - <<'PY'
+from pathlib import Path
+p = Path('artifacts/MAX-542/course-outline-orchestrate-ai-agents.md')
+text = p.read_text()
+required = [
+    'The verification problem',
+    'Board setup: Linear, GitHub Issues, Notion, Jira',
+    'The 5-stage ticket lifecycle',
+    'Writing verification criteria',
+    'Artifact delta',
+    'Business delta',
+    'Surface correctness',
+]
+missing = [item for item in required if item not in text]
+print('FILE:', p)
+print('LINES:', len(text.splitlines()))
+print('BYTES:', len(text.encode()))
+print('MISSING:', missing if missing else 'none')
+PY
+FILE: artifacts/MAX-542/course-outline-orchestrate-ai-agents.md
+LINES: 183
+BYTES: 6884
+MISSING: none
