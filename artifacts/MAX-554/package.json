@@ -1,0 +1,31 @@
+{
+  "ticket": "MAX-554",
+  "campaign": "Ship launch proof pack",
+  "asset_type": "blog + mailerlite companion",
+  "repo": "maxtechera/orchestrator",
+  "target_system": "mailerlite",
+  "source_blog": {
+    "title": "Launching Ship, how Claude Code agents ship products in public",
+    "slug": "/blog/launching-ship",
+    "primary_cta": "Star the Ship repo",
+    "secondary_cta": "Join the newsletter"
+  },
+  "placements": {
+    "landing": {
+      "eyebrow": "Launch proof preview",
+      "headline": "Ship turns Claude Code agents into a GTM pipeline",
+      "subhead": "A rendered proof pack for the Ship launch story, with blog preview, MailerLite email preview, GitHub markdown proof, mobile and desktop screenshots, and a short MP4 artifact for Linear attachment.",
+      "bullets": [
+        "Validate → build → launch → measure → iterate",
+        "Credential gate catches expired tokens before launch",
+        "Install in 3 commands, then run /ship"
+      ]
+    },
+    "email": {
+      "subject": "Ship is live, and it fixes the messy part after the build",
+      "preview_text": "A MailerLite-ready launch email that tees up the Ship blog story and points readers to the repo.",
+      "body": "You can ship code faster now. The launch side is still chaos.\n\nThat is why I built Ship.\n\nIt is an open source GTM pipeline for Claude Code teams. Instead of random prompt hopping, it gives you explicit stages, role handoffs, launch proof, and credential checks before the public push.\n\nWhat Ship does:\n- Validate the idea before you overbuild\n- Route build work to the right repo and surface\n- Package launch assets instead of leaving them half-done\n- Check tokens and integrations before go time\n- Pull the signals back into the next iteration\n\nInstall it in 3 commands, star the repo, and read the launch post for the full breakdown.\n\nMostrá receipts o callate."
+    },
+    "github_markdown": "# Ship launch\n\nShip is an open source GTM pipeline for Claude Code teams.\n\n## Why it exists\n- Build got fast\n- Launch stayed manual\n- Credential failures still kill momentum\n\n## What it does\n1. Validate\n2. Build\n3. Launch\n4. Measure\n5. Iterate\n\n## Install\n```bash\n/plugin marketplace add maxtechera/ship\nclawhub install ship\n/ship\n```\n\n## Read more\n- Blog: launching Ship in public\n- Repo: github.com/maxtechera/ship\n- Orchestrator: github.com/maxtechera/orchestrator\n"
+  }
+}
