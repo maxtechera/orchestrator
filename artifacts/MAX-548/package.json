@@ -1,0 +1,46 @@
+{
+  "ticket_id": "MAX-548",
+  "content_type": "reel",
+  "target_repo": "maxtechera/orchestrator",
+  "brand": "max-techera",
+  "locale": "en",
+  "placements": {
+    "instagram_reel": {
+      "text": "Your AI agent said done. It wasn't. That is the problem /orchestrator is built to catch. Instead of trusting a victory lap, run a sweep, verify the proof, and flag the tickets that only look complete. DM ORCHESTRATOR for the free install guide.\n\nComment sweep if you want the repo link in replies.",
+      "cta": {"action": "DM ORCHESTRATOR", "reason_for_now": "Get the free install guide before your next agent sweep"},
+      "hashtags": ["#aiagents", "#opensource", "#claudecode", "#buildinpublic", "#orchestrator"],
+      "media": {"mp4": "content/reels/MAX-548/videos/01-problem-agitate-solve.mp4", "thumbnail": "content/reels/MAX-548/thumbnails/01-problem-agitate-solve.png"},
+      "hook_variants": ["Your AI agent said done. It wasn't.", "The ticket closed, but the bug was still live.", "Done is not done when the proof fails."],
+      "manychat_trigger": {"keyword": "ORCHESTRATOR", "flow_id": "TBD_MAX_PROVIDES"}
+    },
+    "tiktok": {
+      "caption": "Your AI said done. It wasn't. /orchestrator runs the sweep, checks the proof, and catches fake completions before they hit production. Comment sweep for the repo.",
+      "hook_variants": ["The problem is not the model.", "Smarter agents still fail if nobody verifies the finish.", "More autonomy without verification just creates faster mistakes."],
+      "media": {"mp4": "content/reels/MAX-548/videos/02-contrarian.mp4"}
+    },
+    "youtube_short": {
+      "title": "Your AI Said Done. It Wasn't. /orchestrator Catches It",
+      "description": "Your agent can close tickets fast. That does not mean the work is actually done. This reel series shows the /orchestrator verification model: problem, sweep, and verification contract. Repo: https://github.com/maxtechera/orchestrator\n\nCTA: DM ORCHESTRATOR for the install guide or comment sweep for the repo link.",
+      "media": {"mp4": "content/reels/MAX-548/videos/03-specific-number.mp4"}
+    }
+  },
+  "proof": {
+    "pr_url": "https://github.com/maxtechera/orchestrator/pull/11",
+    "preview_urls": ["https://github.com/maxtechera/orchestrator/tree/feat/MAX-548-orchestrator-reel-series/artifacts/MAX-548"],
+    "screenshots": {
+      "desktop": "artifacts/MAX-548/screenshot_desktop.png",
+      "mobile": "artifacts/MAX-548/screenshot_mobile.png",
+      "rendered_html": "artifacts/MAX-548/rendered_html_screenshot.png",
+      "rendered_html_preview": "artifacts/MAX-548/rendered_html_preview_screenshot.png",
+      "rendered_github_markdown": "artifacts/MAX-548/rendered_github_markdown_screenshot.png"
+    },
+    "mp4_attachments": [
+      "artifacts/MAX-548/final_mp4_attachment.mp4",
+      "artifacts/MAX-548/01-problem-agitate-solve.mp4",
+      "artifacts/MAX-548/02-contrarian.mp4",
+      "artifacts/MAX-548/03-specific-number.mp4",
+      "artifacts/MAX-548/04-insider-reveal.mp4",
+      "artifacts/MAX-548/05-testimonial.mp4"
+    ]
+  }
+}

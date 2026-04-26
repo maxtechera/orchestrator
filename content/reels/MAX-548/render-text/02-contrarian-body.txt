@@ -1,0 +1,3 @@
+Smarter agents still fail when nobody verifies the finish.
+/orchestrator keeps the tickets with evidence and flags the fake dones.
+More autonomy without verification only creates faster mistakes.
