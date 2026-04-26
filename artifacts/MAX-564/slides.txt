@@ -1,0 +1,7 @@
+file 'linear_attached_visual_proof.png'
+duration 3
+file 'screenshot_desktop.png'
+duration 3
+file 'rendered_html_preview_screenshot.png'
+duration 3
+file 'rendered_html_preview_screenshot.png'
