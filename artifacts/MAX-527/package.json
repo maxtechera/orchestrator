@@ -1,0 +1,47 @@
+{
+  "ticket_id": "MAX-527",
+  "content_type": "content_asset",
+  "target_repo": "maxtechera/orchestrator",
+  "brand": "max-techera",
+  "locale": "en",
+  "placements": {
+    "instagram_reel": {
+      "concept": "before-after running ship-engine vs no pipeline",
+      "duration_seconds": 30,
+      "hook_primary": "Before ship-engine, launch lived in my tabs. After ship-engine, it lived in a pipeline.",
+      "hook_alternates": [
+        "The difference between shipping content and thinking about shipping content.",
+        "Most launch chaos is just work with no system around it."
+      ],
+      "cta": {
+        "primary": "Subscribe to NODO",
+        "secondary": "Comment SHIP for the repo walkthrough"
+      },
+      "script_path": "content/reels/MAX-527-ship-launch-content.md",
+      "caption": "Before ship-engine, launch content lived across tabs, drafts, and half-finished follow-ups. After ship-engine, the workflow became visible: brief, script, asset, publish, follow-up. Subscribe to NODO for more proof-first AI operator systems. Comment SHIP if you want the walkthrough.",
+      "media": {
+        "final_mp4_attachment": "artifacts/MAX-527/final_mp4_attachment.mp4",
+        "linear_attached_visual_proof": "artifacts/MAX-527/linear_attached_visual_proof.png",
+        "thumbnail": "proof/MAX-527/max527-thumb.png"
+      }
+    },
+    "x_thread": {
+      "posts": [
+        "Before ship-engine, launch content lived in scattered tabs, drafts, and mental overhead.",
+        "After ship-engine, the flow became visible: brief -> script -> asset -> publish -> follow-up.",
+        "Most teams do not actually have a content problem. They have a handoff problem.",
+        "When every step depends on memory, DMs, and context switching, shipping slows down even if the ideas are good.",
+        "A pipeline fixes that. The win is not more output. The win is repeatable throughput.",
+        "If you want more proof-first AI operator systems, subscribe to NODO. If you want the walkthrough, reply SHIP."
+      ],
+      "cta": {
+        "primary": "Subscribe to NODO",
+        "secondary": "Reply SHIP"
+      }
+    }
+  },
+  "proof": {
+    "linear_attached_visual_proof": "artifacts/MAX-527/linear_attached_visual_proof.png",
+    "final_mp4_attachment": "artifacts/MAX-527/final_mp4_attachment.mp4"
+  }
+}
