@@ -1,0 +1,137 @@
+{
+  "ticket_id": "MAX-545",
+  "content_type": "social-pack",
+  "target_repo": "maxtechera/orchestrator",
+  "brand": "max-techera",
+  "locale": "en",
+  "placements": {
+    "instagram_reel": {
+      "text": "Most OSS tools fail for one reason: you show the README before you show the win.\n\nHere is the better funnel.\n1. Show the config running\n2. Send people to the free repo\n3. Capture newsletter intent\n4. Sell the full system in the course\n\nThe free tool is not the side quest. It is the proof.\n\nExplore the tools: https://maxtechera.com/tools",
+      "cta": {
+        "action": "Explore the free tools",
+        "reason_for_now": "Use the free repo as the fast starting point before the paid walkthrough turns it into a full system"
+      },
+      "hashtags": ["#OpenSource", "#AIAgents", "#BuildInPublic", "#Automation", "#CreatorBusiness"],
+      "media": {
+        "mp4": "artifacts/MAX-545/MAX-545-demo-first-funnel-reel.mp4",
+        "thumbnail": "artifacts/MAX-545/MAX-545-demo-first-funnel-thumb.png"
+      },
+      "hook_variants": [
+        "Stop selling OSS tools like documentation, sell them like proof.",
+        "The README is not the top of the funnel, the demo is.",
+        "Watch how a free tool becomes a course sale without sounding salesy."
+      ],
+      "manychat_trigger": {
+        "keyword": "TOOLS",
+        "flow_id": "TBD_MAX_PROVIDES"
+      }
+    },
+    "instagram_carousel": {
+      "slides": [
+        {"text": "OSS tools should open the funnel, not end the funnel.", "image": "artifacts/MAX-545/carousel-slide-1.png"},
+        {"text": "Step 1, show the config running before you explain anything.", "image": "artifacts/MAX-545/carousel-slide-2.png"},
+        {"text": "Step 2, drive curiosity to GitHub where people can copy the foundation.", "image": "artifacts/MAX-545/carousel-slide-3.png"},
+        {"text": "Step 3, use newsletter breakdowns to explain decisions and use cases.", "image": "artifacts/MAX-545/carousel-slide-4.png"},
+        {"text": "Step 4, sell the course as the full stack and the cohort as implementation support.", "image": "artifacts/MAX-545/carousel-slide-5.png"}
+      ],
+      "caption": "If your OSS repo is useful but not converting, the problem is probably packaging. Demo first, repo second, explanation third.\n\nStart here: https://maxtechera.com/tools",
+      "cta": {
+        "action": "Explore the free tools",
+        "reason_for_now": "The repos give people an immediate win before they decide whether they want the full workflow"
+      },
+      "hashtags": ["#OpenSource", "#GrowthSystem", "#AIAutomation"]
+    },
+    "tiktok": {
+      "caption": "Free OSS tools are your sales page if you package them right. Tools: https://maxtechera.com/tools",
+      "hook_variants": [
+        "You do not need a better sales page, you need a better demo.",
+        "This is how free repos turn into paid buyers.",
+        "Show the config working, then let GitHub do the trust-building."
+      ],
+      "media": {"mp4": "artifacts/MAX-545/MAX-545-demo-first-funnel-reel.mp4"}
+    },
+    "youtube_short": {
+      "title": "How free OSS tools become a paid course funnel",
+      "description": "Demo-first beats readme-first. Show the win, send people to GitHub, turn installs into newsletter signups, then sell the full architecture. Start with the free tools at https://maxtechera.com/tools",
+      "media": {"mp4": "artifacts/MAX-545/MAX-545-demo-first-funnel-reel.mp4"}
+    },
+    "x_thread": {
+      "tweets": [
+        {"text": "Most people market OSS tools backwards. They lead with the README instead of the result."},
+        {"text": "The better funnel is: short demo -> GitHub -> newsletter -> course -> cohort."},
+        {"text": "Why it works: the demo creates desire, the repo earns trust, the newsletter creates depth, the course sells the full system."},
+        {"text": "Free tools are not just lead magnets. They are product proof in public."},
+        {"text": "If you build OSS and want it to convert, package it like a working demo first. Tools: https://maxtechera.com/tools"}
+      ],
+      "cta": {
+        "action": "Explore the free tools",
+        "reason_for_now": "They show what is possible before someone commits to the full walkthrough"
+      }
+    },
+    "linkedin_post": {
+      "text": "A useful OSS repo is not enough by itself.\n\nIf you want free tools to drive business, the packaging has to do more than explain installation. It has to create momentum.\n\nThe funnel I would use is simple:\n- short demo content that shows the config working\n- GitHub as the trust layer and install surface\n- newsletter issues that break down architecture and tradeoffs\n- paid course for the full system\n- cohort for implementation help\n\nThe key shift is demo-first instead of readme-first.\n\nThe free tool is the proof. The paid product is the explanation, context, and implementation support around it.\n\nThat is how open source starts compounding instead of sitting there as a nice repo with no commercial follow-through.\n\nTools: https://maxtechera.com/tools",
+      "cta": {
+        "action": "Explore the free tools",
+        "reason_for_now": "They are the fastest way to understand the stack before committing to the deeper walkthrough"
+      }
+    },
+    "email": {
+      "subject_variants": [
+        "The demo should sell the OSS repo",
+        "How free tools become course demand",
+        "The funnel behind my OSS tools"
+      ],
+      "preview_text": "Show the win first, let GitHub earn trust, then sell the full system.",
+      "body_html": "<html><body style=\"font-family:Arial,sans-serif;max-width:640px;margin:auto;color:#111;line-height:1.6\"><h1 style=\"font-size:28px\">The demo should sell the OSS repo</h1><p>Most OSS tools are packaged backwards. They start with explanation when they should start with proof.</p><p>The stronger funnel is:</p><ol><li>Show the config running in short-form content</li><li>Send people to GitHub to copy the base</li><li>Use the newsletter to explain architecture and tradeoffs</li><li>Sell the course as the full system</li><li>Offer the cohort for implementation help</li></ol><p><a href=\"https://maxtechera.com/tools?utm_source=mailerlite&utm_medium=email&utm_campaign=max-545-demo-first-funnel\" style=\"display:inline-block;padding:12px 18px;background:#111;color:#fff;text-decoration:none;border-radius:8px\">Explore the free tools</a></p><p>The free tool is not the side quest. It is the proof that earns the right to the paid offer.</p></body></html>",
+      "utm": {
+        "source": "mailerlite",
+        "campaign": "max-545-demo-first-funnel",
+        "medium": "email"
+      }
+    },
+    "blog_post": {
+      "slug": "/blog/demo-first-oss-tools-funnel",
+      "title": "Demo-first OSS tools funnel for course conversions",
+      "meta_description": "How to turn open source tools into a demo-first funnel that drives GitHub installs, newsletter signups, course sales, and cohort applications.",
+      "hero_og": "artifacts/MAX-545/MAX-545-demo-first-funnel-thumb.png",
+      "body_md": "# Demo-first OSS tools funnel\n\nMost OSS tools are marketed like documentation projects. That leaves demand on the table.\n\nThe stronger model is demo-first: show the tool working, send people to GitHub, use the newsletter to deepen the relationship, then sell the full architecture through the course and implementation support through the cohort.\n\n## The funnel\n\n1. Short-form demo content proves the tool works\n2. GitHub captures install intent\n3. Newsletter captures recurring attention\n4. Course sells the full system design\n5. Cohort sells implementation support\n\n## Why this works\n\nFree tools reduce skepticism. They let the audience test the logic before they buy the explanation. That makes the course feel like the natural next layer, not a disconnected offer.\n\n## Tool angles\n\n- `/memory`: the pain is repeated context loss\n- `/ship`: the pain is launch chaos between idea and assets\n- `/orch`: the pain is delegated work without verification\n\n## CTA\n\nStart with the free tools at https://maxtechera.com/tools\n",
+      "faq": [
+        {"q": "Why demo-first instead of readme-first?", "a": "Because the demo creates desire faster than documentation. The readme helps after interest exists."},
+        {"q": "What does the course sell if the tools are free?", "a": "The course sells architecture, sequencing, adaptation, and implementation logic around the tools."}
+      ]
+    },
+    "landing_page": {
+      "slug": "/tools",
+      "hero": {
+        "headline": "Free OSS tools that prove the workflow before you buy the full system",
+        "subhead": "Explore the repos, see the demos, then step into the course or cohort when you want the full architecture and implementation support.",
+        "hero_image": "artifacts/MAX-545/MAX-545-demo-first-funnel-thumb.png"
+      },
+      "features": [
+        {"name": "Demo-first packaging", "hero_image": "artifacts/MAX-545/MAX-545-demo-first-funnel-thumb.png", "diagram": "artifacts/MAX-545/rendered-html-preview.png", "demo_media": "artifacts/MAX-545/MAX-545-demo-first-funnel-reel.mp4"},
+        {"name": "GitHub as trust layer", "hero_image": "artifacts/MAX-545/MAX-545-demo-first-funnel-thumb.png", "diagram": "artifacts/MAX-545/rendered-markdown-preview.png", "demo_media": "artifacts/MAX-545/MAX-545-demo-first-funnel-reel.mp4"}
+      ],
+      "ctas": {
+        "primary": "Explore the free tools",
+        "secondary": "Get the full walkthrough"
+      },
+      "tracking_events": ["page_view", "github_tools_click", "newsletter_signup", "course_page_visit", "cohort_apply_start"],
+      "meta": {
+        "title": "Free OSS tools, demos, and full-system walkthroughs",
+        "description": "See the tools working first, install the free repos, then go deeper with the course and cohort.",
+        "og": "artifacts/MAX-545/MAX-545-demo-first-funnel-thumb.png",
+        "canonical": "https://maxtechera.com/tools"
+      }
+    }
+  },
+  "proof": {
+    "pr_url": "https://github.com/maxtechera/orchestrator/pull/12",
+    "preview_urls": ["artifacts/MAX-545/preview.html", "artifacts/MAX-545/github-markdown-preview.html"],
+    "screenshots": {
+      "desktop": "artifacts/MAX-545/rendered-html-preview.png",
+      "mobile": "artifacts/MAX-545/rendered-markdown-preview.png"
+    },
+    "mp4_attachments": ["artifacts/MAX-545/MAX-545-demo-first-funnel-reel.mp4"],
+    "mailerlite_campaign_url": ""
+  }
+}
