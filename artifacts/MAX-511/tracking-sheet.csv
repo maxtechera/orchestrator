@@ -1,0 +1,8 @@
+day,date,goal,primary_cta,sticker_type,story_views,forward_taps,back_taps,exits,replies,dm_starts,link_clicks,newsletter_signups,workshop_signups,office_hours_signups,notes
+1,,Diagnóstico de dolor,DM STORIES,Poll,,,,,,,,,,,
+2,,Educación + captura,Newsletter,None,,,,,,,,,,,
+3,,Prueba social + workshop,Workshop waitlist,Question,,,,,,,,,,,
+4,,Behind the scenes + replies,Reply prompt,Question,,,,,,,,,,,
+5,,Valor accionable + office hours,Office hours,None,,,,,,,,,,,
+6,,Segmentación de intención,Newsletter o DM,Poll,,,,,,,,,,,
+7,,Cierre + conversión,Workshop,DM / link CTA,,,,,,,,,,,

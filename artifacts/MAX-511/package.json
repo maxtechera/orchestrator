@@ -1,0 +1,46 @@
+{
+  "ticket_id": "MAX-511",
+  "content_type": "content_asset",
+  "target_repo": "maxtechera/orchestrator",
+  "target_system": "mailerlite",
+  "brand": "max-techera",
+  "locale": "es",
+  "placements": {
+    "instagram_stories": {
+      "asset": "artifacts/MAX-511/story-pack.md",
+      "tracking_sheet": "artifacts/MAX-511/tracking-sheet.csv",
+      "days": 7,
+      "frames_per_day": "3-5",
+      "audience_intent": [
+        "newsletter",
+        "workshop",
+        "office_hours",
+        "reply_prompt"
+      ],
+      "cta_map": [
+        {"day": 1, "cta": "Responder DM con STORIES", "interaction": "poll + dm"},
+        {"day": 2, "cta": "Newsletter", "interaction": "educational frame"},
+        {"day": 3, "cta": "Workshop waitlist", "interaction": "question sticker"},
+        {"day": 4, "cta": "Reply prompt", "interaction": "question sticker"},
+        {"day": 5, "cta": "Office hours", "interaction": "template value stack"},
+        {"day": 6, "cta": "Newsletter o DM", "interaction": "poll segmentation"},
+        {"day": 7, "cta": "Workshop", "interaction": "dm or link cta"}
+      ]
+    },
+    "mailerlite_supporting_asset": {
+      "purpose": "newsletter growth and workshop intent collection",
+      "copy_angle": "Historias diarias que generan replies, taps y conversiones sin depender solo del feed"
+    }
+  },
+  "proof": {
+    "preview_urls": [
+      "artifacts/MAX-511/preview.html"
+    ],
+    "screenshots": {
+      "rendered_html_preview_screenshot": "artifacts/MAX-511/rendered_html_preview_screenshot.png"
+    },
+    "final_mp4_attachment": "artifacts/MAX-511/final_mp4_attachment.mp4",
+    "linear_attached_visual_proof": "artifacts/MAX-511/rendered_html_preview_screenshot.png",
+    "pr_url": "https://github.com/maxtechera/orchestrator/pull/22"
+  }
+}

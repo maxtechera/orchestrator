@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MAX-511 | Story engagement pack</title>
+  <style>
+    :root {
+      --bg: #07111f;
+      --panel: #0d1b2e;
+      --panel-2: #112640;
+      --ink: #f4f7fb;
+      --muted: #9fb3c8;
+      --line: rgba(255,255,255,0.08);
+      --accent: #87f7c6;
+      --accent-2: #83b6ff;
+      --pink: #ff8bd6;
+      --yellow: #ffd76c;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, sans-serif;
+      background: radial-gradient(circle at top, #163052 0%, var(--bg) 55%);
+      color: var(--ink);
+      line-height: 1.45;
+    }
+    .wrap { max-width: 1400px; margin: 0 auto; padding: 40px 24px 80px; }
+    .hero {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 24px;
+      align-items: stretch;
+      margin-bottom: 28px;
+    }
+    .panel {
+      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.28);
+    }
+    h1 { font-size: 48px; line-height: 1.04; margin: 0 0 14px; }
+    h2 { font-size: 24px; margin: 0 0 14px; }
+    p { margin: 0 0 12px; color: var(--muted); }
+    .chips, .metrics { display: flex; flex-wrap: wrap; gap: 10px; }
+    .chip, .metric {
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.04);
+      padding: 10px 12px;
+      border-radius: 999px;
+      font-size: 14px;
+    }
+    .metric strong { color: var(--accent); }
+    .days { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 20px; }
+    .day { padding: 22px; border-radius: 22px; background: var(--panel); border: 1px solid var(--line); }
+    .day h3 { margin: 0 0 8px; font-size: 22px; }
+    .sub { color: var(--accent); font-weight: 600; margin-bottom: 16px; }
+    .frames { display: grid; gap: 12px; }
+    .frame {
+      background: var(--panel-2);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 18px;
+      padding: 14px 16px;
+    }
+    .frame .n { color: var(--yellow); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; }
+    .frame strong { display: block; margin-top: 6px; font-size: 18px; color: #fff; }
+    .frame small { display: block; margin-top: 8px; color: var(--pink); }
+    table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 14px; }
+    th, td { padding: 10px 12px; border-bottom: 1px solid var(--line); text-align: left; }
+    th { color: var(--accent-2); }
+    .footer { margin-top: 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    @media (max-width: 1100px) {
+      .hero, .footer, .days { grid-template-columns: 1fr; }
+      h1 { font-size: 36px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <div class="panel">
+        <div class="chips">
+          <span class="chip">MAX-511</span>
+          <span class="chip">Instagram Stories</span>
+          <span class="chip">Spanish-first</span>
+          <span class="chip">Manual posting friendly</span>
+        </div>
+        <h1>Paquete de stories de 7 días para crecer newsletter y workshop</h1>
+        <p>Secuencia diaria pensada para generar replies, taps y conversiones. El sistema mezcla hooks de dolor, mini frameworks, prueba social y CTAs claros hacia newsletter, office hours y workshop.</p>
+        <div class="metrics">
+          <span class="metric"><strong>7</strong> días</span>
+          <span class="metric"><strong>31</strong> frames</span>
+          <span class="metric"><strong>4</strong> días con DM/reply prompt</span>
+          <span class="metric"><strong>1</strong> tracking sheet ligero</span>
+        </div>
+      </div>
+      <div class="panel">
+        <h2>Mapa de intención</h2>
+        <table>
+          <thead><tr><th>Día</th><th>Objetivo</th><th>CTA</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>Dolor + conversación</td><td>DM `STORIES`</td></tr>
+            <tr><td>2</td><td>Educación + captura</td><td>Newsletter</td></tr>
+            <tr><td>3</td><td>Prueba social</td><td>Workshop waitlist</td></tr>
+            <tr><td>4</td><td>Behind the scenes</td><td>Reply prompt</td></tr>
+            <tr><td>5</td><td>Plantilla accionable</td><td>Office hours</td></tr>
+            <tr><td>6</td><td>Segmentación</td><td>Newsletter o DM</td></tr>
+            <tr><td>7</td><td>Cierre + conversión</td><td>Workshop</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="days">
+      <article class="day"><h3>Día 1</h3><div class="sub">Diagnóstico de dolor, CTA a DM</div><div class="frames">
+        <div class="frame"><div class="n">Frame 1</div><strong>Tu contenido no falla por falta de ideas, falla por falta de sistema diario.</strong></div>
+        <div class="frame"><div class="n">Frame 2</div><strong>Los que crecen convierten stories en hábito, no en inspiración.</strong></div>
+        <div class="frame"><div class="n">Frame 3</div><strong>Poll: ¿Tus stories venden o solo mantienen presencia?</strong><small>Sticker: Poll</small></div>
+        <div class="frame"><div class="n">Frame 4</div><strong>Respóndeme `STORIES` y te mando la estructura simple.</strong><small>CTA: DM</small></div>
+      </div></article>
+
+      <article class="day"><h3>Día 2</h3><div class="sub">Mini framework, CTA a newsletter</div><div class="frames">
+        <div class="frame"><div class="n">Frame 1</div><strong>Una buena story capta atención, abre interacción y mueve a una acción.</strong></div>
+        <div class="frame"><div class="n">Frame 2</div><strong>Hook + prueba + pregunta + CTA.</strong></div>
+        <div class="frame"><div class="n">Frame 3</div><strong>No necesitas diseño complejo. Necesitas una secuencia repetible.</strong></div>
+        <div class="frame"><div class="n">Frame 4</div><strong>Si quieres más frameworks así cada semana, entra a la newsletter.</strong><small>CTA: Newsletter</small></div>
+      </div></article>
+
+      <article class="day"><h3>Día 3</h3><div class="sub">Prueba social, CTA a workshop</div><div class="frames">
+        <div class="frame"><div class="n">Frame 1</div><strong>Una story bien armada suma conversaciones, no solo views.</strong></div>
+        <div class="frame"><div class="n">Frame 2</div><strong>Más replies = más señales reales de intención.</strong></div>
+        <div class="frame"><div class="n">Frame 3</div><strong>Question: ¿Qué te cuesta más hoy, ideas, consistencia o convertir?</strong><small>Sticker: Question</small></div>
+        <div class="frame"><div class="n">Frame 4</div><strong>Si quieres entrar primero al próximo workshop, súmate a la lista.</strong><small>CTA: Workshop</small></div>
+      </div></article>
+
+      <article class="day"><h3>Día 4</h3><div class="sub">Behind the scenes, CTA a respuesta</div><div class="frames">
+        <div class="frame"><div class="n">Frame 1</div><strong>Así pienso una story antes de publicarla.</strong></div>
+        <div class="frame"><div class="n">Frame 2</div><strong>1. ¿Qué fricción real siente la audiencia hoy?</strong></div>
+        <div class="frame"><div class="n">Frame 3</div><strong>2. ¿Qué micro-prueba puedo mostrar en 1 pantalla?</strong></div>
+        <div class="frame"><div class="n">Frame 4</div><strong>3. ¿Qué acción mínima quiero que hagan ahora?</strong></div>
+        <div class="frame"><div class="n">Frame 5</div><strong>¿Quieres que mañana te muestre la plantilla exacta?</strong><small>Sticker: Question / CTA: Reply</small></div>
+      </div></article>
+
+      <article class="day"><h3>Día 5</h3><div class="sub">Plantilla lista para usar, CTA a office hours</div><div class="frames">
+        <div class="frame"><div class="n">Frame 1</div><strong>Plantilla rápida para hoy.</strong></div>
+        <div class="frame"><div class="n">Frame 2</div><strong>Hook: “Si tu contenido no convierte, probablemente no es por alcance.”</strong></div>
+        <div class="frame"><div class="n">Frame 3</div><strong>Prueba: comparte un mini insight o resultado.</strong></div>
+        <div class="frame"><div class="n">Frame 4</div><strong>Pregunta: “¿Quieres que suba más ejemplos como este?”</strong></div>
+        <div class="frame"><div class="n">Frame 5</div><strong>Si quieres que revisemos tu caso en vivo, súmate a office hours.</strong><small>CTA: Office hours</small></div>
+      </div></article>
+
+      <article class="day"><h3>Día 6</h3><div class="sub">Segmentación de intención, CTA dual</div><div class="frames">
+        <div class="frame"><div class="n">Frame 1</div><strong>No toda tu audiencia está lista para comprar, pero sí puede darte una señal.</strong></div>
+        <div class="frame"><div class="n">Frame 2</div><strong>Las stories separan curiosidad, interés e intención.</strong></div>
+        <div class="frame"><div class="n">Frame 3</div><strong>Poll: ¿Qué te serviría más esta semana?</strong><small>Sticker: Más ideas / Más conversión</small></div>
+        <div class="frame"><div class="n">Frame 4</div><strong>Si eliges ideas, newsletter. Si eliges conversión, escríbeme DM.</strong><small>CTA: Newsletter o DM</small></div>
+      </div></article>
+
+      <article class="day"><h3>Día 7</h3><div class="sub">Cierre de semana, CTA a workshop</div><div class="frames">
+        <div class="frame"><div class="n">Frame 1</div><strong>Las stories no son relleno. Son un canal diario de demanda.</strong></div>
+        <div class="frame"><div class="n">Frame 2</div><strong>Pueden generar taps, replies y conversiones sin depender solo del feed.</strong></div>
+        <div class="frame"><div class="n">Frame 3</div><strong>La clave no es subir más. Es repetir una secuencia que empuje acción.</strong></div>
+        <div class="frame"><div class="n">Frame 4</div><strong>Si quieres construir ese sistema conmigo, únete al workshop.</strong><small>CTA: Workshop</small></div>
+      </div></article>
+    </section>
+
+    <section class="footer">
+      <div class="panel">
+        <h2>Tracking sheet</h2>
+        <p>Incluye columnas para story views, taps, exits, replies, DMs y conversiones hacia newsletter, workshop y office hours.</p>
+        <p>Archivo: <strong>tracking-sheet.csv</strong></p>
+      </div>
+      <div class="panel">
+        <h2>Condición de verificación</h2>
+        <p>AC-1 cubierto con plan frame por frame para 7 días. AC-2 cubierto con prompts de reply/DM en los días 1, 4, 6 y 7.</p>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
