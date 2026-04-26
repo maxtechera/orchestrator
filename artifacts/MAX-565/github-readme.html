@@ -1,4 +1,26 @@
-# /orchestrator
+<!doctype html><html><head><meta charset="utf-8"><style>
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: Inter, ui-sans-serif, system-ui, sans-serif; background: #0b1020; color: #e5e7eb; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 48px 32px 80px; }
+  .eyebrow { color: #93c5fd; text-transform: uppercase; letter-spacing: .12em; font-size: 12px; font-weight: 700; }
+  h1, h2, h3 { margin: 0 0 16px; }
+  .hero { padding: 40px; border-radius: 32px; background: linear-gradient(135deg, #111827, #172554); border: 1px solid rgba(255,255,255,.08); box-shadow: 0 20px 70px rgba(0,0,0,.35); }
+  .hero p { color: #cbd5e1; font-size: 20px; line-height: 1.5; max-width: 760px; }
+  .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; margin-top: 24px; }
+  .card { border-radius: 24px; background: rgba(15,23,42,.9); border: 1px solid rgba(255,255,255,.08); padding: 24px; box-shadow: 0 12px 40px rgba(0,0,0,.25); }
+  .card h3 { font-size: 22px; }
+  .ctaRow { display: flex; gap: 16px; margin-top: 24px; }
+  .btn { display: inline-flex; padding: 14px 20px; border-radius: 999px; text-decoration: none; font-weight: 700; }
+  .btn.primary { background: #60a5fa; color: #08111f; }
+  .btn.secondary { background: transparent; color: #dbeafe; border: 1px solid rgba(147,197,253,.5); }
+  .markdown { margin-top: 28px; }
+  pre { white-space: pre-wrap; word-wrap: break-word; margin: 0; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 15px; line-height: 1.55; color: #dbe4ff; }
+  .github { background: #0d1117; }
+  .github .card { background: #0d1117; border-color: #30363d; }
+  .github pre { color: #c9d1d9; }
+  .badge { display:inline-block; padding: 6px 10px; border-radius: 999px; background: rgba(96,165,250,.15); color: #bfdbfe; font-weight: 700; margin-bottom: 12px; }
+</style></head><body class="github"><div class="wrap"><div class="card"><pre># /orchestrator
 
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Version](https://img.shields.io/badge/version-1.0.0-green.svg)](CHANGELOG.md)
@@ -71,7 +93,7 @@ The free OSS skill helps you run the workflow. The paid course teaches you how t
 
 **Engineering ticket flow.** `/orchestrator sweep` picks up GitHub Issues, runs domain-specific verification (link checks, schema validation, test presence), and only marks tickets done when the deliverable actually passes.
 
-**Auditing before a release.** `/orchestrator review <ticket>` independently checks a specific deliverable. The agent that did the work never grades its own homework.
+**Auditing before a release.** `/orchestrator review &lt;ticket&gt;` independently checks a specific deliverable. The agent that did the work never grades its own homework.
 
 ---
 
@@ -94,7 +116,7 @@ The setup wizard detects your environment, connects your issue tracker, and vali
 If you prefer manual config:
 
 ```bash
-mkdir -p ~/.config/orchestrator && chmod 700 ~/.config/orchestrator
+mkdir -p ~/.config/orchestrator &amp;&amp; chmod 700 ~/.config/orchestrator
 ```
 
 Then add to `~/.config/orchestrator/.env`:
@@ -234,7 +256,7 @@ The Manual install works for Codex CLI, Gemini CLI, and OpenCode — clone to `~
 
 Three steps, every ticket:
 
-1. **Dispatch** — read the board, prioritize by proximity to done (Review > Verification > In Progress stale > Todo), match to domain skill, validate integrations, dispatch worker agent
+1. **Dispatch** — read the board, prioritize by proximity to done (Review &gt; Verification &gt; In Progress stale &gt; Todo), match to domain skill, validate integrations, dispatch worker agent
 2. **Verify** — separate verification pass with fresh context. Automated checks (API assertions, link validation, test suites) + AI judgment (brand voice, content quality). The verifier never knows how the work was done — no confirmation bias.
 3. **Proof** — verification report posted to ticket with evidence. PASS → Done. PARTIAL → Review (human decides). FAIL → auto-retry with failure context, or escalates to Review.
 
@@ -256,7 +278,7 @@ Keyword brief "AI agent verification", brand voice guide, 3 competitor URLs
 Blog post published on CMS, meta tags set, internal links added
 
 ## Verification
-Page returns 200, word count > 1,500, SEO score green, no brand violations
+Page returns 200, word count &gt; 1,500, SEO score green, no brand violations
 
 ## Artifacts
 Published URL, screenshot of live page
@@ -282,7 +304,7 @@ Status: PASS ✓
 
 Checks:
   ✓ Page returns 200 (automated — 0.3s)
-  ✓ Word count: 1,847 > 1,500 (automated — 0.1s)
+  ✓ Word count: 1,847 &gt; 1,500 (automated — 0.1s)
   ✓ SEO score: 92/100, green (automated — 1.2s)
   ✓ Meta title set, under 60 chars (automated — 0.1s)
   ✓ og:image present and resolves (automated — 0.4s)
@@ -366,3 +388,4 @@ Read the full north star document: [`docs/VISION.md`](docs/VISION.md)
 ## License
 
 MIT
+</pre></div></div></body></html>
