@@ -1,0 +1,36 @@
+{
+  "tweets": [
+    {
+      "text": "Single-agent AI workflows feel fast until context loss, duplicated work, and drift kill the result. That’s the wall most Claude Code users hit right after the first good demo. 🧵",
+      "media": null
+    },
+    {
+      "text": "Most people already know how to prompt one agent. The real bottleneck starts when the job needs parallel executors, clear ticket contracts, and handoffs that survive more than one session.",
+      "media": null
+    },
+    {
+      "text": "That’s where /orchestrator fits. It closes the gap between “cool demo” and “reliable workflow” by turning agent work into a system with contracts, ownership, verification, and state.",
+      "media": null
+    },
+    {
+      "text": "The course packages that operating model into 6 modules: why single-agent breaks, ticket contracts, spawning teams, memory + handoff, reliability patterns, and production orchestration.",
+      "media": null
+    },
+    {
+      "text": "This is not abstract theory. You get a free lesson on the context-limit wall, a coordinator ↔ executor preview, and cloneable templates you can drop into your own workflow right away.",
+      "media": null
+    },
+    {
+      "text": "The outcome is simple: run reliable, parallel multi-agent workflows in 1 week without losing context, duplicating work, or watching agents drift while you babysit the process.",
+      "media": null
+    },
+    {
+      "text": "If you want the full framework, start with the course outline and free lesson here: https://github.com/maxtechera/orchestrator#learn-orchestrator\n\nJoin the /orchestrator waitlist before everyone else is still babysitting one prompt at a time.",
+      "media": null
+    }
+  ],
+  "cta": {
+    "action": "Start with the /orchestrator course outline and join the waitlist.",
+    "reason_for_now": "Single-agent wins are getting crowded. The leverage now is reliable multi-agent execution."
+  }
+}
