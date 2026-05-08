@@ -1,0 +1,5 @@
+PASS body <= 3000 chars (1383)
+PASS hashtags <= 3 (['#AIAgents', '#ClaudeCode', '#WorkflowAutomation'])
+PASS CTA present
+PASS no http(s) link in body
+PASS short paragraph structure preserved

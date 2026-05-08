@@ -1,0 +1,18 @@
+{
+  "ticket": "MAX-670",
+  "parent": "MAX-565",
+  "channel": "linkedin",
+  "source_artifact": "artifacts/MAX-565/build.md",
+  "post": "artifacts/MAX-670/post.md",
+  "proofs": [
+    "artifacts/MAX-670/proof/linkedin-preview.png",
+    "artifacts/MAX-670/proof/preview.html",
+    "artifacts/MAX-670/proof.svg"
+  ],
+  "constraints": {
+    "max_body_chars": 3000,
+    "max_hashtags": 3,
+    "no_external_link_in_body": true,
+    "cta": "Comment \"orchestrator\" and I’ll send the free lesson/waitlist path."
+  }
+}
