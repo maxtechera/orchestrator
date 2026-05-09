@@ -1,0 +1,11 @@
+Most AI agent setups break the moment one task becomes three.
+
+The gap is not “better prompts.” It is coordination.
+
+If your agents lose context, duplicate work, hand off vague summaries, or mark work done without proof, you do not have an agent problem. You have an orchestration problem.
+
+The /orchestrator course shows Claude Code users how to build reliable multi-agent workflows in one week using ticket contracts, parallel executors, memory discipline, verification loops, and production guardrails.
+
+Get the free lesson, join the waitlist, and stop running agent workflows on vibes.
+
+DM `ORCHESTRATOR` or follow @maxtechera for the build notes.
