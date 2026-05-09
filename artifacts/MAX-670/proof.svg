@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">MAX-670 LinkedIn placement proof</title>
+  <desc id="desc">Preview card summarizing the LinkedIn placement for the /orchestrator course.</desc>
+  <rect width="1200" height="630" fill="#f3f2ef"/>
+  <rect x="110" y="70" width="980" height="490" rx="28" fill="#fff" stroke="#d6d6d6"/>
+  <circle cx="180" cy="145" r="34" fill="#0a66c2"/>
+  <text x="180" y="157" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="700" fill="#fff">MT</text>
+  <text x="235" y="132" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="700" fill="#191919">Max Techera</text>
+  <text x="235" y="166" font-family="Inter, Arial, sans-serif" font-size="20" fill="#666">Founder · AI workflow systems · MAX-670 LinkedIn placement</text>
+  <text x="150" y="245" font-family="Inter, Arial, sans-serif" font-size="38" font-weight="700" fill="#191919">Most AI agent setups break</text>
+  <text x="150" y="295" font-family="Inter, Arial, sans-serif" font-size="38" font-weight="700" fill="#191919">the moment one task becomes three.</text>
+  <text x="150" y="365" font-family="Inter, Arial, sans-serif" font-size="26" fill="#333">The /orchestrator course teaches Claude Code users</text>
+  <text x="150" y="405" font-family="Inter, Arial, sans-serif" font-size="26" fill="#333">reliable multi-agent workflows, proof-backed handoffs,</text>
+  <text x="150" y="445" font-family="Inter, Arial, sans-serif" font-size="26" fill="#333">and coordination patterns that survive real work.</text>
+  <text x="150" y="515" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="700" fill="#0a66c2">Comment “orchestrator” for the free lesson / waitlist path.</text>
+</svg>
