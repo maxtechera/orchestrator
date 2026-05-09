@@ -102,10 +102,12 @@ Students launch a coordinator with three executors, each with a narrow scope, th
 - **Lesson 4.2:** The 3-tier memory model for agent teams
 - **Lesson 4.3:** Session state, handoff docs, and durable operating context
 - **Lesson 4.4:** SESSION-STATE, pre-compact discipline, and recovery after interruption
-- **Lesson 4.5:** Designing memory flows for multi-session work
+- **Lesson 4.5:** What to store, what to summarize, and what to throw away
+- **Lesson 4.6:** Designing memory flows for multi-session work
 
 ### Apply
-- **Lesson 4.6:** Build a persistent memory flow across a 2-session task
+- **Lesson 4.7:** Build a persistent memory flow across a 2-session task
+- **Lesson 4.8:** Repair a broken handoff without restarting the whole workflow
 
 ### Demo / exercise
 Students run one task across two sessions using memory notes, session state, and a formal handoff document.
@@ -122,9 +124,12 @@ Students run one task across two sessions using memory notes, session state, and
 - **Lesson 5.2:** Critic evaluators and rubric-driven review
 - **Lesson 5.3:** Retry policies, bounded loops, and fail-fast triggers
 - **Lesson 5.4:** Human-in-the-loop gates for risky or taste-sensitive tasks
+- **Lesson 5.5:** Guardrails that prevent wrong-surface and wrong-proof failures
+- **Lesson 5.6:** Taste review for content, design, and public-facing assets
 
 ### Apply
-- **Lesson 5.5:** Add a critic and retry loop to your orchestrator
+- **Lesson 5.7:** Add a critic and retry loop to your orchestrator
+- **Lesson 5.8:** Add one human approval gate without slowing the whole system down
 
 ### Demo / exercise
 Students wire a critic pass into a real orchestration flow and tune retry logic so the system improves instead of looping forever.
@@ -155,10 +160,10 @@ Students turn one manual weekly workflow into an orchestrated recurring system w
 - **Module 1:** 5 lessons
 - **Module 2:** 7 lessons
 - **Module 3:** 6 lessons
-- **Module 4:** 6 lessons
-- **Module 5:** 5 lessons
+- **Module 4:** 8 lessons
+- **Module 5:** 8 lessons
 - **Module 6:** 6 lessons
-- **Total:** 35 lesson units in outline format, which is in range for a recorded delivery trimmed to about 30 final lessons by combining adjacent teach segments during production
+- **Total:** 40 lesson units in outline format, which supports a trimmed recorded delivery of ~30 final lessons by combining adjacent teach segments during production
 
 ## Teaching assets to produce
 - 6 module workbooks

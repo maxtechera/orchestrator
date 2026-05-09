@@ -1,0 +1,245 @@
+{
+  "ticket_id": "MAX-547",
+  "content_type": "reel",
+  "target_repo": "maxtechera/orchestrator",
+  "brand": "max-techera",
+  "locale": "en",
+  "variants": [
+    {
+      "id": "v1-problem-agitate-solve",
+      "name": "Problem \u2192 Agitate \u2192 Solve",
+      "angle": "Make the pain visceral, then show /memory as the fix.",
+      "hooks": [
+        "Your AI agent forgot everything again.",
+        "You are not bad at prompting. Your agent is stateless.",
+        "If you re-explain your project every session, this is the bug."
+      ],
+      "script": "Problem clip: blank session. Agitate with the repeat-yourself loop. Solve by revealing /memory and the surviving context: project, last decision, current focus."
+    },
+    {
+      "id": "v2-contrarian",
+      "name": "Contrarian",
+      "angle": "The real problem is not the model, it is no memory architecture.",
+      "hooks": [
+        "Your agent is not dumb, it is just stateless.",
+        "Bigger models do not fix zero memory.",
+        "The real AI productivity leak is context reset, not model quality."
+      ],
+      "script": "Open with the contrarian line. Show a capable model still starting blank. Then show /memory preserving continuity after a fresh session."
+    },
+    {
+      "id": "v3-specific-number",
+      "name": "Specific-number",
+      "angle": "Quantify the loss: three things you repeat every session.",
+      "hooks": [
+        "3 things you keep re-explaining to your AI agent.",
+        "Three repeated context blocks are stealing your flow.",
+        "Every session reset costs you the same 3 explanations."
+      ],
+      "script": "Frame the pain as three repeated context blocks: project, last decision, current focus. Then show /memory carrying all three into the next session."
+    },
+    {
+      "id": "v4-insider-reveal",
+      "name": "Insider reveal",
+      "angle": "Reveal the architecture under the hood: HOT/WARM/COLD plus WAL.",
+      "hooks": [
+        "The trick is not chat history, it is memory architecture.",
+        "What actually makes an AI agent feel continuous? A 3-tier memory stack.",
+        "The secret is HOT, WARM, COLD plus a write-ahead log."
+      ],
+      "script": "Lead with the architectural reveal. Show HOT working state, WARM durable decisions, and COLD compiled wiki, with WAL surviving compaction."
+    },
+    {
+      "id": "v5-testimonial",
+      "name": "Testimonial",
+      "angle": "First-person workflow upgrade for indie hackers tired of daily resets.",
+      "hooks": [
+        "I got tired of re-explaining my project every morning.",
+        "The moment my agent stopped forgetting, my workflow changed.",
+        "This one install saved me from the daily context reset ritual."
+      ],
+      "script": "Tell it as a first-person before/after. Before: daily re-explaining ritual. After: new session already knows the project and active focus."
+    }
+  ],
+  "placements": {
+    "instagram_reel": {
+      "text": "Your AI agent forgot everything again.\n\nThat is not a prompting issue. It is a memory issue.\n\nEvery new session makes you re-explain the project, the last decision, and the one thing that matters now. `/memory` keeps that context alive across session compactions so the work keeps moving.\n\nDM MEMORY and I will send the free install guide.",
+      "cta": {
+        "action": "DM \"MEMORY\"",
+        "reason_for_now": "because re-explaining context every session is killing momentum"
+      },
+      "hashtags": [
+        "#memory",
+        "#aiagents",
+        "#claudecode",
+        "#buildinpublic",
+        "#indiehacker",
+        "#opensource",
+        "#aiworkflow",
+        "#llm"
+      ],
+      "media": {
+        "mp4": "artifacts/MAX-547/v1-problem-agitate-solve.mp4",
+        "thumbnail": "artifacts/MAX-547/v1-problem-agitate-solve.png"
+      },
+      "hook_variants": [
+        "Your AI agent forgot everything again.",
+        "You are not bad at prompting. Your agent is stateless.",
+        "If you re-explain your project every session, this is the bug."
+      ],
+      "manychat_trigger": {
+        "keyword": "MEMORY",
+        "flow_id": "TBD_MAX_PROVIDES"
+      }
+    },
+    "tiktok": {
+      "caption": "Hot take: bigger models do not fix zero memory. `/memory` does. Comment install and I will send the repo link.",
+      "hook_variants": [
+        "Your agent is not dumb, it is just stateless.",
+        "Bigger models do not fix zero memory.",
+        "The real AI productivity leak is context reset, not model quality."
+      ],
+      "media": {
+        "mp4": "artifacts/MAX-547/v2-contrarian.mp4"
+      }
+    },
+    "youtube_short": {
+      "title": "3 Things You Re-Explain Every AI Session",
+      "description": "Most session resets cost you the same three explanations. This short shows how /memory keeps them across compaction.",
+      "media": {
+        "mp4": "artifacts/MAX-547/v3-specific-number.mp4"
+      }
+    },
+    "x_thread": {
+      "tweets": [
+        {
+          "text": "Your AI agent forgot everything again. That is not a prompting problem. It is a stateless workflow problem."
+        },
+        {
+          "text": "Most resets force you to re-explain 3 things: the project, the last decision, and the current focus."
+        },
+        {
+          "text": "/memory keeps that context through HOT working state, WARM durable notes, and a COLD compiled wiki."
+        },
+        {
+          "text": "If you want the free install guide, reply MEMORY or grab the repo: github.com/maxtechera/memory"
+        }
+      ],
+      "cta": {
+        "action": "Reply \"MEMORY\"",
+        "reason_for_now": "to get the free install guide before your next reset"
+      }
+    },
+    "linkedin_post": {
+      "text": "Your AI agent is probably not underperforming because of the model. It is underperforming because every new session starts blank.\n\nThe practical fix is a memory layer that survives session compaction and preserves three things: project context, the last decision, and the current focus.\n\nThat is the promise of `/memory`: HOT working state, WARM durable context, and a COLD knowledge layer that compounds over time.\n\nIf you are building with Claude Code or any agentic workflow, this is the difference between daily reset and continuous execution.",
+      "cta": {
+        "action": "DM \"MEMORY\"",
+        "reason_for_now": "to get the install guide and stop losing context every session"
+      }
+    },
+    "email": {
+      "subject_variants": [
+        "Your agent forgot everything again",
+        "Stop resetting your AI agent daily",
+        "Install /memory before your next session"
+      ],
+      "preview_text": "A quick fix for stateless AI workflows that lose context every session.",
+      "body_html": "<html><body style=\"font-family:Arial,sans-serif;max-width:640px;margin:0 auto;line-height:1.6;color:#111;\"><h1>Your AI agent forgot everything again</h1><p>Every new session should not feel like day one.</p><p>The root problem is not prompting, it is memory. <strong>/memory</strong> preserves project context, the last decision, and the current focus across session compactions.</p><p>If you want the free install guide, reply with <strong>MEMORY</strong> or grab the repo at <a href=\"https://github.com/maxtechera/memory\">github.com/maxtechera/memory</a>.</p></body></html>",
+      "utm": {
+        "source": "mailerlite",
+        "campaign": "max-547-memory-reel-series",
+        "medium": "email"
+      }
+    },
+    "blog_post": {
+      "slug": "/blog/your-ai-agent-forgot-everything-again",
+      "title": "Your AI Agent Forgot Everything Again, Here Is the Fix",
+      "meta_description": "Why stateless AI sessions keep breaking your flow, and how a 3-tier memory system fixes it.",
+      "hero_og": "artifacts/MAX-547/v4-insider-reveal.png",
+      "body_md": "# Your AI agent forgot everything again\n\nEvery new session starts with a tax: repeat the project, repeat the last decision, repeat the current focus. `/memory` fixes that with HOT, WARM, and COLD memory tiers that survive session compactions.\n\n## The bug\nStateless sessions feel smart for one conversation and useless in the next.\n\n## The fix\nInstall `/memory`, connect your working context, and let the agent reload what matters.\n\n## The architecture\nHOT = live working state. WARM = durable decisions and facts. COLD = compiled knowledge that compounds over time.",
+      "faq": [
+        {
+          "q": "What problem does /memory solve?",
+          "a": "It stops you from re-explaining durable context every new session."
+        },
+        {
+          "q": "Who is this for?",
+          "a": "AI/LLM developers, Claude Code users, and indie hackers tired of session resets."
+        }
+      ]
+    },
+    "landing_page": {
+      "slug": "/memory",
+      "hero": {
+        "headline": "Your AI agent forgot everything again",
+        "subhead": "/memory keeps project context, last decisions, and current focus alive across sessions.",
+        "hero_image": "artifacts/MAX-547/v5-testimonial.png"
+      },
+      "features": [
+        {
+          "name": "HOT working state",
+          "hero_image": "artifacts/MAX-547/v4-insider-reveal.png",
+          "diagram": "artifacts/MAX-547/v4-insider-reveal.png",
+          "demo_media": "artifacts/MAX-547/v4-insider-reveal.mp4"
+        },
+        {
+          "name": "WARM durable decisions",
+          "hero_image": "artifacts/MAX-547/v3-specific-number.png",
+          "diagram": "artifacts/MAX-547/v3-specific-number.png",
+          "demo_media": "artifacts/MAX-547/v3-specific-number.mp4"
+        },
+        {
+          "name": "COLD compounding wiki",
+          "hero_image": "artifacts/MAX-547/v2-contrarian.png",
+          "diagram": "artifacts/MAX-547/v2-contrarian.png",
+          "demo_media": "artifacts/MAX-547/v2-contrarian.mp4"
+        }
+      ],
+      "ctas": {
+        "primary": "DM MEMORY",
+        "secondary": "Comment install"
+      },
+      "tracking_events": [
+        "page_view",
+        "cta_click_primary",
+        "cta_click_secondary",
+        "video_play"
+      ],
+      "meta": {
+        "title": "/memory for AI agents",
+        "description": "Persistent context for agentic workflows.",
+        "og": "artifacts/MAX-547/v1-problem-agitate-solve.png",
+        "canonical": "https://github.com/maxtechera/memory"
+      }
+    }
+  },
+  "proof": {
+    "pr_url": "https://github.com/maxtechera/orchestrator/pull/13",
+    "preview_urls": [
+      "artifacts/MAX-547/preview.html",
+      "artifacts/MAX-547/rendered-markdown.html"
+    ],
+    "screenshots": {
+      "desktop": "artifacts/MAX-547/screenshot-desktop.png",
+      "mobile": "artifacts/MAX-547/screenshot-mobile.png",
+      "rendered_html": "artifacts/MAX-547/rendered-html-screenshot.png",
+      "rendered_html_preview": "artifacts/MAX-547/rendered-html-preview-screenshot.png",
+      "rendered_github_markdown": "artifacts/MAX-547/rendered-github-markdown-screenshot.png"
+    },
+    "mp4_attachments": [
+      "artifacts/MAX-547/v1-problem-agitate-solve.mp4",
+      "artifacts/MAX-547/v2-contrarian.mp4",
+      "artifacts/MAX-547/v3-specific-number.mp4",
+      "artifacts/MAX-547/v4-insider-reveal.mp4",
+      "artifacts/MAX-547/v5-testimonial.mp4"
+    ],
+    "thumbnail_pngs": [
+      "artifacts/MAX-547/v1-problem-agitate-solve.png",
+      "artifacts/MAX-547/v2-contrarian.png",
+      "artifacts/MAX-547/v3-specific-number.png",
+      "artifacts/MAX-547/v4-insider-reveal.png",
+      "artifacts/MAX-547/v5-testimonial.png"
+    ],
+    "deployed_url": "https://github.com/maxtechera/orchestrator/pull/13"
+  }
+}
