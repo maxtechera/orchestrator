@@ -217,3 +217,18 @@ Works with any issue tracker. Run `/orchestrator setup` to connect:
 - The system fails visibly, not silently
 - Finishing beats starting
 - You define the boundaries. The harness operates inside them.
+
+## Proof-pack comment hook
+
+Before posting proof-pack comments on markdown-rendering surfaces such as Linear, GitHub, Slack, Discord, or Notion, fail closed on media formatting.
+
+Reject the comment and rewrite it if any of the following are true:
+- local image paths like `/data/workspace/artifacts/...png` appear without a sibling markdown embed `![](...)`
+- MP4 proof is named but not uploaded as an attachment or public link
+- the comment relies on filesystem paths as the primary proof surface
+
+Required behavior:
+1. Upload image proof first
+2. Inline the uploaded image URL with markdown
+3. Upload MP4 proof and include the public attachment link in the same proof pack
+4. Only then post the final proof comment
