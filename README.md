@@ -63,6 +63,15 @@ Want the full operating system behind reliable agent teams?
 
 The free OSS skill helps you run the workflow. The paid course teaches you how to design the contracts, memory, reliability layers, and production patterns behind it.
 
+### Marketplace packaging playbooks
+
+If you are preparing a companion skill or repo for Claude Code marketplace submission, use these proof-first packaging docs:
+
+- [Memory marketplace optimization package](docs/memory-marketplace-package.md)
+- [MAX-534 proof pack](artifacts/MAX-534/proof-pack.md)
+
+The memory package includes the final GitHub description, topic set, social preview card, manifest verification checklist, and install steps to copy into the target repo README before submitting.
+
 ---
 
 ## What people use it for
